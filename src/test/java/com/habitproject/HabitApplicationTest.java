@@ -1,4 +1,4 @@
-package com.example.habitproject;
+package com.habitproject;
 
 import static org.junit.jupiter.api.Assertions.*;
 

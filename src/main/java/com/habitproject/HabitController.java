@@ -1,4 +1,4 @@
-package com.example.habitproject;
+package com.habitproject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

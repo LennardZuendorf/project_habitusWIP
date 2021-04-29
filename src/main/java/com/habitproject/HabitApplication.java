@@ -1,4 +1,4 @@
-package com.example.habitproject;
+package com.habitproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
