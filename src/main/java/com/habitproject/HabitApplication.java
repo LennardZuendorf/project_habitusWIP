@@ -1,13 +1,12 @@
-package com.example.habitproject;
+package com.habitproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HabitProjectApplication {
+public class HabitApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HabitProjectApplication.class, args);
+        SpringApplication.run(HabitApplication.class, args);
     }
-
 }
