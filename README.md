@@ -5,7 +5,7 @@ The HABIT project will be a web app allowing you to track habits every day on th
 
 Want to start programming every single day? Workout 3 times a week? Or read one book a month? Then HABIT is for you.
 
-##Status (Main)
+## Status (Main)
 
 [![Build Status](https://travis-ci.com/LennardZuendorf/HABIT.svg?branch=main)](https://travis-ci.com/LennardZuendorf/HABIT)
 ![Heroku](https://heroku-badge.herokuapp.com/?app=habit-project)
