@@ -1,1 +1,2 @@
+install: gradle wrapper --gradle-version 7.0
 language: java
