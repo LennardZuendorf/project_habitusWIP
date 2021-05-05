@@ -2,3 +2,13 @@ before_install:
 - chmod +x gradlew
 language: java
 jdk: openjdk16
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: GDvONHwK0Txtc/M6qvSw4Nx1pyg2eLe5k6fcW6esuCDa0zTLoRUS5T2KYB1a7giGF5oMYXiyONRYSKqACLBpeM5TX4w8sOffF/YZPfn09sIGMAwLpRR+wNpSK8pQ+c+6lNod/HN6/8oWR4yC6uJZ9qJPTHXn2axzlgGfCemY4kONdriPOnMKy+ugJNbxyzzRRm5m4zVuQe4YxKaK0pzRSEMNIZfmiwu6T4EFk7gkR83lzU9tuQfby1yxZVbbMPvIdt2UQQ8I8nwwQ/xRSVl8KiKtcC0S+eE/BTdAoXsAYr+K2
+  tIX8NcTuVpZQs/S9WukGgq7mS+g6Bh1uxkW+TKF2bitZZfuwGClDL8coy1UmvB5C7nk0MJDKSPBkqktguM1wHlgaR9oCSEXYIyJyIxWoDZA7+4TT35a5hiPpmpAnwQsUjWmc41VyaE5Q2Pha4N4psJgOHiaxUePGQuO1+wi+YtxcFeZ4Tx+0oE1z8XsfriISXjtJDPLZo/3CT+i7u1IlXo4Ay+FawJZxN9oAac402ZJHb/q3QsFFK8yTgdT6RMein3A36CfnF4/iCoFGu3laoRqTu57i8pnav8hjSLtfZKe2VYEt0bvakbOz
+  E4bmi4CrTzWwnED//xWHZMysoH479DVsrybqM/wvO+zaugDS2pPRr54sTt3/5mxieYOaBQ=
+  app: habit-project
+  on:
+    repo: LennardZuendorf/HABIT
