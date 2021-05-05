@@ -1,13 +1,13 @@
-package com.habitproject.web.api;
+package com.habitproject.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HabitController {
+public class SiteController {
 
     @GetMapping("/")
-    public String HelloWorld(){
+    public String HabitHomepage(){
         return "HabitHome";
     }
 
