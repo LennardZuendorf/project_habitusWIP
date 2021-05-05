@@ -1,14 +1,12 @@
-package com.habitproject;
+package com.habitproject.web;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class HabitApplicationTest {
+class SiteControllerTest {
 
     @Test
-    void main() {
+    void HabitHomepageTest() {
         //expected
 
 
