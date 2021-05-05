@@ -1,12 +1,12 @@
-package com.habitproject;
+package com.habitproject.web.api;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class HabitApplicationTest {
+class HabitControllerTest {
 
     @Test
-    void main() {
+    void helloWorld() {
     }
 }
