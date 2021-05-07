@@ -2,8 +2,3 @@ before_install:
 - chmod +x gradlew
 language: java
 jdk: openjdk16
-
-deploy:
-  provider: heroku
-  api_key: $HEROKU_API_KEY
-  on: main
