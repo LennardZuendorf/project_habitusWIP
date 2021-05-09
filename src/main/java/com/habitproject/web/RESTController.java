@@ -3,11 +3,11 @@ package com.habitproject.web;
 import com.habitproject.persistence.HabitEntity;
 import com.habitproject.persistence.HabitQuantity;
 import com.habitproject.service.AppService;
+import com.habitproject.service.AppServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -15,8 +15,7 @@ import java.util.List;
 public class RESTController {
 
     private final AppService service;
-
-    public RESTController(AppService service) {
+    public RESTController(AppServiceImpl service) {
         this.service = service;
     }
 
@@ -26,7 +25,7 @@ public class RESTController {
      * @param quantity - quantity of the habit
      * @param frequency - the frequency a habit should be reached
      * @param userId - id of the user the Habit belongs to
-     * @return status, json
+     * @return status code, json
      */
 
     @PutMapping("/habit/put")
@@ -51,7 +50,7 @@ public class RESTController {
      * @param userId - the user ID to be selected by
      * @return status, json
      */
-    @PutMapping("/habit/getall")
+    @PutMapping("/habit/get-all")
     public ResponseEntity <List<HabitEntity>> getAllHabit(Long userId){
         var output = service.getAllHabit(userId);
         return ResponseEntity.ok(output);
@@ -59,15 +58,15 @@ public class RESTController {
 
     /**
      * API call for updating goal (GoalEntity)
+     * @param id - id of the HabitEntry to add
      * @param tag - a tag for the habit (name)
      * @param quantity - quantity of the habit
      * @param frequency - the frequency a habit should be reached
-     * @param userId - id of the user the Habit belongs to
      * @return status code, json
      */
     @PutMapping("/habit/update")
-    ResponseEntity <HabitEntity> updateHabit(String tag, HabitQuantity quantity, Integer frequency, Long userId){
-        var output = service.updateHabit(tag, quantity, frequency, userId);
+    ResponseEntity <HabitEntity> updateHabit(Long id, String tag, HabitQuantity quantity, Integer frequency){
+        var output = service.updateHabit(id, tag, quantity, frequency);
         return ResponseEntity.ok(output);
     }
 
