@@ -1,17 +1,16 @@
 package com.habitproject.service;
 
 import com.habitproject.persistence.HabitEntity;
-import com.habitproject.persistence.HabitQuantity;
-import com.habitproject.web.api.HabitRequestModel;
+import com.habitproject.web.api.HabitParamRequest;
 
 import java.util.List;
 
 public interface AppService {
 
-    HabitEntity putHabit(HabitRequestModel requestBody);
+    HabitEntity postHabit(HabitParamRequest requestBody);
     HabitEntity getHabit(Long id);
     List<HabitEntity> getAllHabit(Long UserId);
-    HabitEntity patchHabit(Long id, HabitRequestModel requestBody);
+    HabitEntity putHabit(Long id, HabitParamRequest requestBody);
     HabitEntity deleteHabit(Long id);
 
 }

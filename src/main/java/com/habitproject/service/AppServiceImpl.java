@@ -1,10 +1,8 @@
 package com.habitproject.service;
 
 import com.habitproject.persistence.HabitEntity;
-import com.habitproject.persistence.HabitQuantity;
 import com.habitproject.persistence.HabitRepository;
-import com.habitproject.web.api.HabitRequestModel;
-import org.springframework.context.annotation.Bean;
+import com.habitproject.web.api.HabitParamRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,7 +21,7 @@ public class AppServiceImpl implements AppService {
      * @return newly created habit
      */
     @Override
-    public HabitEntity putHabit(HabitRequestModel requestBody) {
+    public HabitEntity postHabit(HabitParamRequest requestBody) {
         HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency(), 12345678910L); //userId for testing always the same
         habitRepository.saveAndFlush(newHabit);
         return newHabit;
@@ -56,7 +54,7 @@ public class AppServiceImpl implements AppService {
      * @return updated habit
      */
     @Override
-    public HabitEntity patchHabit(Long id, HabitRequestModel requestBody) {
+    public HabitEntity putHabit(Long id, HabitParamRequest requestBody) {
         habitRepository.updateHabitByID(id, requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency());
         habitRepository.flush();
         return habitRepository.getOne(id);
