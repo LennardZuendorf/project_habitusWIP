@@ -1,16 +1,16 @@
 package com.habitproject.web;
 
 import com.habitproject.persistence.HabitEntity;
-import com.habitproject.persistence.HabitQuantity;
 import com.habitproject.service.AppService;
 import com.habitproject.service.AppServiceImpl;
+import com.habitproject.web.api.HabitRequestModel;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
+//TODO: Catching Exceptions and creating custom errors
 @RestController
 public class RESTController {
 
@@ -21,26 +21,24 @@ public class RESTController {
 
     /**
      * API call for creating a new habit (HabitEntity)
-     * @param tag - a tag for the habit (name)
-     * @param quantity - quantity of the habit
-     * @param frequency - the frequency a habit should be reached
-     * @param userId - id of the user the Habit belongs to
+     * @param requestBody - all of HabitEntity params
      * @return status code, json
      */
-
-    @PutMapping("/habit/put")
-    public ResponseEntity <HabitEntity> putHabit(String tag, HabitQuantity quantity, Integer frequency, Long userId){
-        var output = service.putHabit(tag, quantity, frequency, userId);
+    @PostMapping("/habit/post")
+    public ResponseEntity <HabitEntity> postHabit(@RequestBody HabitRequestModel requestBody){
+        var output = service.postHabit(requestBody);
         return ResponseEntity.ok(output);
     }
+
+    //TODO 1: fixing postman errors
 
     /**
      * API call for getting a habit (HabitEntity) by id
      * @param habitId - the habit id to select
      * @return status, json
      */
-    @PutMapping("/habit/get")
-    public ResponseEntity <HabitEntity> getHabit(Long habitId){
+    @GetMapping("/habit/get")
+    public ResponseEntity <HabitEntity> getHabit(@RequestParam Long habitId){
         var output = service.getHabit(habitId);
         return ResponseEntity.ok(output);
     }
@@ -50,34 +48,33 @@ public class RESTController {
      * @param userId - the user ID to be selected by
      * @return status, json
      */
-    @PutMapping("/habit/get-all")
-    public ResponseEntity <List<HabitEntity>> getAllHabit(Long userId){
+    @GetMapping("/habit/get-all")
+    public ResponseEntity <List<HabitEntity>> getAllHabit(@RequestParam Long userId){
         var output = service.getAllHabit(userId);
         return ResponseEntity.ok(output);
     }
 
+    //TODO 3: fixing postman errors - wrong status code
     /**
      * API call for updating goal (GoalEntity)
-     * @param id - id of the HabitEntry to add
-     * @param tag - a tag for the habit (name)
-     * @param quantity - quantity of the habit
-     * @param frequency - the frequency a habit should be reached
+     * @param habitId - id of the HabitEntry to add
+     * @param requestBody - all of HabitEntity params
      * @return status code, json
      */
-    @PutMapping("/habit/update")
-    ResponseEntity <HabitEntity> updateHabit(Long id, String tag, HabitQuantity quantity, Integer frequency){
-        var output = service.updateHabit(id, tag, quantity, frequency);
+    @PatchMapping("/habit/put")
+    ResponseEntity <HabitEntity> putHabit(@RequestParam Long habitId, @RequestBody HabitRequestModel requestBody){
+        var output = service.putHabit(habitId, requestBody);
         return ResponseEntity.ok(output);
     }
 
+    //TODO 2: fixing postman errors - wrong status code
     /**
      * API call for deleting a habit (HabitEntity)
-     * @param id - id of the habit that should be deleted
-     * @return status, json
+     * @param habitId - id of the habit that should be deleted
+     * @return HttpStatus - statuscode depending if value was deleted
      */
-    @PutMapping("/habit/delete")
-    ResponseEntity <HabitEntity> deleteHabit(Long id){
-        var output = service.deleteHabit(id);
-        return ResponseEntity.ok(output);
+    @DeleteMapping("/habit/delete")
+    HttpStatus deleteHabit (@RequestParam Long habitId){
+        return service.deleteHabit(habitId);
     }
 }
