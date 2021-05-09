@@ -3,9 +3,12 @@ package com.habitproject.service;
 import com.habitproject.persistence.HabitEntity;
 import com.habitproject.persistence.HabitQuantity;
 import com.habitproject.persistence.HabitRepository;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AppServiceImpl implements AppService {
 
     private final HabitRepository habitRepository;
