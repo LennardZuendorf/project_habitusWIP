@@ -2,6 +2,9 @@ package com.habitproject.persistence;
 
 import javax.persistence.*;
 
+/**
+ * HabitEntity defines database entries for persistence
+ */
 @Entity
 @Table(name = "habit")
 public class HabitEntity {
@@ -14,21 +17,21 @@ public class HabitEntity {
     @Column(name = "tag")
     private String tag;
 
-    @Column(name= "quantity")
-    @Enumerated(value = EnumType.STRING)
-    private HabitQuantity quantity;
-
     @Column(name= "frequency")
-    private Integer frequency;
+    @Enumerated(value = EnumType.STRING)
+    private HabitFrequency frequency;
+
+    @Column(name= "quantity")
+    private Integer quantity;
 
     @Column(name= "user_id_fk")
     private Long userId;
 
     //constructor
-    public HabitEntity(String tag, HabitQuantity quantity, Integer frequency, Long userId){
-        this.frequency = frequency;
-        this.quantity = quantity;
+    public HabitEntity(String tag, HabitFrequency frequency, Integer quantity, Long userId){
         this.tag = tag;
+        this.quantity = quantity;
+        this.frequency = frequency;
         this.userId = userId;
     }
     protected HabitEntity(){}
@@ -37,28 +40,24 @@ public class HabitEntity {
     public Long getId() {
         return id;
     }
-
     public String getTag() {
         return tag;
     }
-
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    public HabitQuantity getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
-
-    public void setQuantity(HabitQuantity quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
-    public int getFrequency() {
+    public HabitFrequency getFrequency() {
         return frequency;
     }
-
-    public void setFrequency(Integer frequency) {
+    public void setFrequency(HabitFrequency frequency) {
         this.frequency = frequency;
     }
+
+
 }

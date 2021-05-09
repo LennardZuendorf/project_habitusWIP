@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * AppService is the class implementing the HabitApp's backend business logic, right now only for HabitEntities
+ */
+
 @Service
 public class AppServiceImpl implements AppService {
 
@@ -25,7 +29,7 @@ public class AppServiceImpl implements AppService {
      */
     @Override
     public HabitEntity postHabit(HabitRequestModel requestBody) {
-        HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency(), requestBody.getUser_id()); //userId for testing always the same
+        HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getUser_id()); //userId for testing always the same
         habitRepository.saveAndFlush(newHabit);
         return newHabit;
     }
@@ -63,9 +67,9 @@ public class AppServiceImpl implements AppService {
     public HttpStatus putHabit(Long id, HabitRequestModel requestBody) {
         if(habitRepository.existsById(id)){
             var habitEntry = habitRepository.findFirstById(id);
-            habitEntry.setQuantity(requestBody.getQuantity());
-            habitEntry.setFrequency(requestBody.getFrequency());
             habitEntry.setTag(requestBody.getTag());
+            habitEntry.setFrequency(requestBody.getFrequency());
+            habitEntry.setQuantity(requestBody.getQuantity());
             habitRepository.save(habitEntry);
             return HttpStatus.ACCEPTED;
         }else return HttpStatus.NO_CONTENT;
