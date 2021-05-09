@@ -29,10 +29,7 @@ public class HabitEntity {
         this.frequency = frequency;
         this.quantity = quantity;
         this.tag = tag;
-
-        //always the same for testing purposes
         this.userId = userId;
-        this.userId = 12345678910L;
     }
     protected HabitEntity(){}
 
