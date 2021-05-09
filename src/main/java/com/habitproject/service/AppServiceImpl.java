@@ -12,11 +12,11 @@ import java.util.List;
 public class AppServiceImpl implements AppService {
 
     private final HabitRepository habitRepository;
-
     public AppServiceImpl(HabitRepository repository) {
         this.habitRepository = repository;
     }
 
+    //Services for habit endpoints
     /**
      * saving a new habit to database
      *
@@ -25,7 +25,7 @@ public class AppServiceImpl implements AppService {
      */
     @Override
     public HabitEntity postHabit(HabitRequestModel requestBody) {
-        HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency(), 12345678910L); //userId for testing always the same
+        HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency(), requestBody.getUser_id()); //userId for testing always the same
         habitRepository.saveAndFlush(newHabit);
         return newHabit;
     }
@@ -62,8 +62,12 @@ public class AppServiceImpl implements AppService {
     @Override
     public HttpStatus putHabit(Long id, HabitRequestModel requestBody) {
         if(habitRepository.existsById(id)){
-            habitRepository.updateHabitByID(id, requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency());
-            return HttpStatus.OK;
+            var habitEntry = habitRepository.findFirstById(id);
+            habitEntry.setQuantity(requestBody.getQuantity());
+            habitEntry.setFrequency(requestBody.getFrequency());
+            habitEntry.setTag(requestBody.getTag());
+            habitRepository.save(habitEntry);
+            return HttpStatus.ACCEPTED;
         }else return HttpStatus.NO_CONTENT;
     }
 
