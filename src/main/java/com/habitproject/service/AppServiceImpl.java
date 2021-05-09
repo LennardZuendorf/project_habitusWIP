@@ -2,7 +2,8 @@ package com.habitproject.service;
 
 import com.habitproject.persistence.HabitEntity;
 import com.habitproject.persistence.HabitRepository;
-import com.habitproject.web.api.HabitParamRequest;
+import com.habitproject.web.api.HabitRequestModel;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,17 +12,19 @@ import java.util.List;
 public class AppServiceImpl implements AppService {
 
     private final HabitRepository habitRepository;
+
     public AppServiceImpl(HabitRepository repository) {
         this.habitRepository = repository;
     }
 
     /**
      * saving a new habit to database
+     *
      * @param requestBody - all of HabitEntity params
      * @return newly created habit
      */
     @Override
-    public HabitEntity postHabit(HabitParamRequest requestBody) {
+    public HabitEntity postHabit(HabitRequestModel requestBody) {
         HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency(), 12345678910L); //userId for testing always the same
         habitRepository.saveAndFlush(newHabit);
         return newHabit;
@@ -29,6 +32,7 @@ public class AppServiceImpl implements AppService {
 
     /**
      * getting one HabitEntity by id
+     *
      * @param id - the habit id to select
      * @return selected HabitEntity
      */
@@ -39,6 +43,7 @@ public class AppServiceImpl implements AppService {
 
     /**
      * getting a list of all habits by UserID
+     *
      * @param userId - the user ID to be selected by
      * @return list of HabitEntities
      */
@@ -49,12 +54,13 @@ public class AppServiceImpl implements AppService {
 
     /**
      * updating a HabitEntity in the database
-     * @param id - id of the habit to update
+     *
+     * @param id          - id of the habit to update
      * @param requestBody - all of HabitEntity params
      * @return updated habit
      */
     @Override
-    public HabitEntity putHabit(Long id, HabitParamRequest requestBody) {
+    public HabitEntity putHabit(Long id, HabitRequestModel requestBody) {
         habitRepository.updateHabitByID(id, requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency());
         habitRepository.flush();
         return habitRepository.getOne(id);
@@ -62,17 +68,18 @@ public class AppServiceImpl implements AppService {
 
     /**
      * API call for deleting a habit (HabitEntity)
+     *
      * @param id - id of the habit that should be deleted
      * @return deleted habit
      */
     @Override
-    public HabitEntity deleteHabit(Long id) {
-        var output = habitRepository.getOne(id);
-        habitRepository.delete(output);
-        habitRepository.flush();
-        return output;
-
+    public HttpStatus deleteHabit(Long id) {
+        if (habitRepository.existsById(id)) {
+            habitRepository.delete(habitRepository.getOne(id));
+            habitRepository.flush();
+            return HttpStatus.OK;
+        } else{
+            return HttpStatus.NO_CONTENT;
+        }
     }
-
-
 }

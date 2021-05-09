@@ -1,16 +1,17 @@
 package com.habitproject.service;
 
 import com.habitproject.persistence.HabitEntity;
-import com.habitproject.web.api.HabitParamRequest;
+import com.habitproject.web.api.HabitRequestModel;
+import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
 public interface AppService {
 
-    HabitEntity postHabit(HabitParamRequest requestBody);
+    HabitEntity postHabit(HabitRequestModel requestBody);
     HabitEntity getHabit(Long id);
     List<HabitEntity> getAllHabit(Long UserId);
-    HabitEntity putHabit(Long id, HabitParamRequest requestBody);
-    HabitEntity deleteHabit(Long id);
+    HabitEntity putHabit(Long id, HabitRequestModel requestBody);
+    HttpStatus deleteHabit(Long id);
 
 }
