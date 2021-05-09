@@ -9,9 +9,9 @@ import java.util.List;
 public interface AppService {
 
     HabitEntity postHabit(HabitRequestModel requestBody);
-    HabitEntity getHabit(Long id);
-    List<HabitEntity> getAllHabit(Long UserId);
-    HttpStatus putHabit(Long id, HabitRequestModel requestBody);
-    HttpStatus deleteHabit(Long id);
+    HabitEntity getHabit(Long hid);
+    List<HabitEntity> getAllHabit(Long uid);
+    HttpStatus putHabit(Long hid, HabitRequestModel requestBody);
+    HttpStatus deleteHabit(Long hid);
 
 }

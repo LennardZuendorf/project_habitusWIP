@@ -12,33 +12,33 @@ public class HabitEntity {
     //variables and columns
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long hid;
 
-    @Column(name = "tag")
+    @Column
     private String tag;
 
-    @Column(name= "frequency")
+    @Column
     @Enumerated(value = EnumType.STRING)
     private HabitFrequency frequency;
 
-    @Column(name= "quantity")
+    @Column
     private Integer quantity;
 
-    @Column(name= "user_id_fk")
-    private Long userId;
+    @Column
+    private Long uid;
 
     //constructor
-    public HabitEntity(String tag, HabitFrequency frequency, Integer quantity, Long userId){
+    public HabitEntity(String tag, HabitFrequency frequency, Integer quantity, Long uid){
         this.tag = tag;
-        this.quantity = quantity;
         this.frequency = frequency;
-        this.userId = userId;
+        this.quantity = quantity;
+        this.uid = uid;
     }
     protected HabitEntity(){}
 
     //getter and setter
-    public Long getId() {
-        return id;
+    public Long getHid() {
+        return hid;
     }
     public String getTag() {
         return tag;
@@ -58,6 +58,7 @@ public class HabitEntity {
     public void setFrequency(HabitFrequency frequency) {
         this.frequency = frequency;
     }
-
-
+    public Long getUid() {
+        return uid;
+    }
 }

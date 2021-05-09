@@ -29,7 +29,7 @@ public class AppServiceImpl implements AppService {
      */
     @Override
     public HabitEntity postHabit(HabitRequestModel requestBody) {
-        HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getUser_id()); //userId for testing always the same
+        HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getUid());
         habitRepository.saveAndFlush(newHabit);
         return newHabit;
     }
@@ -37,36 +37,36 @@ public class AppServiceImpl implements AppService {
     /**
      * getting one HabitEntity by id
      *
-     * @param id - the habit id to select
+     * @param hid - the habit id to select
      * @return selected HabitEntity
      */
     @Override
-    public HabitEntity getHabit(Long id) {
-        return habitRepository.findFirstById(id);
+    public HabitEntity getHabit(Long hid) {
+        return habitRepository.findFirstByHid(hid);
     }
 
     /**
      * getting a list of all habits by UserID
      *
-     * @param userId - the user ID to be selected by
+     * @param uid - the user ID to be selected by
      * @return list of HabitEntities
      */
     @Override
-    public List<HabitEntity> getAllHabit(Long userId) {
-        return habitRepository.findAllByUserId(userId);
+    public List<HabitEntity> getAllHabit(Long uid) {
+        return habitRepository.findAllByUid(uid);
     }
 
     /**
      * updating a HabitEntity in the database
      *
-     * @param id          - id of the habit to update
+     * @param hid          - id of the habit to update
      * @param requestBody - all of HabitEntity params
      * @return updated habit
      */
     @Override
-    public HttpStatus putHabit(Long id, HabitRequestModel requestBody) {
-        if(habitRepository.existsById(id)){
-            var habitEntry = habitRepository.findFirstById(id);
+    public HttpStatus putHabit(Long hid, HabitRequestModel requestBody) {
+        if(habitRepository.existsById(hid)){
+            var habitEntry = habitRepository.findFirstByHid(hid);
             habitEntry.setTag(requestBody.getTag());
             habitEntry.setFrequency(requestBody.getFrequency());
             habitEntry.setQuantity(requestBody.getQuantity());
@@ -78,13 +78,13 @@ public class AppServiceImpl implements AppService {
     /**
      * API call for deleting a habit (HabitEntity)
      *
-     * @param id - id of the habit that should be deleted
+     * @param hid - id of the habit that should be deleted
      * @return deleted habit
      */
     @Override
-    public HttpStatus deleteHabit(Long id) {
-        if (habitRepository.existsById(id)) {
-            habitRepository.delete(habitRepository.getOne(id));
+    public HttpStatus deleteHabit(Long hid) {
+        if (habitRepository.existsById(hid)) {
+            habitRepository.delete(habitRepository.getOne(hid));
             habitRepository.flush();
             return HttpStatus.OK;
         } else return HttpStatus.NO_CONTENT;
