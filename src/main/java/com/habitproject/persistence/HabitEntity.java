@@ -1,18 +1,60 @@
 package com.habitproject.persistence;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "habit")
 public class HabitEntity {
 
-    private final String id;
-    private final String desc;
-    private final String tag;
-    private final String frequency;
+    //variables and columns
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
+    @Column(name = "tag")
+    private String tag;
 
-    public HabitEntity(String id, String desc,String tag, String frequency){
-        this.id = id;
-        this.desc = desc;
+    @Column(name= "quantity")
+    @Enumerated(value = EnumType.STRING)
+    private HabitQuantity quantity;
+
+    @Column(name= "frequency")
+    private Integer frequency;
+
+    //constructor
+    public HabitEntity(String tag, HabitQuantity quantity, Integer frequency){
         this.frequency = frequency;
+        this.quantity = quantity;
+        this.tag = tag;
+    }
+    protected HabitEntity(){}
+
+    //getter and setter
+    public Long getId() {
+        return id;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
         this.tag = tag;
     }
 
+    public HabitQuantity getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(HabitQuantity quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(Integer frequency) {
+        this.frequency = frequency;
+    }
 }
