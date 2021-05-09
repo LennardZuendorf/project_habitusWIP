@@ -1,16 +1,16 @@
 package com.habitproject.service;
 
 import com.habitproject.persistence.HabitEntity;
+import com.habitproject.persistence.HabitQuantity;
 
 import java.util.List;
-import java.util.TreeSet;
 
 public interface AppService {
 
-    HabitEntity putHabit();
-    HabitEntity getHabit();
-    List<HabitEntity> getAllHabit();
-    HabitEntity updateHabit();
-    HabitEntity deleteHabit();
+    HabitEntity putHabit(String tag, HabitQuantity quantity, Integer frequency, Long userId);
+    HabitEntity getHabit(Long id);
+    List<HabitEntity> getAllHabit(Long UserId);
+    HabitEntity updateHabit(String tag, HabitQuantity quantity, Integer frequency, Long userId);
+    HabitEntity deleteHabit(Long id);
 
 }
