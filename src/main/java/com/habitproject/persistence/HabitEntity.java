@@ -21,11 +21,18 @@ public class HabitEntity {
     @Column(name= "frequency")
     private Integer frequency;
 
+    @Column(name= "user_id_fk")
+    private Long userId;
+
     //constructor
-    public HabitEntity(String tag, HabitQuantity quantity, Integer frequency){
+    public HabitEntity(String tag, HabitQuantity quantity, Integer frequency, Long userId){
         this.frequency = frequency;
         this.quantity = quantity;
         this.tag = tag;
+
+        //always the same for testing purposes
+        this.userId = userId;
+        this.userId = 12345678910L;
     }
     protected HabitEntity(){}
 
