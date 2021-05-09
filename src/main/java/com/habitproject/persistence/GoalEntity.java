@@ -1,43 +1,44 @@
 package com.habitproject.persistence;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name="goal")
 public class GoalEntity {
 
-    private final String id;
-    private String desc;
+    //variables and columns
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name="tag")
     private String tag;
 
+    @Column(name="quantity")
     private String quantity;
+
+    @Column(name="current_amount")
     private BigDecimal currentAmount;
+
+    @Column(name="total_amount")
     private BigDecimal totalAmount;
 
+    //constructor
+    protected GoalEntity() {
 
-    public GoalEntity (String id, String desc, String tag, String quantity, BigDecimal currentAmount, BigDecimal totalAmount) {
-        this.id = id;
-        this.desc = desc;
+    }
+
+    public GoalEntity(String tag, String quantity, BigDecimal currentAmount, BigDecimal totalAmount) {
         this.tag = tag;
         this.quantity = quantity;
         this.currentAmount = currentAmount;
         this.totalAmount = totalAmount;
-
     }
 
-    public BigDecimal getPerc(){
-        BigDecimal output = currentAmount;
-        return output.divide(totalAmount).multiply(new BigDecimal(100));
-    }
-
-    public String getId() {
+    //getter and setter
+    public Long getId() {
         return id;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
     }
 
     public String getTag() {
@@ -71,5 +72,4 @@ public class GoalEntity {
     public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
     }
-
 }
