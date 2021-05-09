@@ -2,6 +2,9 @@ package com.habitproject.persistence;
 
 import javax.persistence.*;
 
+/**
+ * HabitEntity defines database entries for persistence
+ */
 @Entity
 @Table(name = "habit")
 public class HabitEntity {
@@ -9,56 +12,53 @@ public class HabitEntity {
     //variables and columns
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long hid;
 
-    @Column(name = "tag")
+    @Column
     private String tag;
 
-    @Column(name= "quantity")
+    @Column
     @Enumerated(value = EnumType.STRING)
-    private HabitQuantity quantity;
+    private HabitFrequency frequency;
 
-    @Column(name= "frequency")
-    private Integer frequency;
+    @Column
+    private Integer quantity;
 
-    @Column(name= "user_id_fk")
-    private Long userId;
+    @Column
+    private Long uid;
 
     //constructor
-    public HabitEntity(String tag, HabitQuantity quantity, Integer frequency, Long userId){
+    public HabitEntity(String tag, HabitFrequency frequency, Integer quantity, Long uid){
+        this.tag = tag;
         this.frequency = frequency;
         this.quantity = quantity;
-        this.tag = tag;
-        this.userId = userId;
+        this.uid = uid;
     }
     protected HabitEntity(){}
 
     //getter and setter
-    public Long getId() {
-        return id;
+    public Long getHid() {
+        return hid;
     }
-
     public String getTag() {
         return tag;
     }
-
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    public HabitQuantity getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
-
-    public void setQuantity(HabitQuantity quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
-    public int getFrequency() {
+    public HabitFrequency getFrequency() {
         return frequency;
     }
-
-    public void setFrequency(Integer frequency) {
+    public void setFrequency(HabitFrequency frequency) {
         this.frequency = frequency;
+    }
+    public Long getUid() {
+        return uid;
     }
 }

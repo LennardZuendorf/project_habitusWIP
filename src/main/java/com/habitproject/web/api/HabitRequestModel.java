@@ -1,24 +1,24 @@
 package com.habitproject.web.api;
 
-import com.habitproject.persistence.HabitQuantity;
+import com.habitproject.persistence.HabitFrequency;
 
 public class HabitRequestModel {
 
     private String tag;
-    private HabitQuantity quantity;
-    private Integer frequency;
-    private Long user_id;
+    private HabitFrequency frequency;
+    private Integer quantity;
+    private Long uid;
 
     public String getTag() {
         return tag;
     }
-    public HabitQuantity getQuantity() {
-        return quantity;
-    }
-    public Integer getFrequency() {
+    public HabitFrequency getFrequency() {
         return frequency;
     }
-    public Long getUser_id() {
-        return user_id;
+    public Integer getQuantity() {
+        return quantity;
+    }
+    public Long getUid() {
+        return uid;
     }
 }
