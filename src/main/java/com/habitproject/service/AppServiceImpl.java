@@ -38,7 +38,7 @@ public class AppServiceImpl implements AppService {
      */
     @Override
     public HabitEntity getHabit(Long id) {
-        return habitRepository.getOne(id);
+        return habitRepository.findFirstById(id);
     }
 
     /**
@@ -60,10 +60,11 @@ public class AppServiceImpl implements AppService {
      * @return updated habit
      */
     @Override
-    public HabitEntity putHabit(Long id, HabitRequestModel requestBody) {
-        habitRepository.updateHabitByID(id, requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency());
-        habitRepository.flush();
-        return habitRepository.getOne(id);
+    public HttpStatus putHabit(Long id, HabitRequestModel requestBody) {
+        if(habitRepository.existsById(id)){
+            habitRepository.updateHabitByID(id, requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency());
+            return HttpStatus.OK;
+        }else return HttpStatus.NO_CONTENT;
     }
 
     /**
@@ -78,8 +79,6 @@ public class AppServiceImpl implements AppService {
             habitRepository.delete(habitRepository.getOne(id));
             habitRepository.flush();
             return HttpStatus.OK;
-        } else{
-            return HttpStatus.NO_CONTENT;
-        }
+        } else return HttpStatus.NO_CONTENT;
     }
 }

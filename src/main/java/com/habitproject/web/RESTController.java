@@ -59,19 +59,18 @@ public class RESTController {
      * API call for updating goal (GoalEntity)
      * @param habitId - id of the HabitEntry to add
      * @param requestBody - all of HabitEntity params
-     * @return status code, json
+     * @return status code
      */
     @PatchMapping("/habit/put")
-    ResponseEntity <HabitEntity> putHabit(@RequestParam Long habitId, @RequestBody HabitRequestModel requestBody){
-        var output = service.putHabit(habitId, requestBody);
-        return ResponseEntity.ok(output);
+    HttpStatus putHabit(@RequestParam Long habitId, @RequestBody HabitRequestModel requestBody){
+        return service.putHabit(habitId, requestBody);
     }
 
     //TODO 2: fixing postman errors - wrong status code
     /**
      * API call for deleting a habit (HabitEntity)
      * @param habitId - id of the habit that should be deleted
-     * @return HttpStatus - statuscode depending if value was deleted
+     * @return status code
      */
     @DeleteMapping("/habit/delete")
     HttpStatus deleteHabit (@RequestParam Long habitId){

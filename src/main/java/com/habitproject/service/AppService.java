@@ -11,7 +11,7 @@ public interface AppService {
     HabitEntity postHabit(HabitRequestModel requestBody);
     HabitEntity getHabit(Long id);
     List<HabitEntity> getAllHabit(Long UserId);
-    HabitEntity putHabit(Long id, HabitRequestModel requestBody);
+    HttpStatus putHabit(Long id, HabitRequestModel requestBody);
     HttpStatus deleteHabit(Long id);
 
 }
