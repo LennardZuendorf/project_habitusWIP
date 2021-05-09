@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//TODO: Catching Exceptions and creating custom errors
+//TODO 1: Catching Exceptions and creating custom errors
+//TODO 2: fixing postman errors - wrong status code
 @RestController
 public class RESTController {
 
@@ -52,7 +53,6 @@ public class RESTController {
         return ResponseEntity.ok(output);
     }
 
-    //TODO 3: fixing postman errors - wrong status code
     /**
      * API call for updating habit (HabitEntity)
      * @param hid - id of the HabitEntry to add
@@ -64,7 +64,7 @@ public class RESTController {
         return service.putHabit(hid, requestBody);
     }
 
-    //TODO 2: fixing postman errors - wrong status code
+
     /**
      * API call for deleting a habit (HabitEntity)
      * @param hid - id of the habit that should be deleted
