@@ -7,23 +7,18 @@ public class HabitRequestModel {
     private String tag;
     private HabitQuantity quantity;
     private Integer frequency;
+    private Long user_id;
 
     public String getTag() {
         return tag;
     }
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
     public HabitQuantity getQuantity() {
         return quantity;
-    }
-    public void setQuantity(HabitQuantity quantity) {
-        this.quantity = quantity;
     }
     public Integer getFrequency() {
         return frequency;
     }
-    public void setFrequency(Integer frequency) {
-        this.frequency = frequency;
+    public Long getUser_id() {
+        return user_id;
     }
 }

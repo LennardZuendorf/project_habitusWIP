@@ -30,8 +30,6 @@ public class RESTController {
         return ResponseEntity.ok(output);
     }
 
-    //TODO 1: fixing postman errors
-
     /**
      * API call for getting a habit (HabitEntity) by id
      * @param habitId - the habit id to select
@@ -61,7 +59,7 @@ public class RESTController {
      * @param requestBody - all of HabitEntity params
      * @return status code
      */
-    @PatchMapping("/habit/put")
+    @PutMapping("/habit/put")
     HttpStatus putHabit(@RequestParam Long habitId, @RequestBody HabitRequestModel requestBody){
         return service.putHabit(habitId, requestBody);
     }
