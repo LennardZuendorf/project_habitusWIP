@@ -4,7 +4,7 @@
 The HABIT project will be a web app allowing you to track habits every day on the web.
 Want to start programming every single day? Workout 3 times a week? Or read one book a month? Then HABIT is for you.
 
-## Status
+## Status (MAIN)
 
 [![Build Status](https://travis-ci.com/LennardZuendorf/HABIT.svg?branch=main)](https://travis-ci.com/LennardZuendorf/HABIT)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/LennardZuendorf/HABIT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/HABIT/alerts/)
