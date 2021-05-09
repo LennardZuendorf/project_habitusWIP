@@ -60,7 +60,7 @@ public class AppServiceImpl implements AppService {
      * @return updated habit
      */
     @Override
-    public HabitEntity updateHabit(Long id, String tag, HabitQuantity quantity, Integer frequency) {
+    public HabitEntity patchHabit(Long id, String tag, HabitQuantity quantity, Integer frequency) {
         habitRepository.updateHabitByID(id, tag, quantity,frequency);
         habitRepository.flush();
         return habitRepository.getOne(id);
