@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class DatabaseController {
-    final
-    Environment environment;
+    final Environment environment;
 
     public DatabaseController(Environment environment) {
         this.environment = environment;
