@@ -3,6 +3,7 @@ package com.habitproject.service;
 import com.habitproject.persistence.HabitEntity;
 import com.habitproject.persistence.HabitQuantity;
 import com.habitproject.persistence.HabitRepository;
+import com.habitproject.web.api.HabitRequestModel;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
@@ -18,15 +19,12 @@ public class AppServiceImpl implements AppService {
 
     /**
      * saving a new habit to database
-     * @param tag - a tag for the habit (name)
-     * @param quantity - quantity of the habit
-     * @param frequency - the frequency a habit should be reached
-     * @param userId - id of the user the Habit belongs to
+     * @param requestBody - all of HabitEntity params
      * @return newly created habit
      */
     @Override
-    public HabitEntity putHabit(String tag, HabitQuantity quantity, Integer frequency, Long userId) {
-        HabitEntity newHabit = new HabitEntity(tag, quantity, frequency, userId);
+    public HabitEntity putHabit(HabitRequestModel requestBody) {
+        HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency(), 12345678910L); //userId for testing always the same
         habitRepository.saveAndFlush(newHabit);
         return newHabit;
     }
@@ -54,14 +52,12 @@ public class AppServiceImpl implements AppService {
     /**
      * updating a HabitEntity in the database
      * @param id - id of the habit to update
-     * @param tag - a tag for the habit (name)
-     * @param quantity - quantity of the habit
-     * @param frequency - the frequency a habit should be reached
+     * @param requestBody - all of HabitEntity params
      * @return updated habit
      */
     @Override
-    public HabitEntity patchHabit(Long id, String tag, HabitQuantity quantity, Integer frequency) {
-        habitRepository.updateHabitByID(id, tag, quantity,frequency);
+    public HabitEntity patchHabit(Long id, HabitRequestModel requestBody) {
+        habitRepository.updateHabitByID(id, requestBody.getTag(), requestBody.getQuantity(), requestBody.getFrequency());
         habitRepository.flush();
         return habitRepository.getOne(id);
     }
