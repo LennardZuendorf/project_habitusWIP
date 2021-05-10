@@ -4,6 +4,7 @@ import com.habitproject.persistence.HabitEntity;
 import com.habitproject.service.AppService;
 import com.habitproject.service.AppServiceImpl;
 import com.habitproject.web.api.HabitRequestModel;
+import com.habitproject.web.api.UserRequestModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,7 @@ public class RESTController {
         this.service = service;
     }
 
+    //Habit API Endpoints
     /**
      * API call for creating a new habit (HabitEntity)
      * @param requestBody - all of HabitEntity params
@@ -64,7 +66,6 @@ public class RESTController {
         return service.putHabit(hid, requestBody);
     }
 
-
     /**
      * API call for deleting a habit (HabitEntity)
      * @param hid - id of the habit that should be deleted
@@ -73,5 +74,38 @@ public class RESTController {
     @DeleteMapping("/habit/delete")
     HttpStatus deleteHabit (@RequestParam Long hid){
         return service.deleteHabit(hid);
+    }
+
+
+    //User API Endpoints
+    /**
+     * API call for creating a user (UserAccountEntity)
+     * @param requestBody - all of UserAccountEntity Params
+     * @return status code
+     */
+    @PostMapping("/user/post")
+    public HttpStatus postUser(@RequestBody UserRequestModel requestBody){
+        return service.postUser(requestBody);
+    }
+
+    /**
+     * API call for creating a user (UserAccountEntity)
+     * @param uid - id of the UserAccountEntity to change
+     * @param requestBody - all of UserAccountEntity Params
+     * @return status code
+     */
+    @PutMapping("/user/put")
+    public HttpStatus putUser(@RequestParam Long uid, @RequestBody UserRequestModel requestBody){
+        return service.putUser(uid, requestBody);
+    }
+
+    /**
+     * API call for creating a user (UserAccountEntity)
+     * @param uid - id of the UserAccountEntity to delete
+     * @return status code
+     */
+    @DeleteMapping("/user/delete")
+    public HttpStatus deleteUser(@RequestParam Long uid){
+        return service.deleteUser(uid);
     }
 }
