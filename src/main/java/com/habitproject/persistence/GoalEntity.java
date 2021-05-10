@@ -16,24 +16,28 @@ public class GoalEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long gid;
 
-    @Column
+    @Column(nullable = false)
     private String tag;
 
-    @Column
-    private String quantity;
+    @Column(nullable = false)
+    private String measure;
 
     @Column(name="current_amount")
     private BigDecimal currentAmount;
 
-    @Column(name="total_amount")
+    @Column(name="total_amount", nullable = false)
     private BigDecimal totalAmount;
 
+    @Column(nullable = false)
+    private Long uid;
+
     //constructor
-    public GoalEntity(String tag, String quantity, BigDecimal currentAmount, BigDecimal totalAmount) {
+    public GoalEntity(String tag, String measure, BigDecimal currentAmount, BigDecimal totalAmount, Long uid) {
         this.tag = tag;
-        this.quantity = quantity;
+        this.measure = measure;
         this.currentAmount = currentAmount;
         this.totalAmount = totalAmount;
+        this.uid = uid;
     }
     protected GoalEntity() {
 
@@ -49,11 +53,11 @@ public class GoalEntity {
     public void setTag(String tag) {
         this.tag = tag;
     }
-    public String getQuantity() {
-        return quantity;
+    public String getMeasure() {
+        return measure;
     }
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
+    public void setMeasure(String measure) {
+        this.measure = measure;
     }
     public BigDecimal getCurrentAmount() {
         return currentAmount;
