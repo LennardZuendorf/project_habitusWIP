@@ -1,8 +1,10 @@
 package com.habitproject.web;
 
+import com.habitproject.persistence.GoalEntity;
 import com.habitproject.persistence.HabitEntity;
 import com.habitproject.service.AppService;
 import com.habitproject.service.AppServiceImpl;
+import com.habitproject.web.api.GoalRequestModel;
 import com.habitproject.web.api.HabitRequestModel;
 import com.habitproject.web.api.UserRequestModel;
 import org.springframework.http.HttpStatus;
@@ -62,7 +64,7 @@ public class RESTController {
      * @return status code
      */
     @PutMapping("/habit/put")
-    HttpStatus putHabit(@RequestParam Long hid, @RequestBody HabitRequestModel requestBody){
+    public HttpStatus putHabit(@RequestParam Long hid, @RequestBody HabitRequestModel requestBody){
         return service.putHabit(hid, requestBody);
     }
 
@@ -72,8 +74,63 @@ public class RESTController {
      * @return status code
      */
     @DeleteMapping("/habit/delete")
-    HttpStatus deleteHabit (@RequestParam Long hid){
+    public HttpStatus deleteHabit (@RequestParam Long hid){
         return service.deleteHabit(hid);
+    }
+
+
+    //Goal API Endpoints
+    /**
+     * API call for creating a new goal (GoalEntity)
+     * @param requestBody - all of GoalEntity params
+     * @return status code, json
+     */
+    @PostMapping("/goal/post")
+    public HttpStatus postGoal(@RequestBody GoalRequestModel requestBody){
+        return service.postGoal(requestBody);
+    }
+
+    /**
+     * API call for getting a goal (GoalEntity) by id
+     * @param gid - the goal id to select
+     * @return status code
+     */
+    @GetMapping("/goal/get")
+    public ResponseEntity <GoalEntity> getGoal(@RequestParam Long gid){
+        var output = service.getGoal(gid);
+        return ResponseEntity.ok(output);
+    }
+
+    /**
+     * API call for getting all goal (GoalEntity) by userID
+     * @param uid - the user ID to be selected by
+     * @return status, json
+     */
+    @GetMapping("/goal/get-all")
+    public ResponseEntity <List<GoalEntity>> getAllGoal(@RequestParam Long uid){
+        var output = service.getAllGoal(uid);
+        return ResponseEntity.ok(output);
+    }
+
+    /**
+     * API call for updating goal (GoalEntity)
+     * @param gid - id of the GoalEntity to add
+     * @param requestBody - all of GoalEntity params
+     * @return status code
+     */
+    @PutMapping("/goal/put")
+    HttpStatus putHabit(@RequestParam Long gid, @RequestBody GoalRequestModel requestBody){
+        return service.putGoal(gid, requestBody);
+    }
+
+    /**
+     * API call for deleting a goal (GoalEntity)
+     * @param gid - id of the goal that should be deleted
+     * @return status code
+     */
+    @DeleteMapping("/goal/delete")
+    public HttpStatus deleteGoal(@RequestParam Long gid){
+        return service.deleteGoal(gid);
     }
 
 
