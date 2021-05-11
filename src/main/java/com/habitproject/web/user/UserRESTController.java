@@ -28,6 +28,17 @@ public class UserRESTController {
     }
 
     /**
+     * API call for getting a user (HabitEntity)
+     * @param uid - id of the UserAccountEntity to delete
+     * @return status code, json
+     */
+    @GetMapping("/users/{uid}")
+    public ResponseEntity <UserAccountEntity> getUser(@PathVariable Long uid){
+        var output = service.getUser(uid);
+        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
+    }
+
+    /**
      * API call for creating a user (UserAccountEntity)
      * @param uid - id of the UserAccountEntity to change
      * @param requestBody - all of UserAccountEntity Params
