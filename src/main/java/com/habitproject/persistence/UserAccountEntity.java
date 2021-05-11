@@ -1,6 +1,7 @@
 package com.habitproject.persistence;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * UserAccountEntity defines database entries for persistence of goals
@@ -16,10 +17,10 @@ public class UserAccountEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long uid;
 
-    @Column
+    @Column(nullable=false)
     private String username;
 
-    @Column
+    @Column(nullable=false)
     private String email;
 
     //constructor

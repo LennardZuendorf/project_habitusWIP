@@ -28,16 +28,17 @@ public class GoalEntity {
     @Column(name="total_amount", nullable = false)
     private BigDecimal totalAmount;
 
-    @Column(nullable = false)
-    private Long uid;
+    @ManyToOne
+    @JoinColumn(name="uid", nullable=false)
+    private UserAccountEntity userAccountEntity;
 
     //constructor
-    public GoalEntity(String tag, String measure, BigDecimal currentAmount, BigDecimal totalAmount, Long uid) {
+    public GoalEntity(String tag, String measure, BigDecimal currentAmount, BigDecimal totalAmount, UserAccountEntity userAccountEntity) {
         this.tag = tag;
         this.measure = measure;
         this.currentAmount = currentAmount;
         this.totalAmount = totalAmount;
-        this.uid = uid;
+        this.userAccountEntity = userAccountEntity;
     }
     protected GoalEntity() {
 

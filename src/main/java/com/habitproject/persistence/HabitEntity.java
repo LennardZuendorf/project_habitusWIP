@@ -1,6 +1,7 @@
 package com.habitproject.persistence;
 
 import javax.persistence.*;
+import java.rmi.server.UID;
 
 /**
  * HabitEntity defines database entries for persistence
@@ -14,25 +15,26 @@ public class HabitEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long hid;
 
-    @Column
+    @Column(nullable=false)
     private String tag;
 
-    @Column
+    @Column(nullable=false)
     @Enumerated(value = EnumType.STRING)
     private HabitFrequency frequency;
 
-    @Column
+    @Column(nullable=false)
     private Integer quantity;
 
-    @Column
-    private Long uid;
+    @ManyToOne
+    @JoinColumn(name="uid", nullable=false)
+    private UserAccountEntity userAccountEntity;
 
     //constructor
-    public HabitEntity(String tag, HabitFrequency frequency, Integer quantity, Long uid){
+    public HabitEntity(String tag, HabitFrequency frequency, Integer quantity, UserAccountEntity uid){
         this.tag = tag;
         this.frequency = frequency;
         this.quantity = quantity;
-        this.uid = uid;
+        this.userAccountEntity = uid;
     }
     protected HabitEntity(){}
 
@@ -58,7 +60,7 @@ public class HabitEntity {
     public void setFrequency(HabitFrequency frequency) {
         this.frequency = frequency;
     }
-    public Long getUid() {
-        return uid;
+    public UserAccountEntity getUid() {
+        return userAccountEntity;
     }
 }
