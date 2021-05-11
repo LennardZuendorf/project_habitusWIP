@@ -34,6 +34,17 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
+     * saving a new user (UserAccountEntity) to database
+     * @param uid - id of the user to get
+     * @return UserStatusReturn - combination of Entity and status code
+     */
+    @Override
+    public UserStatusReturn getUser(Long uid) {
+        if (userRepository.existsById(uid)) return new UserStatusReturn(userRepository.findFirstByUid(uid), HttpStatus.OK);
+        else return new UserStatusReturn(null, HttpStatus.NO_CONTENT);
+    }
+
+    /**
      * updating a HabitEntity in the database
      * @param uid - id of the user to update
      * @param requestBody - all UserAccountEntity params

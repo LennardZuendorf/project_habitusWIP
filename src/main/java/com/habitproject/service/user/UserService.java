@@ -8,6 +8,7 @@ public interface UserService {
 
     //UserAccountEntity services
     UserStatusReturn postUser(UserRequestModel requestBody);
+    UserStatusReturn getUser(Long uid);
     HttpStatus putUser(Long uid, UserRequestModel requestBody);
     HttpStatus deleteUser(Long uid);
 
