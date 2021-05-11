@@ -11,45 +11,43 @@ import org.springframework.stereotype.Service;
 @Service
 public class HabitServiceImpl implements HabitService{
 
-    private final HabitRepository habitRepository;
-    public HabitServiceImpl(HabitRepository habitRepository) {
-        this.habitRepository = habitRepository;
+    private final HabitRepository repository;
+    public HabitServiceImpl(HabitRepository repository) {
+        this.repository = repository;
     }
 
     //services for habit API endpoints
     /**
      * saving a new habit to database
      * @param requestBody - all of HabitEntity params
-     * @return newly created habit
+     * @return HabitStatusReturn - combination of new Entity and status code
      */
     @Override
     public HabitStatusReturn postHabit(HabitRequestModel requestBody) {
         HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getUid());
-        habitRepository.saveAndFlush(newHabit);
+        repository.saveAndFlush(newHabit);
         return new HabitStatusReturn(newHabit, HttpStatus.CREATED);
     }
 
     /**
      * getting one HabitEntity by id
-     *
      * @param hid - the habit id to select
-     * @return selected HabitEntity
+     * @return HabitStatusReturn - combination of new Entity and status code
      */
     @Override
     public HabitStatusReturn getHabit(Long hid) {
-        if (habitRepository.existsById(hid))return new HabitStatusReturn(habitRepository.findFirstByHid(hid), HttpStatus.OK);
+        if (repository.existsById(hid))return new HabitStatusReturn(repository.findFirstByHid(hid), HttpStatus.OK);
         else return new HabitStatusReturn(null, HttpStatus.NO_CONTENT);
     }
 
     /**
      * getting a list of all habits by UserID
-     *
      * @param uid - the user ID to be selected by
-     * @return list of HabitEntities
+     * @return HabitListStatusReturn - combination of new List with Entities and status code
      */
     @Override
     public HabitListStatusReturn getAllHabit(Long uid) {
-        if (habitRepository.existsByUid(uid)) return new HabitListStatusReturn(habitRepository.findAllByUid(uid), HttpStatus.OK);
+        if (repository.existsByUid(uid)) return new HabitListStatusReturn(repository.findAllByUid(uid), HttpStatus.OK);
         else return new HabitListStatusReturn(null, HttpStatus.NO_CONTENT);
     }
 
@@ -57,16 +55,16 @@ public class HabitServiceImpl implements HabitService{
      * updating a HabitEntity in the database
      * @param hid          - id of the habit to update
      * @param requestBody - all of HabitEntity params
-     * @return updated habit
+     * @return http status code
      */
     @Override
     public HttpStatus putHabit(Long hid, HabitRequestModel requestBody) {
-        if(habitRepository.existsById(hid)){
-            var habitEntry = habitRepository.findFirstByHid(hid);
+        if(repository.existsById(hid)){
+            var habitEntry = repository.findFirstByHid(hid);
             habitEntry.setTag(requestBody.getTag());
             habitEntry.setFrequency(requestBody.getFrequency());
             habitEntry.setQuantity(requestBody.getQuantity());
-            habitRepository.saveAndFlush(habitEntry);
+            repository.saveAndFlush(habitEntry);
             return HttpStatus.OK;
         }else return HttpStatus.NO_CONTENT;
     }
@@ -74,13 +72,13 @@ public class HabitServiceImpl implements HabitService{
     /**
      * API call for deleting a habit (HabitEntity)
      * @param hid - id of the habit that should be deleted
-     * @return deleted habit
+     * @return http status code
      */
     @Override
     public HttpStatus deleteHabit(Long hid) {
-        if (habitRepository.existsById(hid)) {
-            habitRepository.delete(habitRepository.getOne(hid));
-            habitRepository.flush();
+        if (repository.existsById(hid)) {
+            repository.delete(repository.getOne(hid));
+            repository.flush();
             return HttpStatus.OK;
         } else return HttpStatus.NO_CONTENT;
     }
