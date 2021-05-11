@@ -1,6 +1,7 @@
 package com.habitproject.web.api;
 
 import com.habitproject.persistence.HabitFrequency;
+import com.habitproject.persistence.UserAccountEntity;
 
 import java.math.BigDecimal;
 
@@ -10,7 +11,7 @@ public class GoalRequestModel {
     private String measure;
     private BigDecimal currentAmount;
     private BigDecimal totalAmount;
-    private Long uid;
+    private UserAccountEntity uid;
 
     public String getTag() {
         return tag;
@@ -36,7 +37,7 @@ public class GoalRequestModel {
     public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
     }
-    public Long getUid() {
+    public UserAccountEntity getUid() {
         return uid;
     }
 }
