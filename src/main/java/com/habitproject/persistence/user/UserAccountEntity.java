@@ -1,4 +1,4 @@
-package com.habitproject.persistence;
+package com.habitproject.persistence.user;
 
 import javax.persistence.*;
 
