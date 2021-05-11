@@ -1,11 +1,8 @@
 package com.habitproject.web.goal;
 
 import com.habitproject.persistence.goal.GoalEntity;
-import com.habitproject.persistence.habit.HabitEntity;
-import com.habitproject.service.AppService;
-import com.habitproject.service.AppServiceImpl;
-import com.habitproject.web.habit.HabitRequestModel;
-import com.habitproject.web.user.UserRequestModel;
+import com.habitproject.service.GoalService;
+import com.habitproject.service.GoalServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +14,8 @@ import java.util.List;
 @RestController
 public class GoalRESTController {
 
-    private final AppService service;
-    public GoalRESTController(AppServiceImpl service) {
+    private final GoalService service;
+    public GoalRESTController(GoalServiceImpl service) {
         this.service = service;
     }
 
