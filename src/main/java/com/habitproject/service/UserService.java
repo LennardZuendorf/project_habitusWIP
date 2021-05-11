@@ -10,21 +10,7 @@ import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
-public interface AppService {
-
-    //HabitEntity services
-    HabitStatusReturn postHabit(HabitRequestModel requestBody);
-    HabitStatusReturn getHabit(Long hid);
-    HabitListStatusReturn getAllHabit(Long uid);
-    HttpStatus putHabit(Long hid, HabitRequestModel requestBody);
-    HttpStatus deleteHabit(Long hid);
-
-    //GoalEntity services
-    HttpStatus postGoal(GoalRequestModel requestBody);
-    GoalEntity getGoal(Long gid);
-    List<GoalEntity> getAllGoal(Long uid);
-    HttpStatus putGoal(Long gid, GoalRequestModel requestBody);
-    HttpStatus deleteGoal(Long gid);
+public interface UserService {
 
     //UserAccountEntity services
     HttpStatus postUser(UserRequestModel requestBody);

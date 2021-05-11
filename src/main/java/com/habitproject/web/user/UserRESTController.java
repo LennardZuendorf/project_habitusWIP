@@ -1,15 +1,15 @@
 package com.habitproject.web.user;
 
-import com.habitproject.service.AppService;
-import com.habitproject.service.AppServiceImpl;
+import com.habitproject.service.UserService;
+import com.habitproject.service.UserServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserRESTController {
 
-    private final AppService service;
-    public UserRESTController(AppServiceImpl service) {
+    private final UserService service;
+    public UserRESTController(UserServiceImpl service) {
         this.service = service;
     }
 
