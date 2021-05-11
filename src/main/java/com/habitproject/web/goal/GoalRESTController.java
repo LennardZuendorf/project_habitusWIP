@@ -26,8 +26,9 @@ public class GoalRESTController {
      * @return status code, json
      */
     @PostMapping("/goals")
-    public HttpStatus postGoal(@RequestBody GoalRequestModel requestBody){
-        return service.postGoal(requestBody);
+    public ResponseEntity <GoalEntity> postGoal(@RequestBody GoalRequestModel requestBody){
+        var output = service.postGoal(requestBody);
+        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
 
     /**
@@ -38,7 +39,7 @@ public class GoalRESTController {
     @GetMapping("/goals/{gid}")
     public ResponseEntity <GoalEntity> getGoal(@PathVariable Long gid){
         var output = service.getGoal(gid);
-        return ResponseEntity.ok(output);
+        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
 
     /**
@@ -49,7 +50,7 @@ public class GoalRESTController {
     @GetMapping("/goals/{uid}")
     public ResponseEntity <List<GoalEntity>> getAllGoal(@PathVariable Long uid){
         var output = service.getAllGoal(uid);
-        return ResponseEntity.ok(output);
+        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
 
     /**
@@ -59,8 +60,8 @@ public class GoalRESTController {
      * @return status code
      */
     @PutMapping("/goals/{gid}")
-    public HttpStatus putHabit(@PathVariable Long gid, @RequestBody GoalRequestModel requestBody){
-        return service.putGoal(gid, requestBody);
+    public ResponseEntity <Void>  putHabit(@PathVariable Long gid, @RequestBody GoalRequestModel requestBody){
+        return ResponseEntity.status(service.putGoal(gid, requestBody)).build();
     }
 
     /**
@@ -69,7 +70,7 @@ public class GoalRESTController {
      * @return status code
      */
     @DeleteMapping("/goals/{gid}")
-    public HttpStatus deleteGoal(@PathVariable Long gid){
-        return service.deleteGoal(gid);
+    public ResponseEntity <Void> deleteGoal(@PathVariable Long gid){
+        return ResponseEntity.status(service.deleteGoal(gid)).build();
     }
 }
