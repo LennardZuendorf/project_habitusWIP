@@ -2,18 +2,18 @@ package com.habitproject.service.goal;
 
 import com.habitproject.persistence.goal.GoalEntity;
 import com.habitproject.persistence.goal.GoalRepository;
+import com.habitproject.web.goal.GoalListStatusReturn;
 import com.habitproject.web.goal.GoalRequestModel;
+import com.habitproject.web.goal.GoalStatusReturn;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class GoalServiceImpl implements GoalService{
 
-    private final GoalRepository goalRepository;
-    public GoalServiceImpl(GoalRepository goalRepository) {
-        this.goalRepository = goalRepository;
+    private final GoalRepository repository;
+    public GoalServiceImpl(GoalRepository repository) {
+        this.repository = repository;
     }
 
     //services for goal API endpoints
@@ -23,10 +23,10 @@ public class GoalServiceImpl implements GoalService{
      * @return http status code
      */
     @Override
-    public HttpStatus postGoal(GoalRequestModel requestBody) {
+    public GoalStatusReturn postGoal(GoalRequestModel requestBody) {
         GoalEntity newGoal = new GoalEntity(requestBody.getTag(), requestBody.getMeasure(), requestBody.getCurrentAmount(), requestBody.getTotalAmount(), requestBody.getUid());
-        goalRepository.saveAndFlush(newGoal);
-        return HttpStatus.CREATED;
+        repository.saveAndFlush(newGoal);
+        return new GoalStatusReturn(newGoal, HttpStatus.CREATED);
     }
 
     /**
@@ -35,8 +35,9 @@ public class GoalServiceImpl implements GoalService{
      * @return selected GoalEntity
      */
     @Override
-    public GoalEntity getGoal(Long gid) {
-        return goalRepository.findFirstByGid(gid);
+    public GoalStatusReturn getGoal(Long gid) {
+        if (repository.existsById(gid))return new GoalStatusReturn(repository.findFirstByGid(gid), HttpStatus.OK);
+        else return new GoalStatusReturn(null, HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -45,8 +46,9 @@ public class GoalServiceImpl implements GoalService{
      * @return list of GoalEntities
      */
     @Override
-    public List<GoalEntity> getAllGoal(Long uid) {
-        return goalRepository.findAllByUid(uid);
+    public GoalListStatusReturn getAllGoal(Long uid) {
+        if (repository.existsByUid(uid)) return new GoalListStatusReturn(repository.findAllByUid(uid), HttpStatus.OK);
+        else return new GoalListStatusReturn(null, HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -57,13 +59,13 @@ public class GoalServiceImpl implements GoalService{
      */
     @Override
     public HttpStatus putGoal(Long gid, GoalRequestModel requestBody) {
-        if(goalRepository.existsById(gid)){
-            GoalEntity goalEntity = goalRepository.findFirstByGid(gid);
+        if(repository.existsById(gid)){
+            GoalEntity goalEntity = repository.findFirstByGid(gid);
             goalEntity.setTag(requestBody.getTag());
             goalEntity.setMeasure(requestBody.getMeasure());
             goalEntity.setCurrentAmount(requestBody.getCurrentAmount());
             goalEntity.setTotalAmount(requestBody.getTotalAmount());
-            goalRepository.saveAndFlush(goalEntity);
+            repository.saveAndFlush(goalEntity);
             return HttpStatus.OK;
         }else return HttpStatus.NO_CONTENT;
     }
@@ -75,9 +77,9 @@ public class GoalServiceImpl implements GoalService{
      */
     @Override
     public HttpStatus deleteGoal(Long gid) {
-        if (goalRepository.existsById(gid)) {
-            goalRepository.delete(goalRepository.getOne(gid));
-            goalRepository.flush();
+        if (repository.existsById(gid)) {
+            repository.delete(repository.getOne(gid));
+            repository.flush();
             return HttpStatus.OK;
         } else return HttpStatus.NO_CONTENT;
     }
