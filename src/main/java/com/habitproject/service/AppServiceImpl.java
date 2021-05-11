@@ -1,9 +1,16 @@
 package com.habitproject.service;
 
-import com.habitproject.persistence.*;
-import com.habitproject.web.api.GoalRequestModel;
-import com.habitproject.web.api.HabitRequestModel;
-import com.habitproject.web.api.UserRequestModel;
+import com.habitproject.persistence.goal.GoalEntity;
+import com.habitproject.persistence.goal.GoalRepository;
+import com.habitproject.persistence.habit.HabitEntity;
+import com.habitproject.persistence.habit.HabitRepository;
+import com.habitproject.persistence.user.UserAccountEntity;
+import com.habitproject.persistence.user.UserRepository;
+import com.habitproject.web.EntityStatusReturns.HabitListStatusReturn;
+import com.habitproject.web.EntityStatusReturns.HabitStatusReturn;
+import com.habitproject.web.goal.GoalRequestModel;
+import com.habitproject.web.habit.HabitRequestModel;
+import com.habitproject.web.user.UserRequestModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -32,10 +39,10 @@ public class AppServiceImpl implements AppService {
      * @return newly created habit
      */
     @Override
-    public HabitEntity postHabit(HabitRequestModel requestBody) {
+    public HabitStatusReturn postHabit(HabitRequestModel requestBody) {
         HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getUid());
         habitRepository.saveAndFlush(newHabit);
-        return newHabit;
+        return new HabitStatusReturn(newHabit, HttpStatus.CREATED);
     }
 
     /**
@@ -45,8 +52,9 @@ public class AppServiceImpl implements AppService {
      * @return selected HabitEntity
      */
     @Override
-    public HabitEntity getHabit(Long hid) {
-        return habitRepository.findFirstByHid(hid);
+    public HabitStatusReturn getHabit(Long hid) {
+        if (habitRepository.existsById(hid))return new HabitStatusReturn(habitRepository.findFirstByHid(hid), HttpStatus.OK);
+        else return new HabitStatusReturn(null, HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -56,8 +64,9 @@ public class AppServiceImpl implements AppService {
      * @return list of HabitEntities
      */
     @Override
-    public List<HabitEntity> getAllHabit(Long uid) {
-        return habitRepository.findAllByUid(uid);
+    public HabitListStatusReturn getAllHabit(Long uid) {
+        if (habitRepository.existsByUid(uid)) return new HabitListStatusReturn(habitRepository.findAllByUid(uid), HttpStatus.OK);
+        else return new HabitListStatusReturn(null, HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -74,7 +83,7 @@ public class AppServiceImpl implements AppService {
             habitEntry.setFrequency(requestBody.getFrequency());
             habitEntry.setQuantity(requestBody.getQuantity());
             habitRepository.saveAndFlush(habitEntry);
-            return HttpStatus.ACCEPTED;
+            return HttpStatus.OK;
         }else return HttpStatus.NO_CONTENT;
     }
 
@@ -140,7 +149,7 @@ public class AppServiceImpl implements AppService {
             goalEntity.setCurrentAmount(requestBody.getCurrentAmount());
             goalEntity.setTotalAmount(requestBody.getTotalAmount());
             goalRepository.saveAndFlush(goalEntity);
-            return HttpStatus.ACCEPTED;
+            return HttpStatus.OK;
         }else return HttpStatus.NO_CONTENT;
     }
 

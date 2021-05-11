@@ -24,8 +24,9 @@ public class HabitRESTController {
      * @return status code, json
      */
     @PostMapping("/habits")
-    public HttpStatus postHabit(@RequestBody HabitRequestModel requestBody){
-        return service.postHabit(requestBody);
+    public ResponseEntity <HabitEntity> postHabit(@RequestBody HabitRequestModel requestBody){
+        var output = service.postHabit(requestBody);
+        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
 
     /**
@@ -34,9 +35,9 @@ public class HabitRESTController {
      * @return status, json
      */
     @GetMapping("/habits/{hid}")
-    public ResponseEntity<HabitEntity> getHabit(@PathVariable Long hid){
+    public ResponseEntity <HabitEntity> getHabit(@PathVariable Long hid){
         var output = service.getHabit(hid);
-        return ResponseEntity.ok(output);
+        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
 
     /**
@@ -47,7 +48,7 @@ public class HabitRESTController {
     @GetMapping("/habits")
     public ResponseEntity <List<HabitEntity>> getAllHabit(@RequestParam Long uid){
         var output = service.getAllHabit(uid);
-        return ResponseEntity.ok(output);
+        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
 
     /**
@@ -57,8 +58,8 @@ public class HabitRESTController {
      * @return status code
      */
     @PutMapping("/habits/{hid}")
-    public HttpStatus putHabit(@PathVariable Long hid, @RequestBody HabitRequestModel requestBody){
-        return service.putHabit(hid, requestBody);
+    public ResponseEntity <Void> putHabit(@PathVariable Long hid, @RequestBody HabitRequestModel requestBody){
+        return ResponseEntity.status(service.putHabit(hid, requestBody)).build();
     }
 
     /**
@@ -68,7 +69,6 @@ public class HabitRESTController {
      */
     @DeleteMapping("/habits/{hid}")
     public ResponseEntity <Void> deleteHabit (@PathVariable Long hid){
-        var status = service.deleteHabit(hid);
-        return ResponseEntity.status(status).build();
+        return ResponseEntity.status(service.deleteHabit(hid)).build();
     }
 }
