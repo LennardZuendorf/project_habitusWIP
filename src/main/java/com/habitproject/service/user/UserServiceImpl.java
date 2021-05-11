@@ -3,6 +3,7 @@ package com.habitproject.service.user;
 import com.habitproject.persistence.user.UserAccountEntity;
 import com.habitproject.persistence.user.UserRepository;
 import com.habitproject.web.user.UserRequestModel;
+import com.habitproject.web.user.UserStatusReturn;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -26,10 +27,10 @@ public class UserServiceImpl implements UserService {
      * @return https Status code
      */
     @Override
-    public HttpStatus postUser(UserRequestModel requestBody) {
+    public UserStatusReturn postUser(UserRequestModel requestBody) {
         UserAccountEntity newUser = new UserAccountEntity(requestBody.getUsername(), requestBody.getEmail());
         userRepository.saveAndFlush(newUser);
-        return HttpStatus.CREATED;
+        return new UserStatusReturn(newUser, HttpStatus.CREATED);
     }
 
     /**
@@ -45,7 +46,7 @@ public class UserServiceImpl implements UserService {
             userEntry.setUsername(requestBody.getUsername());
             userEntry.setEmail(requestBody.getEmail());
             userRepository.saveAndFlush(userEntry);
-            return HttpStatus.ACCEPTED;
+            return HttpStatus.OK;
         }else return HttpStatus.NO_CONTENT;
     }
 

@@ -1,12 +1,13 @@
 package com.habitproject.service.user;
 
 import com.habitproject.web.user.UserRequestModel;
+import com.habitproject.web.user.UserStatusReturn;
 import org.springframework.http.HttpStatus;
 
 public interface UserService {
 
     //UserAccountEntity services
-    HttpStatus postUser(UserRequestModel requestBody);
+    UserStatusReturn postUser(UserRequestModel requestBody);
     HttpStatus putUser(Long uid, UserRequestModel requestBody);
     HttpStatus deleteUser(Long uid);
 
