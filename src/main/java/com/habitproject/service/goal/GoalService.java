@@ -1,4 +1,4 @@
-package com.habitproject.service;
+package com.habitproject.service.goal;
 
 import com.habitproject.persistence.goal.GoalEntity;
 import com.habitproject.web.goal.GoalRequestModel;
