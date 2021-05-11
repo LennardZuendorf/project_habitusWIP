@@ -1,9 +1,7 @@
 package com.habitproject.web.habit;
 
 import com.habitproject.persistence.habit.HabitEntity;
-import com.habitproject.service.AppService;
-import com.habitproject.service.AppServiceImpl;
-import org.springframework.http.HttpStatus;
+import com.habitproject.service.HabitService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,8 +10,8 @@ import java.util.List;
 @RestController
 public class HabitRESTController {
 
-    private final AppService service;
-    public HabitRESTController(AppServiceImpl service) {
+    private final HabitService service;
+    public HabitRESTController( HabitService service) {
         this.service = service;
     }
 
