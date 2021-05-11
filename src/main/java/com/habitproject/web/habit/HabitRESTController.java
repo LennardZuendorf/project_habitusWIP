@@ -1,7 +1,7 @@
 package com.habitproject.web.habit;
 
 import com.habitproject.persistence.habit.HabitEntity;
-import com.habitproject.service.HabitService;
+import com.habitproject.service.habit.HabitService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

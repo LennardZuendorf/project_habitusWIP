@@ -1,8 +1,8 @@
 package com.habitproject.web.goal;
 
 import com.habitproject.persistence.goal.GoalEntity;
-import com.habitproject.service.GoalService;
-import com.habitproject.service.GoalServiceImpl;
+import com.habitproject.service.goal.GoalService;
+import com.habitproject.service.goal.GoalServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
