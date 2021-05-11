@@ -1,22 +1,24 @@
-package com.habitproject.web.EntityStatusReturns;
+package com.habitproject.web.goal;
 
 import com.habitproject.persistence.goal.GoalEntity;
 import org.springframework.http.HttpStatus;
 
-public class GoalStatusReturn {
+import java.util.List;
 
-    GoalEntity response;
+public class GoalListStatusReturn {
+
+    List<GoalEntity> response;
     HttpStatus status;
 
-    public GoalStatusReturn(GoalEntity response, HttpStatus status){
+    public GoalListStatusReturn(List<GoalEntity> response, HttpStatus status){
         this.response = response;
         this.status = status;
     }
 
-    public GoalEntity getResponse() {
+    public List <GoalEntity> getResponse() {
         return response;
     }
-    public void setResponse(GoalEntity response) {
+    public void setResponse(List <GoalEntity> response) {
         this.response = response;
     }
     public HttpStatus getStatus() {

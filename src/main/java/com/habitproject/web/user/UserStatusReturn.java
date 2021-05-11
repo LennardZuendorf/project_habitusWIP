@@ -1,4 +1,4 @@
-package com.habitproject.web.EntityStatusReturns;
+package com.habitproject.web.user;
 
 import com.habitproject.persistence.user.UserAccountEntity;
 import org.springframework.http.HttpStatus;

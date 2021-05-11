@@ -1,24 +1,22 @@
-package com.habitproject.web.EntityStatusReturns;
+package com.habitproject.web.habit;
 
 import com.habitproject.persistence.habit.HabitEntity;
 import org.springframework.http.HttpStatus;
 
-import java.util.List;
+public class HabitStatusReturn  {
 
-public class HabitListStatusReturn {
-
-    List <HabitEntity> response;
+    HabitEntity response;
     HttpStatus status;
 
-    public HabitListStatusReturn(List <HabitEntity> response, HttpStatus status){
+    public HabitStatusReturn(HabitEntity response, HttpStatus status){
         this.response = response;
         this.status = status;
     }
 
-    public List <HabitEntity> getResponse() {
+    public HabitEntity getResponse() {
         return response;
     }
-    public void setResponse(List <HabitEntity> response) {
+    public void setResponse(HabitEntity response) {
         this.response = response;
     }
     public HttpStatus getStatus() {
@@ -28,4 +26,7 @@ public class HabitListStatusReturn {
         this.status = status;
     }
 }
+
+
+
 

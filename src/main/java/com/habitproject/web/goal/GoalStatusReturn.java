@@ -1,22 +1,22 @@
-package com.habitproject.web.EntityStatusReturns;
+package com.habitproject.web.goal;
 
-import com.habitproject.persistence.habit.HabitEntity;
+import com.habitproject.persistence.goal.GoalEntity;
 import org.springframework.http.HttpStatus;
 
-public class HabitStatusReturn  {
+public class GoalStatusReturn {
 
-    HabitEntity response;
+    GoalEntity response;
     HttpStatus status;
 
-    public HabitStatusReturn(HabitEntity response, HttpStatus status){
+    public GoalStatusReturn(GoalEntity response, HttpStatus status){
         this.response = response;
         this.status = status;
     }
 
-    public HabitEntity getResponse() {
+    public GoalEntity getResponse() {
         return response;
     }
-    public void setResponse(HabitEntity response) {
+    public void setResponse(GoalEntity response) {
         this.response = response;
     }
     public HttpStatus getStatus() {
@@ -26,7 +26,3 @@ public class HabitStatusReturn  {
         this.status = status;
     }
 }
-
-
-
-
