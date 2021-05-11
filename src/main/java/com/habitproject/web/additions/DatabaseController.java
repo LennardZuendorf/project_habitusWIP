@@ -1,4 +1,4 @@
-package com.habitproject.web;
+package com.habitproject.web.additions;
 
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
