@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     /**
      * saving a new user (UserAccountEntity) to database
      * @param requestBody - all UserAccountEntity params
-     * @return https Status code
+     * @return UserStatusReturn - combination of new Entity and status code
      */
     @Override
     public UserStatusReturn postUser(UserRequestModel requestBody) {

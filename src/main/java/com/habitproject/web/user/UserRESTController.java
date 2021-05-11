@@ -19,7 +19,7 @@ public class UserRESTController {
     /**
      * API call for creating a user (UserAccountEntity)
      * @param requestBody - all of UserAccountEntity Params
-     * @return status code
+     * @return status code, json
      */
     @PostMapping("/users")
     public ResponseEntity <UserAccountEntity> postUser (@RequestBody UserRequestModel requestBody){

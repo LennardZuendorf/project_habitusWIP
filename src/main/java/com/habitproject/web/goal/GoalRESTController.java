@@ -34,7 +34,7 @@ public class GoalRESTController {
     /**
      * API call for getting a goal (GoalEntity) by id
      * @param gid - the goal id to select
-     * @return status code
+     * @return status code, json
      */
     @GetMapping("/goals/{gid}")
     public ResponseEntity <GoalEntity> getGoal(@PathVariable Long gid){
@@ -45,7 +45,7 @@ public class GoalRESTController {
     /**
      * API call for getting all goals (GoalEntity) by userID
      * @param uid - the user ID to be selected by
-     * @return status, json
+     * @return status code, json
      */
     @GetMapping("/goals/{uid}")
     public ResponseEntity <List<GoalEntity>> getAllGoal(@PathVariable Long uid){

@@ -30,7 +30,7 @@ public class HabitRESTController {
     /**
      * API call for getting a habit (HabitEntity) by id
      * @param hid - the habit id to select
-     * @return status, json
+     * @return status code, json
      */
     @GetMapping("/habits/{hid}")
     public ResponseEntity <HabitEntity> getHabit(@PathVariable Long hid){
@@ -41,7 +41,7 @@ public class HabitRESTController {
     /**
      * API call for getting all habits (HabitEntity) by userID
      * @param uid - the user ID to be selected by
-     * @return status, json
+     * @return status code, json
      */
     @GetMapping("/habits")
     public ResponseEntity <List<HabitEntity>> getAllHabit(@RequestParam Long uid){
