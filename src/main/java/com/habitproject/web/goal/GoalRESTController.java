@@ -47,7 +47,7 @@ public class GoalRESTController {
      * @param uid - the user ID to be selected by
      * @return status code, json
      */
-    @GetMapping("/goals/{uid}")
+    @GetMapping("/goals/all/{uid}")
     public ResponseEntity <List<GoalEntity>> getAllGoal(@PathVariable Long uid){
         var output = service.getAllGoal(uid);
         return ResponseEntity.status(output.getStatus()).body(output.getResponse());

@@ -43,8 +43,8 @@ public class HabitRESTController {
      * @param uid - the user ID to be selected by
      * @return status code, json
      */
-    @GetMapping("/habits")
-    public ResponseEntity <List<HabitEntity>> getAllHabit(@RequestParam Long uid){
+    @GetMapping("/habits/all/{uid}")
+    public ResponseEntity <List<HabitEntity>> getAllHabit(@PathVariable Long uid){
         var output = service.getAllHabit(uid);
         return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
