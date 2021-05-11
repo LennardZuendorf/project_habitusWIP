@@ -1,6 +1,4 @@
-package com.habitproject.web.api;
-
-import com.habitproject.persistence.HabitFrequency;
+package com.habitproject.web.goal;
 
 import java.math.BigDecimal;
 

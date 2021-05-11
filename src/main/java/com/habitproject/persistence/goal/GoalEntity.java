@@ -1,4 +1,4 @@
-package com.habitproject.persistence;
+package com.habitproject.persistence.goal;
 
 import javax.persistence.*;
 import java.math.BigDecimal;

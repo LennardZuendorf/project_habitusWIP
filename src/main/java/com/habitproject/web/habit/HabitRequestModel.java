@@ -1,6 +1,6 @@
-package com.habitproject.web.api;
+package com.habitproject.web.habit;
 
-import com.habitproject.persistence.HabitFrequency;
+import com.habitproject.persistence.habit.HabitFrequency;
 
 public class HabitRequestModel {
 

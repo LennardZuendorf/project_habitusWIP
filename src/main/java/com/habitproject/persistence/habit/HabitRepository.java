@@ -1,4 +1,4 @@
-package com.habitproject.persistence;
+package com.habitproject.persistence.habit;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
