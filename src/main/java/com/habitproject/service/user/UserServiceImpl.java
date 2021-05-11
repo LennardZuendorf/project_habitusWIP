@@ -1,7 +1,5 @@
-package com.habitproject.service;
+package com.habitproject.service.user;
 
-import com.habitproject.persistence.goal.GoalRepository;
-import com.habitproject.persistence.habit.HabitRepository;
 import com.habitproject.persistence.user.UserAccountEntity;
 import com.habitproject.persistence.user.UserRepository;
 import com.habitproject.web.user.UserRequestModel;

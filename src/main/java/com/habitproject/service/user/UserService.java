@@ -1,4 +1,4 @@
-package com.habitproject.service;
+package com.habitproject.service.user;
 
 import com.habitproject.persistence.goal.GoalEntity;
 import com.habitproject.web.EntityStatusReturns.HabitListStatusReturn;
