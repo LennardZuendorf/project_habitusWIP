@@ -1,8 +1,10 @@
 package com.habitproject.web.user;
 
+import com.habitproject.persistence.user.UserAccountEntity;
 import com.habitproject.service.user.UserService;
 import com.habitproject.service.user.UserServiceImpl;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,8 +22,9 @@ public class UserRESTController {
      * @return status code
      */
     @PostMapping("/users")
-    public HttpStatus postUser(@RequestBody UserRequestModel requestBody){
-        return service.postUser(requestBody);
+    public ResponseEntity <UserAccountEntity> postUser (@RequestBody UserRequestModel requestBody){
+        var output = service.postUser(requestBody);
+        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
 
     /**
@@ -31,8 +34,8 @@ public class UserRESTController {
      * @return status code
      */
     @PutMapping("/users/{uid}")
-    public HttpStatus putUser(@PathVariable Long uid, @RequestBody UserRequestModel requestBody){
-        return service.putUser(uid, requestBody);
+    public ResponseEntity <Void> putUser(@PathVariable Long uid, @RequestBody UserRequestModel requestBody){
+        return ResponseEntity.status(service.putUser(uid, requestBody)).build();
     }
 
     /**
@@ -41,7 +44,7 @@ public class UserRESTController {
      * @return status code
      */
     @DeleteMapping("/users/{uid}")
-    public HttpStatus deleteUser(@PathVariable Long uid){
-        return service.deleteUser(uid);
+    public ResponseEntity <Void> deleteUser(@PathVariable Long uid){
+        return ResponseEntity.status(service.deleteUser(uid)).build();
     }
 }
