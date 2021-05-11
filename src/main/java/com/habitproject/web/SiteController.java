@@ -8,7 +8,7 @@ public class SiteController {
 
     @GetMapping("/")
     public String HabitHomepage(){
-        return "HabitHome";
+        return "home";
     }
 
 }
