@@ -1,7 +1,7 @@
 package com.habitproject.web.user;
 
-import com.habitproject.service.UserService;
-import com.habitproject.service.UserServiceImpl;
+import com.habitproject.service.user.UserService;
+import com.habitproject.service.user.UserServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
