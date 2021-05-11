@@ -1,4 +1,8 @@
+##Testing Java Code
+#creating new Wrapper for Testing
 before_install:
-- chmod +x gradlew
+  - chmod +x gradlew
+
+#defining language and jdk for testing
 language: java
 jdk: openjdk16
