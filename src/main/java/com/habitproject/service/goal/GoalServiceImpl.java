@@ -20,7 +20,7 @@ public class GoalServiceImpl implements GoalService{
     /**
      * saving a new goal to database
      * @param requestBody - all of GoalEntity params
-     * @return http status code
+     * @return GoalStatusReturn - combination of entity and status
      */
     @Override
     public GoalStatusReturn postGoal(GoalRequestModel requestBody) {
@@ -32,7 +32,7 @@ public class GoalServiceImpl implements GoalService{
     /**
      * getting one GoalEntity by id
      * @param gid - the goal id to select by
-     * @return selected GoalEntity
+     * @return GoalStatusReturn - combination of entity and status
      */
     @Override
     public GoalStatusReturn getGoal(Long gid) {
@@ -43,7 +43,7 @@ public class GoalServiceImpl implements GoalService{
     /**
      * getting a list of all goals by UserID
      * @param uid - the user ID to be selected by
-     * @return list of GoalEntities
+     * @return GoalListStatusReturn - combination of List with entities and status
      */
     @Override
     public GoalListStatusReturn getAllGoal(Long uid) {
