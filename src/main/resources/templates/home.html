@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="de">
+
     <head>
-        <title>HABIT</title>
+        <title>HABIT project </title>
         <meta http-equiv="Content-Type" content="text/html"/>
-        <link rel="stylesheet" href="/css/HabitStyle.css">
+        <link rel="stylesheet" href="/css/style.css">
     </head>
-    <body>
-        <home.vue></home.vue>
-        <script src ="https.unpkg.com/vue@3.0.5"></script>
+
+    <body style="background-color:var(--background-color);">
+    <div>
+        <div><img src="/img/logo.svg" alt="HABIT project logo"></div>
+    </div>
+
+
+
     </body>
+
 </html>
 
 <script>
-    import home from "/js/home.vue"
+    import Footer from "../static/js/vue/footer";
     export default {
-        components: {home}
+        components: {Footer}
     }
 </script>
