@@ -11,4 +11,9 @@ public class SiteController {
         return "home";
     }
 
+    @GetMapping("/dashboard")
+    public String HabitDashboard(){
+        return "dashboard";
+    }
+
 }
