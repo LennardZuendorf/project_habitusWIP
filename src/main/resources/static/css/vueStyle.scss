@@ -1,0 +1,10 @@
+// Colors
+$white: rgba(255, 255, 255, 1);
+
+// Typographies
+@mixin roboto-11-regular {
+  font-family: "Roboto";
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 31px;
+}
