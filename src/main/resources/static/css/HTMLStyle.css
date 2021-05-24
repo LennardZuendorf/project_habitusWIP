@@ -1,70 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,500,900");
+
+
 :root {
-    /* light mode color */
-    --background-color: rgba(38, 37, 37, 1);
-    --text-color: rgba(255, 255, 255, 1);
+    --goal-blue:
+            rgba(30, 127, 218, 1);
+    --habit-orange:
+            rgba(240, 133, 34, 1);
+    --background-color:
+            rgba(38, 36, 36, 1);
+    --accent-color:
+            rgba(255, 255, 255, 0.039);
+    --text-color:
+            rgba(255, 255, 255, 1);
 
-    /* Typographies */
-    /* roboto-11-regular */
-    --roboto-11-regular-family: "Roboto";
-    --roboto-11-regular-size: 11px;
-    --roboto-11-regular-weight: 400;
-    --roboto-11-regular-line-height: 31px;
+    --font-size-xs: 11px;
+    --font-size-s: 15px;
+    --font-size-m: 20px;
+    --font-size-l: 40px;
+    --font-family: "Roboto";
+}
+.roboto-black {
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-style: normal;
+}
+.roboto-bold {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-style: normal;
+}
+.roboto-medium {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-style: normal;
+}
+.roboto-normal {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-style: normal;
 }
 
-/*
-[data-theme="lightMode"] {
-    /* Variables for dark mode
-    --background-color: rgba(255, 255, 255, 1);
-    --text-color: rgba(38, 37, 37, 1);
-}
-*/
-
-.footer {
-    display: flex;
-    align-items: center;
-    height: 20px;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    position: fixed;
+.roboto-light {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-style: normal;
 }
 
-.footer_text {
+.roboto-thin {
+    font-family: var(--font-family);
+    font-weight: 100;
+    font-style: normal;
+}
+
+body{
+    height: 100%;
+    margin: 30px;
+}
+
+.bg-dark{
+    background-color: var(--background-color);
+}
+
+.bg-accent{
+    background-color: var(--accent-color);
+}
+
+.m-heading{
     color: var(--text-color);
-    text-align: right;
-    text-transform: uppercase;
-    margin-right: 23px;
-    letter-spacing: 1.25px;
-    font-family: "Roboto";
+    font-min-size: var(--font-size-m);
+    font-max-size: var(--font-size-l);
+}
+
+.nav-link{
+    padding-right: 75px;
+}
+
+.button_label{
+    color: var(--text-color);
+    font-size: var(--font-size-s);
+    white-space: pre-line;
 
 }
 
-.body {
+#d-flex {
+    width: 20%;
+    max-width: 250px;
     height: 100%;
-    margin-top: 20px;
-    padding-bottom: 30px;
 }
 
-.div {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    height: 100%;
+#navbar {
     width: 100%;
-    margin-top: 150px;
-    padding-bottom: 30px;
-    line-height: normal;
-    text-align: center;
-    font-family: Courier, monospace;
-    font-weight: 600;
-    font-size: 24px;
 }
 
-.div img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin:auto;
+.footer_text{
+    color: var(--text-color);
+    font-size: var(--font-size-xs);
+}
+
+#footer{
+    background-color: var(--background-color);
+    width: 100%;
+}
+
+.field_heading{
+    color: var(--text-color);
+    font: var(--font-size-l);
 }
