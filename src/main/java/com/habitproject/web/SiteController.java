@@ -8,12 +8,6 @@ public class SiteController {
 
     @GetMapping("/")
     public String HabitHomepage(){
-        return "home";
+        return "homeDark";
     }
-
-    @GetMapping("/dashboard")
-    public String HabitDashboard(){
-        return "dashboard";
-    }
-
 }
