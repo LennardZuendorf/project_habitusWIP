@@ -14,7 +14,7 @@
     --background-color:
             rgba(38, 36, 36, 1);
     --accent-color:
-            rgba(52, 52, 54, 1);
+            rgba(45, 45, 47, 1);
     --text-color:
             rgba(255, 255, 255, 1);
 
@@ -99,13 +99,6 @@ body{
     padding-right: 75px;
 }
 
-.button_label{
-    color: var(--text-color);
-    font-size: var(--font-size-s);
-    white-space: pre-line;
-
-}
-
 #d-flex {
     width: 20%;
     max-width: 250px;
@@ -141,4 +134,9 @@ body{
 .modal-dialog{
     background-color: var(--background-color);
     border-width: 3px;
+}
+
+.navbar_button{
+    margin: 10px;
+    background-color: var(--background-color);
 }
