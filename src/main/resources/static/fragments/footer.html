@@ -1,4 +1,34 @@
-<!-- footer -->
-<footer class="footer">
-</footer>
-<!-- footer -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="footer">
+    <meta http-equiv="Content-Type" content="text/html"/>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" th:href="@{/css/HTMLStyle.css}">
+</head>
+
+<body>
+    <!-- footer -->
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/LennardZuendorf/HABIT" role="button"
+                ><i class="fab fa-github" style="color: var(--text-color);"></i
+                ></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3 roboto-light" style="background-color:var(--accent-color); font-size: var(--font-size-m)">
+            CREATED BY LENNARD ZÜNDORF
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- footer -->
+</body>
