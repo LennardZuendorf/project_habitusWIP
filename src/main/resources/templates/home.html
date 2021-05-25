@@ -67,8 +67,12 @@
             <!-- text row-->
             <div class="row align-items-center justify-content-center" style="padding-top: 5%">
                 <div class="d-flex col-4 justify-content-center">
-                    <button type="button" class="btn btn-dark btn-rounded roboto-light" style="font-size: var(--font-size-m); color: var(--text-color); background-color: var(--accent-color)">
-                        LOGIN | REGISTER </button>
+                    <a class="btn btn-outline-light btn-floating m-1"
+                       th:href="@{/clean}"
+                       role="button"
+                       style="font-size: var(--font-size-m); color: var(--text-color); background-color: var(--accent-color)">
+                       LOGIN | REGISTER
+                    </a>
                 </div>
             </div>
             <!-- text row-->
@@ -76,10 +80,9 @@
         <!-- logo & text -->
 
         <!-- footer -->
-        <div th:insert="fragments/footer :: footer"></div>
+        <div th:insert="fragments/components :: footer"></div>
         <!-- footer -->
     </body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
 </html>
