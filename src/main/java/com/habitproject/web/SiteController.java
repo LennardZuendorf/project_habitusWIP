@@ -11,6 +11,11 @@ public class SiteController {
         return "home";
     }
 
+    @GetMapping("/home")
+    public String HabitHomepage2(){
+        return "home";
+    }
+
     @GetMapping("/dashboard")
     public String HabitDashboard(){
         return "dashboard";
