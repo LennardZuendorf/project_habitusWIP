@@ -15,4 +15,9 @@ public class SiteController {
     public String HabitDashboard(){
         return "dashboard";
     }
+
+    @GetMapping("/clean")
+    public String cleanSite(){
+        return "clean";
+    }
 }
