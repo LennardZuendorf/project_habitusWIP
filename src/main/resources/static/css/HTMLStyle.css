@@ -6,14 +6,16 @@
             rgba(30, 127, 218, 1);
     --habit-orange:
             rgba(240, 133, 34, 1);
+    --light_white:
+            rgba(255, 255, 255, 1);
+    --dark-grey:
+            rgba(38, 36, 36, 1);
+
     --background-color:
             rgba(38, 36, 36, 1);
     --accent-color:
-            rgba(255, 255, 255, 0.039);
+            rgba(52, 52, 54, 1);
     --text-color:
-            rgba(255, 255, 255, 1);
-
-    --light_white:
             rgba(255, 255, 255, 1);
 
     --font-size-xs: 11px;
@@ -22,6 +24,25 @@
     --font-size-l: 40px;
     --font-family: "Roboto";
 }
+
+[data-theme="light"] {
+    --goal-blue:
+            rgba(30, 127, 218, 1);
+    --habit-orange:
+            rgba(240, 133, 34, 1);
+    --light_white:
+            rgba(255, 255, 255, 1);
+    --dark-grey:
+            rgba(38, 36, 36, 1);
+
+    --background-color:
+            rgba(255, 255, 255, 1);
+    --accent-color:
+            rgba(239, 235, 235, 1);
+    --text-color:
+            rgba(38, 36, 36, 1);
+}
+
 .roboto-black {
     font-family: var(--font-family);
     font-weight: 900;
