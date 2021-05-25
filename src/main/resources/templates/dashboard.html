@@ -12,130 +12,129 @@
 
 <body class="bg-dark" style="background-color: var(--background-color)">
 
-<!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Navbar brand -->
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                <img src="/img/logo_long.svg"
-                     height="60px"
-                     alt=""
-                     loading="lazy"
-                />
-            </a>
-            <!-- empty left side -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link roboto-bold" style="font-size: var(--font-size-l); color: var(--text-color)">WELCOME LENNARD!</a>
-                </li>
-            </ul>
-            <!-- Left links -->
-        </div>
-        <!-- Collapsible wrapper -->
-
-        <!-- right side -->
-        <div class="d-flex align-items-center">
-            <!-- icons -->
-            <a class="text-reset me-3" href="#">
-                <i class="fa fa-cog fa-2x " style="color: var(--text-color)"></i>
-            </a>
-
-            <a class="text-reset me-3" href="#">
-                <i class="fa fa-sun fa-2x " style="color: var(--habit-orange)"></i>
-            </a>
-
-            <a class="text-reset me-3" href="#">
-                <i class="fa fa-times fa-2x " style="color: var(--text-color)"></i>
-            </a>
-        </div>
-        <!-- Right elements -->
-    </div>
-    <!-- Container wrapper -->
-</nav>
-<!-- navbar -->
-
-<!-- content & sidebar -->
-<div>
-    <div class="container-fluid">
-
-        <!-- white line row -->
-        <div class="row align-content-center justify-content-center">
-            <div class="col-8">
-                <div class="d-flex flex-column flex-shrink-0 bg-accent" style="width: 100%">
-                    <a></a>
-                    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center"></ul>
-                    <div class="dropdown border-top"><ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3"></ul></div>
-                </div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navbar brand -->
+                <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                    <img src="/img/logo_long.svg"
+                         height="60px"
+                         alt=""
+                         loading="lazy"
+                    />
+                </a>
+                <!-- empty left side -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link roboto-bold" style="font-size: var(--font-size-l); color: var(--text-color)">WELCOME LENNARD!</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
             </div>
-        </div>
-        <!-- white line row -->
+            <!-- Collapsible wrapper -->
 
-        <!-- real content & sidebar row -->
-        <div class="row">
-            <!-- sidebar -->
-            <div class="col-2">
-                <div class="d-flex flex-column flex-shrink-0 bg-accent" style="width: 100%">
-                </div>
+            <!-- right side -->
+            <div class="d-flex align-items-center">
+                <!-- icons -->
+                <a class="text-reset me-3" href="#">
+                    <i class="fa fa-cog fa-2x " style="color: var(--text-color)"></i>
+                </a>
+
+                <a class="text-reset me-3" href="#">
+                    <i class="fa fa-sun fa-2x " style="color: var(--habit-orange)"></i>
+                </a>
+
+                <a class="text-reset me-3" th:href="@{/home}">>
+                    <i class="fa fa-times fa-2x " style="color: var(--text-color)"></i>
+                </a>
             </div>
-            <!-- sidebar -->
+            <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- navbar -->
 
-            <!-- content -->
-            <div class="col-8">
+    <!-- content & sidebar -->
+    <div>
+        <div class="container-fluid">
 
-                <!-- habit field -->
-                <div class="col" style="margin: 15px">
-                    <div class="card card-body" style="border-color: var(--habit-orange)">
-                        <div class="card-body">
-                            <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">HABITS</h5>
-                            <div class="card-text" style="color: var(--text-color)">
-                                dies ist der platz für alle habits
-                            </div>
-                            <button type="button" class="btn btn-floating" style="color: var(--habit-orange)">
-                                <i class="fas fa-plus fa-1x" style="color: var(--light_white)"></i>
-                            </button>
-                        </div>
+            <!-- white line row -->
+            <div class="row align-content-center justify-content-center">
+                <div class="col-8">
+                    <div class="d-flex flex-column flex-shrink-0 bg-accent" style="width: 100%">
+                        <a></a>
+                        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center"></ul>
+                        <div class="dropdown border-top"><ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3"></ul></div>
                     </div>
                 </div>
-                <!-- habit field -->
+            </div>
+            <!-- white line row -->
 
-                <!-- goal field -->
-                <div class="col" style="margin: 15px">
-                    <div class="card card-body" style="border-color: var(--goal-blue)">
-                        <div class="card-body">
-                            <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">GOALS</h5>
-                            <div class="card-text" style="color: var(--text-color)">
-                                dies ist der platz für alle goals
-                            </div>
-                            <button type="button" class="btn btn-floating" style="color: var(--goal-blue)">
-                                <i class="fas fa-plus fa-1x" style="color: var(--light_white)"></i>
-                            </button>
-                        </div>
+            <!-- real content & sidebar row -->
+            <div class="row">
+                <!-- sidebar -->
+                <div class="col-2">
+                    <div class="d-flex flex-column flex-shrink-0 bg-accent" style="width: 100%">
                     </div>
                 </div>
-                <!-- goal field -->
+                <!-- sidebar -->
 
-            </div>
-            <!-- content -->
+                <!-- content -->
+                <div class="col-8">
 
-            <!-- blocker -->
-            <div class="col-2">
-                <div></div>
+                    <!-- habit field -->
+                    <div class="col" style="margin: 15px">
+                        <div class="card card-body" style="border-color: var(--habit-orange)">
+                            <div class="card-body">
+                                <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">HABITS</h5>
+                                <div class="card-text" style="color: var(--text-color)">
+                                    dies ist der platz für alle habits
+                                </div>
+                                <button type="button" class="btn btn-floating" style="color: var(--habit-orange)">
+                                    <i class="fas fa-plus fa-1x" style="color: var(--light_white)"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- habit field -->
+
+                    <!-- goal field -->
+                    <div class="col" style="margin: 15px">
+                        <div class="card card-body" style="border-color: var(--goal-blue)">
+                            <div class="card-body">
+                                <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">GOALS</h5>
+                                <div class="card-text" style="color: var(--text-color)">
+                                    dies ist der platz für alle goals
+                                </div>
+                                <button type="button" class="btn btn-floating" style="color: var(--goal-blue)">
+                                    <i class="fas fa-plus fa-1x" style="color: var(--light_white)"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- goal field -->
+
+                </div>
+                <!-- content -->
+
+                <!-- blocker -->
+                <div class="col-2">
+                    <div></div>
+                </div>
+                <!-- blocker -->
             </div>
-            <!-- blocker -->
         </div>
+
     </div>
+    <!-- content -->
 
-</div>
-<!-- content & sidebar -->
+    <!-- footer-->
+    <div th:insert="fragments/components :: footer"></div>
+    <!-- footer-->
 
-<!-- footer-->
-<footer>
-
-</footer>
-<!-- footer-->
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
