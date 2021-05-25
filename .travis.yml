@@ -1,4 +1,9 @@
-before_install:
-- chmod +x gradlew
 language: java
-jdk: openjdk16
+jdk:
+  - oraclejdk16
+  - oraclejdk11
+
+before_script:
+  - chmod a+x gradlew
+
+sccript: ./gradlew build
