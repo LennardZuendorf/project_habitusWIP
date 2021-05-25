@@ -13,6 +13,9 @@
     --text-color:
             rgba(255, 255, 255, 1);
 
+    --light_white:
+            rgba(255, 255, 255, 1);
+
     --font-size-xs: 11px;
     --font-size-s: 15px;
     --font-size-m: 20px;
@@ -105,4 +108,16 @@ body{
 .field_heading{
     color: var(--text-color);
     font: var(--font-size-l);
+}
+
+.card-body{
+    height: 100%;
+    width: 100%;
+    background-color: var(--background-color);
+    border-width: 3px;
+}
+
+.modal-dialog{
+    background-color: var(--background-color);
+    border-width: 3px;
 }
