@@ -28,8 +28,8 @@
                 </a>
                 <!-- empty left side -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link roboto-bold" style="font-size: var(--font-size-l); color: var(--text-color)">WELCOME LENNARD!</a>
+                    <li class="nav-item align-items-center justify-content-center">
+                        <a class="nav-link roboto-bold text-center" style="font-size: var(--font-size-l); color: var(--text-color)">WELCOME [Placeholder]!</a>
                     </li>
                 </ul>
                 <!-- Left links -->
@@ -38,18 +38,22 @@
 
             <!-- right side -->
             <div class="d-flex align-items-center">
-                <!-- icons -->
-                <a class="text-reset me-3" href="#">
+
+                <!-- settings button -->
+                <a class="btn btn-floating m-1 navbar_button" th:onclick="" role="button">
                     <i class="fa fa-cog fa-2x " style="color: var(--text-color)"></i>
                 </a>
 
-                <a class="text-reset me-3" href="#">
+                <!-- color mode button -->
+                <a class="btn btn-floating m-1 navbar_button" th:onclick="" role="button">
                     <i class="fa fa-sun fa-2x " style="color: var(--habit-orange)"></i>
                 </a>
 
-                <a class="text-reset me-3" th:href="@{/home}">>
+                <!-- close button -->
+                <a class="btn btn-floating m-1 navbar_button" th:href="@{/home}" role="button" style="">
                     <i class="fa fa-times fa-2x " style="color: var(--text-color)"></i>
                 </a>
+
             </div>
             <!-- Right elements -->
         </div>
@@ -57,7 +61,7 @@
     </nav>
     <!-- navbar -->
 
-    <!-- content & sidebar -->
+    <!-- content -->
     <div>
         <div class="container-fluid">
 
