@@ -3,6 +3,9 @@ jdk:
   - oraclejdk16
   - oraclejdk11
 
+before_install:
+  - chmod +x gradlew
+
 before_script:
   - chmod a+x gradlew
 
