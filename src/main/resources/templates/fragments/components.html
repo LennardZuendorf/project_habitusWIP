@@ -3,13 +3,13 @@
     <body>
 
          <!-- footer fragment -->
-        <footer class="bg-dark text-center text-white" th:fragment="footer">
+        <footer class="footer bg-dark text-center text-white fixed-bottom" th:fragment="footer">
             <!-- Grid container -->
             <div class="container p-4 pb-0">
                 <!-- Section: Social media -->
                 <section class="mb-4">
                     <!-- Github -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/LennardZuendorf/HABIT" role="button"
+                    <a class="btn btn-outline-light btn-floating m-1" th:href="@{https://github.com/LennardZuendorf/HABIT}" role="button"
                     ><i class="fab fa-github" style="color: var(--text-color);"></i
                     ></a>
                 </section>
@@ -17,7 +17,7 @@
             </div>
             <!-- Grid container -->
             <!-- Copyright -->
-            <div class="text-center p-3 roboto-light" style="background-color:var(--accent-color); font-size: var(--font-size-m)">
+            <div class="text-center p-3 roboto-light" style="background-color:var(--accent-color); font-size: var(--font-size-s)">
                 CREATED BY LENNARD ZÜNDORF
             </div>
             <!-- Copyright -->
