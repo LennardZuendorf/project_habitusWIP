@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <body>
+
+         <!-- footer fragment -->
+        <footer class="footer bg-dark text-center text-white fixed-bottom" th:fragment="footer">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" th:href="@{https://github.com/LennardZuendorf/HABIT}" role="button"
+                    ><i class="fab fa-github" style="color: var(--text-color);"></i
+                    ></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="text-center p-3 roboto-light" style="background-color:var(--accent-color); font-size: var(--font-size-s)">
+                CREATED BY LENNARD ZÜNDORF
+            </div>
+            <!-- Copyright -->
+        </footer>
+         <!-- footer fragment -->
+
+         <!-- basic popup fragment -->
+         <div
+                 class="modal fade"
+                 id="settingsModal"
+                 tabindex="-1"
+                 aria-labelledby="exampleModalLabel"
+                 aria-hidden="true"
+                 th:fragment="popup"
+         >
+             <div class="modal-dialog">
+                 <div class="modal-content">
+                     <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                         <button
+                                 type="button"
+                                 class="btn-close"
+                                 data-mdb-dismiss="modal"
+                                 aria-label="Close"
+                         ></button>
+                     </div>
+                     <div class="modal-body">...</div>
+                     <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                             Close
+                         </button>
+                         <button type="button" class="btn btn-primary">Save changes</button>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- basic popup fragment -->
+
+    </body>
+</html>

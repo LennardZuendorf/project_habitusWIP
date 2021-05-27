@@ -8,7 +8,21 @@ public class SiteController {
 
     @GetMapping("/")
     public String HabitHomepage(){
-        return "HabitHome";
+        return "home";
     }
 
+    @GetMapping("/home")
+    public String HabitHomepage2(){
+        return "home";
+    }
+
+    @GetMapping("/dashboard")
+    public String HabitDashboard(){
+        return "dashboard";
+    }
+
+    @GetMapping("/clean")
+    public String cleanSite(){
+        return "clean";
+    }
 }
