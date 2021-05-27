@@ -1,6 +1,5 @@
 package com.habitproject.persistence.goal;
 
-import com.habitproject.persistence.habit.HabitEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
