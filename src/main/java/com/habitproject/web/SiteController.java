@@ -9,7 +9,7 @@ public class SiteController {
 
     @GetMapping("/")
     public String HabitHomepage(){
-        return Endpoints.Site.SLASH;
+        return Endpoints.Site.INDEX;
     }
 
     @GetMapping("/home")
