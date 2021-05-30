@@ -21,6 +21,11 @@ public class SiteController {
         return "dashboard";
     }
 
+    @GetMapping("/login")
+    public String loginSite(){
+        return "clean";
+    }
+
     @GetMapping("/clean")
     public String cleanSite(){
         return "clean";
