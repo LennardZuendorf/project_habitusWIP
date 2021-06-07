@@ -2,6 +2,7 @@ package com.habitproject.persistence.goal;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 /**
  * GoalEntity defines database entries for persistence of goals. This is not used (yet).
@@ -31,13 +32,17 @@ public class GoalEntity {
     @Column(nullable = false)
     private Long uid;
 
+    @Column(name="last_check", nullable = true)
+    private LocalDateTime lastCheck;
+
     //constructor
-    public GoalEntity(String tag, String measure, BigDecimal currentAmount, BigDecimal totalAmount, Long uid) {
+    public GoalEntity(String tag, String measure, BigDecimal currentAmount, BigDecimal totalAmount, Long uid, LocalDateTime lastCheck) {
         this.tag = tag;
         this.measure = measure;
         this.currentAmount = currentAmount;
         this.totalAmount = totalAmount;
         this.uid = uid;
+        this.lastCheck = lastCheck;
     }
     protected GoalEntity() {
 
@@ -70,5 +75,14 @@ public class GoalEntity {
     }
     public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
+    }
+    public LocalDateTime getLastCheck() {
+        return lastCheck;
+    }
+    public void setLastCheck(LocalDateTime lastCheck) {
+        this.lastCheck = lastCheck;
+    }
+    public Long getUid() {
+        return uid;
     }
 }
