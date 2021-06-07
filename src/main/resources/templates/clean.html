@@ -33,15 +33,16 @@
 
                 <!-- right side -->
                 <div class="d-flex align-items-center">
-                    <!-- icons -->
-                    <a class="text-reset me-3" href="#">
-                    </a>
+                    <a></a>
 
+                    <!-- color mode button -->
                     <a class="btn btn-floating m-1 navbar_button" role="button" onclick="toggleColor()">
                         <i class="fa fa-sun fa-2x" id="colorModeIcon" style="color: var(--habit-color)"></i>
                     </a>
 
-                    <a class="text-reset me-3" href="#">
+                    <!-- close button -->
+                    <a class="btn btn-floating m-1 navbar_button" th:href="@{/logout}" role="button" style="">
+                        <i class="fa fa-times fa-2x " style="color: var(--text-color)"></i>
                     </a>
                 </div>
                 <!-- Right elements -->
