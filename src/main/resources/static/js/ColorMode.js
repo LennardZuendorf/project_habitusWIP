@@ -1,6 +1,4 @@
 //example found at: https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
-
-
 // function to set a color mode and save to localstorage
 function toggleColor() {
 
