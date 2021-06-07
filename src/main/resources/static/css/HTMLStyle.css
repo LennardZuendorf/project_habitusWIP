@@ -134,6 +134,6 @@ body{
 }
 
 .btn-outline-light{
-    background: var(--goal-color);
-    outline-color: var(--text-color);
+    background-color: var(--accent-color);
 }
+
