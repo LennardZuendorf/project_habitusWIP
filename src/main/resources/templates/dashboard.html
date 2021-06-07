@@ -41,7 +41,7 @@
                 <div class="d-flex align-items-center">
 
                     <!-- settings button -->
-                    <a class="btn btn-floating m-1 navbar_button" th:onclick="@{colorMode}" role="button">
+                    <a class="btn btn-floating m-1 navbar_button" data-mdb-toggle="modal" data-mdb-target="#exampleModal" role="button" >
                         <i class="fa fa-cog fa-2x " style="color: var(--text-color)"></i>
                     </a>
 
@@ -51,7 +51,7 @@
                     </a>
 
                     <!-- close button -->
-                    <a class="btn btn-floating m-1 navbar_button" th:href="@{/home}" role="button" style="">
+                    <a class="btn btn-floating m-1 navbar_button" th:href="@{/logout}" role="button" style="">
                         <i class="fa fa-times fa-2x " style="color: var(--text-color)"></i>
                     </a>
 
@@ -123,6 +123,10 @@
         </div>
         <!-- content -->
 
+        <!-- modal -->
+        <div th:insert="fragments/components :: modal"></div>
+        <!-- modal -->
+
         <!-- footer-->
         <div th:insert="fragments/components :: footer"></div>
         <!-- footer-->
@@ -132,6 +136,6 @@
     <!-- bootstrap js -->
     <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js}" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <!-- color switcher js -->
-    <script th:src="@{/js/colorMode.js}"></script>
+    <script th:src="@{/js/ColorMode.js}"></script>
 
 </html>
