@@ -1,19 +1,10 @@
 package com.habitproject.web.user;
 
-import com.habitproject.persistence.user.UserAccountEntity;
-import com.habitproject.service.user.UserService;
-import com.habitproject.service.user.UserServiceImpl;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserRESTController {
 
-    private final UserService service;
-    public UserRESTController(UserServiceImpl service) {
-        this.service = service;
-    }
 
     //User API Endpoints
     /**
@@ -22,9 +13,8 @@ public class UserRESTController {
      * @return status code, json
      */
     @PostMapping("/users")
-    public ResponseEntity <UserAccountEntity> postUser (@RequestBody UserRequestModel requestBody){
-        var output = service.postUser(requestBody);
-        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
+    public String postUser (@RequestBody UserRequestModel requestBody){
+        return null;
     }
 
     /**
@@ -33,9 +23,8 @@ public class UserRESTController {
      * @return status code, json
      */
     @GetMapping("/users/{uid}")
-    public ResponseEntity <UserAccountEntity> getUser(@PathVariable Long uid){
-        var output = service.getUser(uid);
-        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
+    public String getUser(@PathVariable Long uid){
+        return null;
     }
 
     /**
@@ -45,8 +34,8 @@ public class UserRESTController {
      * @return status code
      */
     @PutMapping("/users/{uid}")
-    public ResponseEntity <Void> putUser(@PathVariable Long uid, @RequestBody UserRequestModel requestBody){
-        return ResponseEntity.status(service.putUser(uid, requestBody)).build();
+    public String putUser(@PathVariable Long uid, @RequestBody UserRequestModel requestBody){
+        return null;
     }
 
     /**
@@ -55,7 +44,7 @@ public class UserRESTController {
      * @return status code
      */
     @DeleteMapping("/users/{uid}")
-    public ResponseEntity <Void> deleteUser(@PathVariable Long uid){
-        return ResponseEntity.status(service.deleteUser(uid)).build();
+    public String deleteUser(@PathVariable Long uid){
+        return null;
     }
 }

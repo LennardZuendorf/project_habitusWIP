@@ -1,5 +1,6 @@
 package com.habitproject.web;
 
+import com.habitproject.configuration.Endpoints;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -8,21 +9,21 @@ public class SiteController {
 
     @GetMapping("/")
     public String HabitHomepage(){
-        return "home";
+        return Endpoints.Site.INDEX;
     }
 
     @GetMapping("/home")
     public String HabitHomepage2(){
-        return "home";
+        return Endpoints.Site.INDEX;
     }
 
     @GetMapping("/dashboard")
     public String HabitDashboard(){
-        return "dashboard";
+        return Endpoints.Site.DASH;
     }
 
     @GetMapping("/clean")
     public String cleanSite(){
-        return "clean";
+        return Endpoints.Site.CLEAN;
     }
 }

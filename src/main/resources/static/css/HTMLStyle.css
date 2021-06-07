@@ -2,45 +2,34 @@
 
 
 :root {
-    --goal-blue:
+    --goal-color:
             rgba(30, 127, 218, 1);
-    --habit-orange:
+    --habit-color:
             rgba(240, 133, 34, 1);
     --light_white:
             rgba(255, 255, 255, 1);
+    --darker-white:
+        rgba(239, 235, 235, 1);
     --dark-grey:
-            rgba(38, 36, 36, 1);
-
-    --background-color:
-            rgba(38, 36, 36, 1);
-    --accent-color:
-            rgba(45, 45, 47, 1);
-    --text-color:
-            rgba(255, 255, 255, 1);
+            rgba(33, 35, 36, 1);
+    --ligher-grey:
+        rgba(44, 44, 46, 1);
 
     --font-size-xs: 11px;
     --font-size-s: 15px;
     --font-size-m: 20px;
     --font-size-l: 40px;
     --font-family: "Roboto";
+
+    --background-color: var(--dark-grey);
+    --accent-color: var(--ligher-grey);
+    --text-color: var(--light_white);
 }
 
-[data-theme="light"] {
-    --goal-blue:
-            rgba(30, 127, 218, 1);
-    --habit-orange:
-            rgba(240, 133, 34, 1);
-    --light_white:
-            rgba(255, 255, 255, 1);
-    --dark-grey:
-            rgba(38, 36, 36, 1);
-
-    --background-color:
-            rgba(255, 255, 255, 1);
-    --accent-color:
-            rgba(239, 235, 235, 1);
-    --text-color:
-            rgba(38, 36, 36, 1);
+.light-mode{
+    --background-color: var(--light_white);
+    --accent-color: var(--darker-white);
+    --text-color: var(--dark-grey);
 }
 
 .roboto-black {
@@ -81,12 +70,15 @@ body{
     margin: 30px;
 }
 
-.bg-dark{
+.bg-bg{
+    background: var(--background-color);
     background-color: var(--background-color);
+    color: var(--text-color)
 }
 
 .bg-accent{
     background-color: var(--accent-color);
+    color: var(--text-color)
 }
 
 .m-heading{
@@ -99,13 +91,13 @@ body{
     padding-right: 75px;
 }
 
-#d-flex {
+.d-flex {
     width: 20%;
     max-width: 250px;
     height: 100%;
 }
 
-#navbar {
+.navbar {
     width: 100%;
 }
 
@@ -114,7 +106,7 @@ body{
     font-size: var(--font-size-xs);
 }
 
-#footer{
+.footer{
     background-color: var(--background-color);
     width: 100%;
 }
@@ -127,16 +119,21 @@ body{
 .card-body{
     height: 100%;
     width: 100%;
-    background-color: var(--background-color);
+    background-color: var(--accent-color);
     border-width: 3px;
 }
 
 .modal-dialog{
-    background-color: var(--background-color);
+    background-color: var(--accent-color);
     border-width: 3px;
 }
 
 .navbar_button{
     margin: 10px;
-    background-color: var(--background-color);
+    background-color: var(--accent-color);
 }
+
+.btn-outline-light{
+    background-color: var(--accent-color);
+}
+
