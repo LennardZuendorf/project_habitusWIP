@@ -137,3 +137,7 @@ body{
     background-color: var(--accent-color);
 }
 
+.modal_button{
+    color: var(--text-color);
+    background-color: var(--accent-color);
+}

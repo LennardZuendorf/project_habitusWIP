@@ -3,7 +3,7 @@
     <body class="dark_mode">
 
          <!-- footer fragment -->
-        <footer class="footer bg-bg text-center text-white fixed-bottom" th:fragment="footer">
+        <footer class="footer bg-bg text-center text-white fixed-bottom" th:fragment="footer" id="footer">
             <!-- Grid container -->
             <div class="container p-4 pb-0">
                 <!-- Section: Social media -->
@@ -32,14 +32,14 @@
                  class="modal fade"
                  id="settingsModal"
                  tabindex="-1"
-                 aria-labelledby="exampleModalLabel"
+                 aria-labelledby="settingsModal"
                  aria-hidden="true"
-                 th:fragment="popup"
+                 th:fragment="modal"
          >
              <div class="modal-dialog">
                  <div class="modal-content">
                      <div class="modal-header">
-                         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                         <h5 class="modal-title" id="settingsModalTitle" style="font-size: var(--font-size-l); color: var(--text-color)">SETTINGS </h5>
                          <button
                                  type="button"
                                  class="btn-close"
@@ -47,12 +47,12 @@
                                  aria-label="Close"
                          ></button>
                      </div>
-                     <div class="modal-body">...</div>
+                     <div class="modal-body">
+
+                     </div>
                      <div class="modal-footer">
-                         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-                             Close
-                         </button>
-                         <button type="button" class="btn btn-primary">Save changes</button>
+                         <button type="button" class="btn btn-outline-light modal_button" data-mdb-dismiss="modal"> CLOSE </button>
+                         <button type="button" class="btn btn-outline-light modal_button" onclick=""> SAVE </button>
                      </div>
                  </div>
              </div>
