@@ -12,7 +12,7 @@ function toggleColor() {
     }else localStorage.setItem("colorMode", "dark");
 
     //changing color mode icon and color of the icon
-    const x = document.getElementById("colorModeIcon")
+    const x = document.getElementById("colorModeIcon");
 
     if(localStorage.getItem("colorMode")==="light"){
         x.classList.remove("fa-sun");
