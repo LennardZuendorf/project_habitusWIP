@@ -2,5 +2,8 @@
   "dependencies": {
     "mdb-ui-kit": "^3.6.0",
     "vue": "^3.0.11"
+  },
+  "devDependencies": {
+    "vue-cli-plugin-mdb": "~2.1.0"
   }
 }

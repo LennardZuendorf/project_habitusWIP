@@ -1,6 +1,4 @@
 //example found at: https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
-
-
 // function to set a color mode and save to localstorage
 function toggleColor() {
 
@@ -14,7 +12,7 @@ function toggleColor() {
     }else localStorage.setItem("colorMode", "dark");
 
     //changing color mode icon and color of the icon
-    const x = document.getElementById("colorModeIcon")
+    const x = document.getElementById("colorModeIcon");
 
     if(localStorage.getItem("colorMode")==="light"){
         x.classList.remove("fa-sun");

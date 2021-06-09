@@ -24,7 +24,7 @@ public class GoalServiceImpl implements GoalService{
      */
     @Override
     public GoalStatusReturn postGoal(GoalRequestModel requestBody) {
-        GoalEntity newGoal = new GoalEntity(requestBody.getTag(), requestBody.getMeasure(), requestBody.getCurrentAmount(), requestBody.getTotalAmount(), requestBody.getUid());
+        GoalEntity newGoal = new GoalEntity(requestBody.getTag(), requestBody.getMeasure(), requestBody.getCurrentAmount(), requestBody.getTotalAmount(), requestBody.getUid(), requestBody.getLastCheck());
         repository.saveAndFlush(newGoal);
         return new GoalStatusReturn(newGoal, HttpStatus.CREATED);
     }
@@ -65,6 +65,7 @@ public class GoalServiceImpl implements GoalService{
             goalEntity.setMeasure(requestBody.getMeasure());
             goalEntity.setCurrentAmount(requestBody.getCurrentAmount());
             goalEntity.setTotalAmount(requestBody.getTotalAmount());
+            goalEntity.setLastCheck(requestBody.getLastCheck());
             repository.saveAndFlush(goalEntity);
             return HttpStatus.OK;
         }else return HttpStatus.NO_CONTENT;
