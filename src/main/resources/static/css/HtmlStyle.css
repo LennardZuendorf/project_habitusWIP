@@ -7,13 +7,13 @@
     --habit-color:
             rgba(240, 133, 34, 1);
     --light_white:
-            rgba(238, 238, 238, 1);
+            rgba(255, 255, 255, 1);
     --darker-white:
-        rgba(211, 211, 218, 1);
+            rgba(248, 248, 248, 1);
     --dark-grey:
             rgba(33, 35, 36, 1);
     --ligher-grey:
-        rgba(44, 44, 46, 1);
+            rgba(44, 44, 46, 1);
 
     --font-size-xs: 11px;
     --font-size-s: 15px;
