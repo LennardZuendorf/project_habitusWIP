@@ -1,0 +1,27 @@
+.habit_modal{
+    color: var(--text-color);
+    background-color: var(--habit-color);
+}
+
+.title{
+    font-family: var(--font-family);
+    font-size: var(--font-size-l);
+}
+
+.basic_modal{
+    background-color: var(--background-color);
+}
+
+.habit_container{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.habit_button{
+    background-color: var(--habit-color);
+    color: var(--light_white)
+}
+
+.h4 {
+    font-size: var(--font-size-m) !important;
+}
