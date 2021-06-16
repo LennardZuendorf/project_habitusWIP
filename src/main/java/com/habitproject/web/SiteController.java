@@ -26,4 +26,9 @@ public class SiteController {
     public String cleanSite(){
         return Endpoints.Site.CLEAN;
     }
+
+    @GetMapping("/test")
+    public String testSite(){
+        return Endpoints.Site.TEST;
+    }
 }

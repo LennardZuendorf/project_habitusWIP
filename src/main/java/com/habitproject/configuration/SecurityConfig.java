@@ -31,9 +31,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // public pages
                 .antMatchers(
-                        HttpMethod.GET,
                         Endpoints.Site.INDEX,
-                        Endpoints.Site.SLASH
+                        Endpoints.Site.SLASH,
+                        Endpoints.Site.TEST
                 ).permitAll()
                 // static resources
                 .antMatchers(
