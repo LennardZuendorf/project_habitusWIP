@@ -37,14 +37,13 @@
                     <a></a>
 
                     <!-- color mode button -->
-                    <a class="btn btn-floating m-1 navbar_button" role="button" onclick="toggleColor()">
-                        <i class="fa fa-sun fa-2x" id="colorModeIcon" style="color: var(--habit-color)"></i>
-                    </a>
+                    <button type="button" class="btn btn-rounded navbar_button" id="colorButton" style="color: var(--habit-color)" onclick="toggleColor()">
+                        <i class="fas fa-sun fa-lg" aria-hidden="true" id="colorModeIcon"> </i> COLOR</button>
 
                     <!-- close button -->
-                    <a class="btn btn-floating m-1 navbar_button" th:href="@{/logout}" role="button" style="">
-                        <i class="fa fa-times fa-2x " style="color: var(--text-color)"></i>
-                    </a>
+                    <button type="button" class="btn btn-rounded navbar_button" id="colorButton" style="color: var(--text-color)" th:href="@{/logout}">
+                        <i class="fa fa-times fa-lg" aria-hidden="true" id="colorModeIcon"> </i> LOGOUT</button>
+
                 </div>
                 <!-- Right elements -->
             </div>
