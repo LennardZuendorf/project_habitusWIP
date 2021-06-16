@@ -13,15 +13,18 @@ function toggleColor() {
 
     //changing color mode icon and color of the icon
     const x = document.getElementById("colorModeIcon");
+    const x2 = document.getElementById("colorButton");
 
     if(localStorage.getItem("colorMode")==="light"){
         x.classList.remove("fa-sun");
         x.classList.add("fa-moon");
         x.style.color="var(--goal-color)";
+        x2.style.color="var(--goal-color)"
     }else{
         x.classList.remove("fa-moon");
         x.classList.add("fa-sun");
         x.style.color="var(--habit-color)";
+        x2.style.color="var(--habit-color)";
     }
 }
 
