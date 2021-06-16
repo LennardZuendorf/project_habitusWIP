@@ -131,13 +131,46 @@ body{
 .navbar_button{
     margin: 10px;
     background-color: var(--accent-color);
+    font-size: var(--font-size-xs);
 }
 
 .btn-outline-light{
     background-color: var(--accent-color);
 }
 
-.modal_button{
+.login-modal{
     color: var(--text-color);
     background-color: var(--accent-color);
+    outline-width: medium;
+    outline-color: var(--text-color);
+}
+
+.login-button{
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    outline-width: medium !important;
+    outline-color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size-m);
+}
+
+.login-modal{
+    background-color: var(--background-color);
+}
+
+.github-button{
+    outline-width: medium;
+    outline-color: var(--text-color);
+    background-color: var(--accent-color);
+}
+
+.login-modal-button{
+    color: var(--text-color);
+    font-size: var(--font-size-xs);
+    background-color: var(--accent-color);
+}
+
+.modal-title{
+    color: var(--text-color);
+    font-size: var(--font-size-xs)
 }
