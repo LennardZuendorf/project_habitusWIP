@@ -7,7 +7,7 @@ public class HabitRequestModel {
     private String tag;
     private HabitFrequency frequency;
     private Integer quantity;
-    private Long uid;
+    private String uid;
 
     public String getTag() {
         return tag;
@@ -18,7 +18,7 @@ public class HabitRequestModel {
     public Integer getQuantity() {
         return quantity;
     }
-    public Long getUid() {
+    public String getUid() {
         return uid;
     }
 }
