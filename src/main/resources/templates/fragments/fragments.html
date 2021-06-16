@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <body class="dark_mode">
+
+         <!-- footer fragment -->
+        <footer class="footer bg-bg text-center text-white fixed-bottom" th:fragment="footer" id="footer">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Github -->
+                    <a class="btn btn-floating github-button"
+                       th:href="@{https://github.com/LennardZuendorf/HABIT}"
+                       role="button"
+                       data-mdb-ripple-color="dark">
+                        <i class="fab fa-github" style="color: var(--text-color);"></i
+                    ></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="text-center p-3 roboto-light" style="background-color:var(--accent-color);color: var(--text-color); font-size: var(--font-size-s)">
+                CREATED BY LENNARD ZÜNDORF
+            </div>
+            <!-- Copyright -->
+        </footer>
+         <!-- footer fragment -->
+    </body>
+</html>
