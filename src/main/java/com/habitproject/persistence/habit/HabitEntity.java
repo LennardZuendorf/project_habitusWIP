@@ -25,10 +25,10 @@ public class HabitEntity {
     private Integer quantity;
 
     @Column
-    private Long uid;
+    private String uid;
 
     //constructor
-    public HabitEntity(String tag, HabitFrequency frequency, Integer quantity, Long uid){
+    public HabitEntity(String tag, HabitFrequency frequency, Integer quantity, String uid){
         this.tag = tag;
         this.frequency = frequency;
         this.quantity = quantity;
@@ -58,7 +58,7 @@ public class HabitEntity {
     public void setFrequency(HabitFrequency frequency) {
         this.frequency = frequency;
     }
-    public Long getUid() {
+    public String getUid() {
         return uid;
     }
 }
