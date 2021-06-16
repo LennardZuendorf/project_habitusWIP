@@ -6,16 +6,17 @@
         <meta http-equiv="Content-Type" content="text/html"/>
         <meta charset="UTF-8">
         <link rel="icon" type="image/svg" th:href="@{/img/logo_clean.svg}"/>
-        <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.6.3/css/all.css}">
-        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css}">
+        <link   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet">
         <link rel="stylesheet" th:href="@{/css/HTMLStyle.css}">
         <script th:src="@{/js/ColorMode.js}"></script>
+        <script th:src="@{/js/HtmlScript.js}"></script>
     </head>
 
     <body class="dark-mode bg-bg">
 
         <!-- basic navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--background-color)">
+        <nav class="navbar navbar-expand-lg" style="background-color: var(--background-color)">
             <!-- Container wrapper -->
             <div class="container-fluid">
 
@@ -37,9 +38,8 @@
                     <a class="text-reset me-3" href="#">
                     </a>
 
-                    <a class="btn btn-floating m-1 navbar_button" role="button" onclick="toggleColor()">
-                        <i class="fa fa-sun fa-2x" id="colorModeIcon" style="color: var(--habit-color)"></i>
-                    </a>
+                    <button type="button" class="btn btn-rounded navbar_button" id="colorButton" style="color: var(--habit-color)" onclick="toggleColor()">
+                        <i class="fas fa-sun fa-lg" aria-hidden="true" id="colorModeIcon"> </i> COLOR</button>
 
                     <a class="text-reset me-3" href="#">
                     </a>
@@ -55,7 +55,7 @@
 
             <!-- logo row-->
             <div class="row align-items-center justify-content-center bg-bg" style="padding-top: 5%">
-                <div class="d-flex col-4 justify-content-center">
+                <div class="d-flex justify-content-center">
                     <img src="/img/logo.svg"
                          height="300px"
                          alt=""
@@ -105,15 +105,18 @@
                     </div>
                 </div>
             </div>
-            <!-- text row-->
+            <!-- login register row-->
         </div>
         <!-- logo & text -->
 
         <!-- footer -->
-        <div th:insert="fragments/components :: footer"></div>
+        <div th:insert="fragments/fragments :: footer"></div>
         <!-- footer -->
+
+
+
     </body>
 
     <!-- bootstrap js -->
-    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js}" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script   type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
 </html>
