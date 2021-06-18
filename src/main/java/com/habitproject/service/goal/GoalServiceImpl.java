@@ -53,7 +53,7 @@ public class GoalServiceImpl implements GoalService{
 
     /**
      * updating a GoalEntity in the database
-     * @param gid          - id of the goal to update
+     * @param gid - id of the goal to update
      * @param requestBody - all of HabitEntity params
      * @return Http status code
      */
