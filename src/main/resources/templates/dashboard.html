@@ -10,7 +10,6 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet">
         <link rel="stylesheet" th:href="@{/css/HTMLStyle.css}">
         <script th:src="@{/js/ColorMode.js}"></script>
-        <script th:src="@{/js/VueApp.js}"></script>
     </head>
 
     <body class="dark-mode bg-bg">
@@ -97,9 +96,6 @@
                                 <div class="card-body">
                                     <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">GOALS</h5>
                                     <div class="card-text">
-                                        <div id="habit-vue-component">
-                                            <HabitComponent></HabitComponent>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -130,10 +126,3 @@
     <script   type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
 
 </html>
-<script>
-    import LoginComponent from "../static/js/vue/LoginComponent";
-    import HabitComponent from "../static/js/vue/HabitComponent";
-    export default {
-        components: {HabitComponent, LoginComponent}
-    }
-</script>

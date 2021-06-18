@@ -99,6 +99,7 @@ body{
 
 .navbar {
     width: 100%;
+    box-shadow: none !important;
 }
 
 .footer_text{
