@@ -1,4 +1,4 @@
 package com.habitproject.persistence.goal;
 
-class GoalEntityTest { }
+class GoalEntityTest {}
 
