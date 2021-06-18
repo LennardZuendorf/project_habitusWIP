@@ -7,9 +7,6 @@ Want to start programming every single day? Workout 3 times a week? Or read one 
 ## Status (MAIN)
 
 [![Build Status](https://travis-ci.com/LennardZuendorf/project_habit.svg?branch=main)](https://travis-ci.com/LennardZuendorf/project_habit)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/LennardZuendorf/HABIT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/HABIT/alerts/)
-[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/LennardZuendorf/HABIT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/HABIT/context:java)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/LennardZuendorf/HABIT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/HABIT/context:javascript)
 
 ## Status (WORKING)
 [![Build Status](https://travis-ci.com/LennardZuendorf/project_habit.svg?branch=workingBranch)](https://travis-ci.com/LennardZuendorf/project_habit)
