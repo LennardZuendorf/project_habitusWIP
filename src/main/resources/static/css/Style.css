@@ -99,6 +99,11 @@ body{
 
 .navbar {
     width: 100%;
+    box-shadow: none !important;
+}
+
+.navbar-expand-lg{
+    box-shadow: none !important;
 }
 
 .footer_text{
@@ -139,23 +144,18 @@ body{
 }
 
 .login-modal{
-    color: var(--text-color);
-    background-color: var(--accent-color);
-    outline-width: medium;
-    outline-color: var(--text-color);
+    background-color: var(--accent-color) !important;
+    outline-width: medium !important;
+    outline-color: var(--text-color) !important;
 }
 
 .login-button{
     background-color: var(--accent-color);
     color: var(--text-color);
     outline-width: medium !important;
-    outline-color: var(--text-color);
+    outline-color: var(--text-color) !important;
     font-family: var(--font-family);
     font-size: var(--font-size-m);
-}
-
-.login-modal{
-    background-color: var(--background-color);
 }
 
 .github-button{
@@ -173,4 +173,32 @@ body{
 .modal-title{
     color: var(--text-color);
     font-size: var(--font-size-xs)
+}
+
+.btn-close{
+    color: var(--text-color) !important;
+}
+
+.habit_modal{
+    color: var(--text-color);
+    background-color: var(--habit-color);
+}
+
+.title{
+    font-family: var(--font-family);
+    font-size: var(--font-size-l);
+}
+
+.basic_modal{
+    background-color: var(--background-color);
+}
+
+.habit_container{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.habit_button{
+    background-color: var(--habit-color);
+    color: var(--light_white)
 }
