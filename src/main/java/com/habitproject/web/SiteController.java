@@ -22,10 +22,6 @@ public class SiteController {
         return Endpoints.Site.DASH;
     }
 
-    @GetMapping("/clean")
-    public String cleanSite(){
-        return Endpoints.Site.CLEAN;
-    }
 
     @GetMapping("/test")
     public String testSite(){
