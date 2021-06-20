@@ -19,7 +19,7 @@ function toggleColor() {
         x.classList.remove("fa-sun");
         x.classList.add("fa-moon");
         x.style.color="var(--goal-color)";
-        x2.style.color="var(--goal-color)"
+        x2.style.color="var(--goal-color)";
     }else{
         x.classList.remove("fa-moon");
         x.classList.add("fa-sun");
@@ -27,10 +27,3 @@ function toggleColor() {
         x2.style.color="var(--habit-color)";
     }
 }
-
-// set correct color mode immediately
-(function () {
-    if (localStorage.getItem('colorMode') === 'light') {
-        toggleColor();
-    }
-})();
