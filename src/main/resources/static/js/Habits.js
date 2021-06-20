@@ -49,6 +49,17 @@ const habitApp ={
                 uid: 587,
                 finished: false
             }
+            //space for updating local habit
+            //space for API Call with axios
+        },
+
+        deleteHabit(){
+            //space for updating local habit
+            //space for API Call with axios
+        },
+
+        getHabits(){
+            //space for API Call with axios
         }
     }
 }
