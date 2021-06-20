@@ -155,8 +155,9 @@ body{
     font-size: var(--font-size-m);
 }
 
-.login-modal{
-    background-color: var(--background-color);
+.custom-modal{
+    background-color: var(--accent-color);
+    color: var(--text-color);
 }
 
 .github-button{
@@ -165,13 +166,17 @@ body{
     background-color: var(--accent-color);
 }
 
-.login-modal-button{
+.modal-button{
     color: var(--text-color);
     font-size: var(--font-size-xs);
-    background-color: var(--accent-color);
+    background-color: var(--background-color);
 }
 
 .modal-title{
     color: var(--text-color);
     font-size: var(--font-size-xs)
+}
+
+.btn-close{
+    color: var(--text-color)!important;
 }
