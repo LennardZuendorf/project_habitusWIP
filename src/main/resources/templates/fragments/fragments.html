@@ -17,13 +17,6 @@
                              loading="lazy"
                         />
                     </a>
-                    <!-- left side -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item align-items-center justify-content-center">
-                            <a></a>
-                        </li>
-                    </ul>
-                    <!-- left side -->
 
                     <!-- right side -->
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -37,7 +30,7 @@
                             <i class="fas fa-sun fa-lg" aria-hidden="true" id="colorModeIcon"> </i> COLOR</button>
 
                         <!-- close button -->
-                        <button type="button" class="btn btn-rounded navbar_button" id="closeButton" style="color: var(--text-color)" th:href="@{/logout}">
+                        <button type="button" class="btn btn-rounded navbar_button" id="closeButton" style="color: var(--text-color)" onclick="logout()">
                             <i class="fa fa-times fa-lg" aria-hidden="true" id="closeButtonIcon"> </i> LOGOUT</button>
 
                     </ul>
@@ -97,7 +90,7 @@
             </div>
             <!-- Grid container -->
             <!-- Copyright -->
-            <div class="text-center p-3 roboto-light" style="background-color:var(--accent-color);color: var(--text-color); font-size: var(--font-size-s)">
+            <div class="text-center p-3 roboto-light" style="background-color:var(--accent-color);color: var(--text-color); font-size: var(--font-size-xs)">
                 CREATED BY LENNARD ZÜNDORF
             </div>
             <!-- Copyright -->
