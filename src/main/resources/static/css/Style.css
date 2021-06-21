@@ -14,6 +14,8 @@
             rgba(33, 35, 36, 1);
     --ligher-grey:
             rgba(44, 44, 46, 1);
+    --outline-color:
+        var(--text-color);
 
     --font-size-xs: 11px;
     --font-size-s: 15px;
@@ -24,6 +26,9 @@
     --background-color: var(--dark-grey);
     --accent-color: var(--ligher-grey);
     --text-color: var(--light_white);
+
+    --mdb-light: var(--text-color) !important;
+
 }
 
 .light-mode{
@@ -177,6 +182,67 @@ body{
     font-size: var(--font-size-xs)
 }
 
-.btn-close{
-    color: var(--text-color)!important;
+.habit-formfield{
+    outline-color: var(--habit-color) !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.form-outline{
+    outline-color: var(--habit-color) !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.form-label{
+    outline-color: var(--habit-color) !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.form-control {
+    outline-color: var(--habit-color) !important;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.habit-button{
+    background-color: var(--habit-color) !important;
+    color: var(--text-color);
+}
+
+.form-outline .form-control:focus~.form-notch .form-notch-leading {
+    border-top: .125rem solid var(--outline-color);
+    border-bottom: .125rem solid var(--outline-color);
+    border-left: .125rem solid var(--outline-color);
+}
+.form-outline .form-control:focus~.form-notch .form-notch-middle {
+    border-bottom: .125rem solid;
+    border-color: var(--outline-color);
+}
+
+.form-outline .form-control:focus~.form-notch .form-notch-trailing {
+    border-color: currentcolor currentcolor currentcolor var(--outline-color);
+    border-bottom: .125rem solid var(--outline-color);
+    border-right: .125rem solid var(--outline-color);
+    border-top: .125rem solid var(--outline-color);
+}
+
+.form-outline .form-control:focus~.form-label {
+    color: var(--outline-color);
+}
+
+.sidebar{
+    color: var(--background-color);
+
+}
+
+.card{
+    margin-top: 15px !important;
+    background-color: var(--accent-color) !important;
+    box-shadow: none;
+}
+
+.fa-times{
+    color: var(--text-color) !important;
 }
