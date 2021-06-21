@@ -28,5 +28,6 @@ public class Endpoints {
         public static final String CLEAN = "/clean";
         public static final String DASH = "/dashboard";
         public static final String TEST= "/test";
+        public static final String ERROR= "/test";
     }
 }

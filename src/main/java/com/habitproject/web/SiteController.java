@@ -22,6 +22,12 @@ public class SiteController {
         return Endpoints.Site.DASH;
     }
 
+    @GetMapping("/error")
+    public String Error(){
+        return Endpoints.Site.ERROR;
+    }
+
+
 
     @GetMapping("/test")
     public String testSite(){
