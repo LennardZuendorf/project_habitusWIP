@@ -10,9 +10,6 @@
         <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css}" rel="stylesheet">
         <link  th:href="@{/css/Style.css}" rel="stylesheet">
         <script th:src="@{/js/ColorMode.js}"></script>
-        <script type="text/javascript">
-            (function () {if (localStorage.getItem("colorMode") === "light") {
-                    toggleColor();}})(); </script>
     </head>
 
     <body class="dark-mode bg-bg">
@@ -38,88 +35,96 @@
 
                         <!-- habit field -->
                         <div class="row" style="margin: 15px">
-                            <div class="card card-body" style="border-color: var(--habit-color)">
+                            <!--habits card-->
+                            <div class="card" style="border-color: var(--habit-color)" >
                                 <div class="card-body">
                                     <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">HABITS</h5>
+                                    <!-- list of habits -->
                                     <div class="card-text">
                                         <div id="habits">
                                             <div id="habit-list">
                                                 <ul id="list">
-                                                    //Showing all Habits
                                                     <div v-for="habit in habits">
-                                                        <li :class="{ex : habit.finished}"
-                                                        >{{habit.tag}} {{habit.frequency}} {{habit.quantity}}
+                                                        <li :class="{ex : habit.finished}">
+                                                            {{habit.tag}} {{habit.frequency}} {{habit.quantity}}
                                                         </li>
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    </div>
-                                    <!-- new habit button -->
-                                    <button type="button" class="btn btn-floating" style="color: var(--habit-color)"  data-mdb-toggle="modal" data-mdb-target="#habitModal">
-                                        <i class="fas fa-plus fa-1x" style="color: var(--light_white)"></i>
-                                    </button>
-                                    <!-- new habit button -->
-                                    <!-- new habit popup -->
-                                    <div
-                                            class="modal fade "
-                                            id="habitModal"
-                                            tabindex="-1"
-                                            aria-labelledby="habitModalLabel"
-                                            aria-hidden="true"
-                                    >
-                                        <div class="modal-dialog">
-                                            <div class="modal-content custom-modal">
-                                                <div class="modal-header">
-                                                    <a class="modal-title" id="habitModalLabel" >NEW HABIT</a>
-                                                    <button
-                                                            type="button"
-                                                            class="btn-close"
-                                                            data-mdb-dismiss="modal"
-                                                            aria-label="Close"
-                                                            style = "color: var(--text-color)!important"
-                                                    ></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <!-- new habit form -->
-                                                    <form>
-                                                        <!-- Name input -->
-                                                        <div class="form-outline mb-4">
-                                                            <input type="text" id="newHabitTag" class="form-control" />
-                                                            <label class="form-label" for="newHabitTag">My new habit is:</label>
-                                                        </div>
+                                        <!-- list of habits -->
 
-                                                        <!-- Email input -->
-                                                        <div class="form-outline mb-4">
-                                                            <input type="text" id="newHabitQuantity" class="form-control" />
-                                                            <label class="form-label" for="newHabitQuantity">I want to do it:</label>
-                                                        </div>
+                                        <!-- new habit button -->
+                                        <button type="button" class="btn btn-floating" style="color: var(--habit-color) !important"  data-mdb-toggle="modal" data-mdb-target="#habitModal">
+                                            <i class="fas fa-plus fa-1x" style="color: var(--light_white)"></i>
+                                        </button>
+                                        <!-- new habit button -->
 
-                                                        <!-- Message input -->
-                                                        <div class="form-outline mb-4">
-                                                            <input type="number" id="newHabitFrequency" class="form-control" />
-                                                            <label class="form-label" for="newHabitQuantity">In a quantity of:</label>
-                                                        </div>
+                                        <!-- new habit popup -->
+                                        <div
+                                                class="modal fade "
+                                                id="habitModal"
+                                                tabindex="-1"
+                                                aria-labelledby="habitModalLabel"
+                                                aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content custom-modal">
+                                                    <div class="modal-header">
+                                                        <a class="modal-title" id="habitModalLabel" >NEW HABIT</a>
+                                                        <button
+                                                                type="button"
+                                                                class="btn btn-rounded"
+                                                                data-mdb-dismiss="modal"
+                                                                aria-label="Close"
+                                                                style="color: var(--text-color); box-shadow: none">
+                                                        <i class="fas fa-times fa-lg" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body" style="--outline-color: var(--habit-color)">
+                                                        <!-- new habit form -->
+                                                        <form>
+                                                            <!-- Tag input -->
+                                                            <div class="form-outline mb-4 habit-formfield">
+                                                                <input type="text" id="newHabitTag" class="form-control" />
+                                                                <label class="form-label" for="newHabitTag" style>My new habit is:</label>
+                                                            </div>
 
-                                                        <button type="submit" class="btn btn-block"
-                                                                onclick="newHabit()">CREATE</button>
-                                                    </form>
-                                                    <!-- new habit form -->
+                                                            <div class="row mb-4">
+                                                                <div class="col">
+                                                                    <!-- frequency input -->
+                                                                    <div class="form-outline">
+                                                                        <input type="text" id="newHabitQuantity" class="form-control" />
+                                                                        <label class="form-label" for="newHabitQuantity">I want to do it:</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <!-- quantity input -->
+                                                                    <div class="form-outline">
+                                                                        <input type="number" id="newHabitFrequency" class="form-control" />
+                                                                        <label class="form-label" for="newHabitQuantity">In a quantity of:</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <button type="submit" class="btn btn-block habit-button" v-on:click="newHabit()">
+                                                                CREATE
+                                                            </button>
+                                                        </form>
+                                                        <!-- new habit form -->
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- new habit popup -->
                                     </div>
-                                    <!-- new habit popup -->
                                 </div>
                             </div>
-                        </div>
-                        <!-- habit field -->
+                            <!--habits card-->
 
                         <!-- goal field -->
                         <div class="row" style="margin: 15px">
                             <div class="card card-body" style="border-color: var(--goal-color)">
                                 <div class="card-body">
-                                    <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">GOALS</h5>
+                                    <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">HABITS</h5>
                                     <div class="card-text">
                                     </div>
                                 </div>
