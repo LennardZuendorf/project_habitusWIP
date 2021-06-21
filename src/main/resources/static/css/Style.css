@@ -29,6 +29,9 @@
 
     --mdb-light: var(--text-color) !important;
 
+    --default-custom-button-background-color: var(--background-color);
+    --default-custom-button-border-color: var(--background-color);
+
 }
 
 .light-mode{
@@ -232,11 +235,6 @@ body{
     color: var(--outline-color);
 }
 
-.sidebar{
-    color: var(--background-color);
-
-}
-
 .card{
     margin-top: 15px !important;
     background-color: var(--accent-color) !important;
@@ -245,4 +243,43 @@ body{
 
 .fa-times{
     color: var(--text-color) !important;
+}
+
+#okta-sign-in.auth-container.main-container {
+    background-color: var(--accent-color) !important;
+    font-family: "Roboto", sans-serif !important;
+}
+
+#okta-sign-in .beacon-blank {
+    background-color: var(--accent-color) !important;
+    font-family: "Roboto", sans-serif !important;
+}
+
+#okta-sign-in.auth-container.main-container {
+    border-color: var(--accent-color) !important;
+    font-family: "Roboto", sans-serif !important;
+}
+
+#okta-sign-in.auth-container .okta-sign-in-header {
+    border-bottom-color: var(--accent-color) !important;
+    font-family: "Roboto", sans-serif !important;
+}
+
+#okta-sign-in * {
+    color: var(--text-color) !important;
+    font-family: "Roboto", sans-serif !important;
+}
+
+#okta-sign-in.auth-container .o-form-head {
+    color: var(--text-color) !important;
+    font-family: "Roboto", sans-serif !important;
+}
+
+#okta-sign-in.auth-container a.link:link {
+    color: var(--goal-color);
+}
+
+#okta-sign-in.auth-container .button-primary {
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
