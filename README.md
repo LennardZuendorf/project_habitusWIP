@@ -16,7 +16,7 @@ Want to start programming every single day? Workout 3 times a week? Or read one 
 
 ## Tech Stack
 
-**Client:** Vue.js
+**Client:** Vue.js, JavaScript
 
 **Server:** Spring Boot, Thymeleaf
 
