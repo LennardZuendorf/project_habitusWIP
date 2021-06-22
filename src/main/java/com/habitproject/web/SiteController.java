@@ -18,16 +18,17 @@ public class SiteController {
     }
 
     @GetMapping("/dashboard")
-    public String HabitDashboard(){
-        return Endpoints.Site.DASH;
-    }
+    public String HabitDashboard(){ return Endpoints.Site.DASH; }
 
     @GetMapping("/error")
     public String Error(){
         return Endpoints.Site.ERROR;
     }
 
-
+    @GetMapping("/login")
+    public String Login(){
+        return Endpoints.Site.LOGIN;
+    }
 
     @GetMapping("/test")
     public String testSite(){
