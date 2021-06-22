@@ -33,7 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         Endpoints.Site.INDEX,
                         Endpoints.Site.SLASH,
                         Endpoints.Site.LOGIN,
-                        Endpoints.Site.TEST,
                         Endpoints.Site.DASH
                 ).permitAll()
                 // static resources
