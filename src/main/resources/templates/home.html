@@ -12,19 +12,18 @@
 
         <!--Style Imports-->
         <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
-        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.8.0/mdb.dark.min.css}" integrity="sha512-YTNg0WbMXbHXRSwn+NUBIY4tHP64EI/lTztJPC/fDHV9gFNPo8JM1Uwhxm99m6t+AXqrWIB63v3HbhXTC2+Q8w==" crossorigin="anonymous"/>
+        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css}"/>
         <link rel="stylesheet" th:href="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/css/okta-sign-in.min.css}"/>
         <link rel="stylesheet" th:href="@{/css/Style.css}">
         <link rel="stylesheet" th:href="@{/css/OktaStyle.css}">
         <!--Style Imports-->
 
         <!-- JS Imports-->
-        <script th:src="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/js/okta-sign-in.min.js}"  defer></script>
-        <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.8.0/mdb.min.js}" integrity="sha512-rVJOxE3yHzlhHmJPnqcl5SZKZ49Foi1AOS3DUD1xw8HsniDi0Ih58kVMAY4mHXVam+4SVXhzqfikJl9/dlm54g==" crossorigin="anonymous" defer></script>
-        <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.1/vue.cjs.js}" integrity="sha512-2e2aXOh4/FgkCAUyurkjk0Uw4m1gPcExFwb1Ai4Ajjg97se/FEWfrLG1na4mq8cgOzouc8qLIqsh0EGksPGdqQ==" crossorigin="anonymous" defer></script>
+        <script th:src="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/js/okta-sign-in.min.js}"></script>
+        <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js}" integrity="sha512-rVJOxE3yHzlhHmJPnqcl5SZKZ49Foi1AOS3DUD1xw8HsniDi0Ih58kVMAY4mHXVam+4SVXhzqfikJl9/dlm54g==" crossorigin="anonymous" defer></script>
+        <script th:src="@{https://cdn.jsdelivr.net/npm/mdbvue/lib/index.js}"></script>
+        <script th:src="@{https://unpkg.com/vue@next}" defer></script>
         <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js}" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" defer></script>
-        <script th:src="@{/js/colorMode.js}" type="text/javascript" defer></script>
-        <script th:src="@{/js/vueApp.js}" type="text/javascript" defer></script>
         <!-- JS Imports-->
 
         <!--color mode script-->
@@ -78,8 +77,10 @@
 
 </body>
 
-    <!-- bootstrap js -->
-    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js}" type="text/javascript"></script>
-    <!-- bootstrap js -->
+    <!--internal java scripts-->
+    <script th:src="@{/js/colorMode.js}" type="text/javascript" defer></script>
+    <script th:src="@{/js/oktaWidget.js}" type="text/javascript" defer></script>
+    <script th:src="@{/js/vueApp.js}" type="text/javascript" defer></script>
+    <!--internal java scripts-->
 
 </html>
