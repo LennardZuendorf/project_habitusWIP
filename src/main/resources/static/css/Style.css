@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,500,900");
 
-
 :root {
     --goal-color:
             rgba(30, 127, 218, 1);
@@ -14,8 +13,6 @@
             rgba(33, 35, 36, 1);
     --ligher-grey:
             rgba(44, 44, 46, 1);
-    --outline-color:
-        var(--text-color);
 
     --font-size-xs: 11px;
     --font-size-s: 15px;
@@ -26,6 +23,7 @@
     --background-color: var(--dark-grey);
     --accent-color: var(--ligher-grey);
     --text-color: var(--light_white);
+    --outline-color: var(--light_white);
 
     --mdb-light: var(--text-color) !important;
 
@@ -38,6 +36,7 @@
     --background-color: var(--light_white);
     --accent-color: var(--darker-white);
     --text-color: var(--dark-grey);
+    --outline-color: var(--dark-grey);
 }
 
 .roboto-black {
@@ -212,6 +211,7 @@ body{
 .habit-button{
     background-color: var(--habit-color) !important;
     color: var(--text-color);
+    box-shadow: var(--habit-color) !important;
 }
 
 .form-outline .form-control:focus~.form-notch .form-notch-leading {
@@ -238,48 +238,19 @@ body{
 .card{
     margin-top: 15px !important;
     background-color: var(--accent-color) !important;
-    box-shadow: none;
+    border-color: var(--habit-color);
+    border: 3px;
 }
 
 .fa-times{
     color: var(--text-color) !important;
 }
 
-#okta-sign-in.auth-container.main-container {
-    background-color: var(--accent-color) !important;
-    font-family: "Roboto", sans-serif !important;
+.habit-form{
+    margin-top: 15px;
 }
 
-#okta-sign-in .beacon-blank {
-    background-color: var(--accent-color) !important;
-    font-family: "Roboto", sans-serif !important;
-}
-
-#okta-sign-in.auth-container.main-container {
-    border-color: var(--accent-color) !important;
-    font-family: "Roboto", sans-serif !important;
-}
-
-#okta-sign-in.auth-container .okta-sign-in-header {
-    border-bottom-color: var(--accent-color) !important;
-    font-family: "Roboto", sans-serif !important;
-}
-
-#okta-sign-in * {
-    color: var(--text-color) !important;
-    font-family: "Roboto", sans-serif !important;
-}
-
-#okta-sign-in.auth-container .o-form-head {
-    color: var(--text-color) !important;
-    font-family: "Roboto", sans-serif !important;
-}
-
-#okta-sign-in.auth-container a.link:link {
-    color: var(--goal-color);
-}
-
-#okta-sign-in.auth-container .button-primary {
-    background-color: var(--background-color);
+.card-title{
+    font-size: var(--font-size-m);
     color: var(--text-color);
 }
