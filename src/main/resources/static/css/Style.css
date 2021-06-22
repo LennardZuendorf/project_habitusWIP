@@ -8,7 +8,7 @@
     --light_white:
             rgba(255, 255, 255, 1);
     --darker-white:
-            rgba(248, 248, 248, 1);
+            rgba(231, 231, 231, 1);
     --dark-grey:
             rgba(33, 35, 36, 1);
     --ligher-grey:
@@ -238,8 +238,8 @@ body{
 .card{
     margin-top: 15px !important;
     background-color: var(--accent-color) !important;
-    border-color: var(--habit-color);
-    border: 3px;
+    border-color: var(--habit-color) !important;
+    border: 3px !important;
 }
 
 .fa-times{
@@ -253,4 +253,12 @@ body{
 .card-title{
     font-size: var(--font-size-m);
     color: var(--text-color);
+}
+
+.form-select{
+    color: var(--text-color) !important;
+    box-shadow: var(--text-color) !important;
+    background-color: var(--background-color) !important;
+    border: 1px !important;
+    border-color: var(--text-color) !important;
 }
