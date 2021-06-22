@@ -19,7 +19,7 @@
         <!--Style Imports-->
 
         <!-- JS Imports-->
-        <script th:src="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/js/okta-sign-in.min.js}"  defer></script>
+        <script th:src="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/js/okta-sign-in.min.js}"></script>
         <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.8.0/mdb.min.js}" integrity="sha512-rVJOxE3yHzlhHmJPnqcl5SZKZ49Foi1AOS3DUD1xw8HsniDi0Ih58kVMAY4mHXVam+4SVXhzqfikJl9/dlm54g==" crossorigin="anonymous" defer></script>
         <script th:src="@{https://cdn.jsdelivr.net/npm/mdbvue/lib/index.js}"></script>
         <script th:src="@{https://unpkg.com/vue@next}" defer></script>
@@ -73,8 +73,14 @@
                                                 <div class="col">
                                                     <!-- frequency input -->
                                                     <div class="form-outline">
-                                                        <input type="text" id="newHabitQuantity" class="form-control" />
-                                                        <label class="form-label" for="newHabitQuantity">I want to do it:</label>
+                                                        <select class="form-select" id="newHabitQuantity">
+                                                            <option selected>I want to do it:</option>
+                                                            <option value="1">daily</option>
+                                                            <option value="2">weekly</option>
+                                                            <option value="3">biweekly</option>
+                                                            <option value="3">triweekly</option>
+                                                            <option value="3">monthly</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col">
@@ -99,8 +105,8 @@
                             <div class="card habits-card">
                                 <div class="card-body">
                                     <div class="card-text">
-                                        <div id="habits-area">
-
+                                        <div id="habitApp">
+                                            <test></test>
                                         </div>
                                     </div>
                                 </div>
