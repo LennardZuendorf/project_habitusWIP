@@ -1,26 +1,16 @@
 #okta-sign-in.auth-container.main-container {
     background-color: var(--accent-color) !important;
     font-family: "Roboto", sans-serif !important;
-    border: none !important;
 }
 
 #okta-sign-in .beacon-blank {
     background-color: var(--accent-color) !important;
     font-family: "Roboto", sans-serif !important;
-    border: none !important;
-}
-
-#okta-sign-in.auth-container.main-container {
-    border: none !important;
-    font-family: "Roboto", sans-serif !important;
-    background-color: var(--background-color) !important;
-
 }
 
 #okta-sign-in.auth-container .okta-sign-in-header {
     font-family: "Roboto", sans-serif !important;
     background-color: var(--background-color) !important;
-    border: none !important;
 }
 
 #okta-sign-in * {
