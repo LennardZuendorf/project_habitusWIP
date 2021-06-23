@@ -24,7 +24,7 @@ public class HabitServiceImpl implements HabitService{
      */
     @Override
     public HabitStatusReturn postHabit(HabitRequestModel requestBody) {
-        HabitEntity newHabit = new HabitEntity(requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getUid());
+        HabitEntity newHabit = new HabitEntity(requestBody.getUid(), requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getLastCheck());
         repository.saveAndFlush(newHabit);
         return new HabitStatusReturn(newHabit, HttpStatus.CREATED);
     }
