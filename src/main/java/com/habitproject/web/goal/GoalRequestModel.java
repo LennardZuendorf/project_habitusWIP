@@ -1,7 +1,6 @@
 package com.habitproject.web.goal;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 public class GoalRequestModel {
 
@@ -10,7 +9,6 @@ public class GoalRequestModel {
     private BigDecimal currentAmount;
     private BigDecimal totalAmount;
     private Long uid;
-    private LocalDateTime lastCheck;
 
     public String getTag() {
         return tag;
@@ -41,12 +39,6 @@ public class GoalRequestModel {
     }
     public void setUid(Long uid) {
         this.uid = uid;
-    }
-    public LocalDateTime getLastCheck() {
-        return lastCheck;
-    }
-    public void setLastCheck(LocalDateTime lastCheck) {
-        this.lastCheck = lastCheck;
     }
 }
 
