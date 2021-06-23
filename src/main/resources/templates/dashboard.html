@@ -1,143 +1,143 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" data-theme="dark">
+<html xmlns:th="http://www.thymeleaf.org">
 
     <head>
+
+        <!--basics-->
         <title>HABIT dashboard </title>
         <meta http-equiv="Content-Type" content="text/html"/>
         <meta charset="UTF-8">
         <link rel="icon" type="image/svg" th:href="@{/img/logo_clean.svg}"/>
-        <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.6.3/css/all.css}">
-        <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css}">
-        <link rel="stylesheet" th:href="@{/css/HTMLStyle.css}">
-        <script th:src="@{/js/ColorMode.js}"></script>
+        <!--basics-->
+
+        <!--Style Imports-->
+        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
+        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css}"/>
+        <link rel="stylesheet" th:href="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/css/okta-sign-in.min.css}"/>
+        <link rel="stylesheet" th:href="@{/css/Style.css}">
+        <link rel="stylesheet" th:href="@{/css/OktaStyle.css}">
+        <!--Style Imports-->
+
+        <!-- JS Imports-->
+        <script th:src="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/js/okta-sign-in.min.js}"></script>
+        <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.8.0/mdb.min.js}" integrity="sha512-rVJOxE3yHzlhHmJPnqcl5SZKZ49Foi1AOS3DUD1xw8HsniDi0Ih58kVMAY4mHXVam+4SVXhzqfikJl9/dlm54g==" crossorigin="anonymous" defer></script>
+        <script th:src="@{https://cdn.jsdelivr.net/npm/mdbvue/lib/index.js}"></script>
+        <script th:src="@{https://unpkg.com/vue@next}" defer></script>
+        <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js}" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" defer></script>
+        <!-- JS Imports-->
+
+        <!--color mode script-->
+        <script type="text/javascript">
+            (function () {if (localStorage.getItem("colorMode") === "light") {
+                toggleColor();}})(); </script>
+        <!--color mode script-->
+
     </head>
 
     <body class="dark-mode bg-bg">
 
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--background-color)">
-            <!-- Container wrapper -->
-            <div class="container-fluid">
-                <!-- Collapsible wrapper -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Navbar brand -->
-                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                        <img src="/img/logo_long.svg"
-                             height="60px"
-                             alt=""
-                             loading="lazy"
-                        />
-                    </a>
-                    <!-- empty left side -->
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item align-items-center justify-content-center">
-                            <a class="nav-link roboto-bold text-center" style="font-size: var(--font-size-l); color: var(--text-color)">WELCOME [Placeholder]!</a>
-                        </li>
-                    </ul>
-                    <!-- Left links -->
-                </div>
-                <!-- Collapsible wrapper -->
-
-                <!-- right side -->
-                <div class="d-flex align-items-center">
-
-                    <!-- settings button -->
-                    <a class="btn btn-floating m-1 navbar_button" data-mdb-toggle="modal" data-mdb-target="#exampleModal" role="button" >
-                        <i class="fa fa-cog fa-2x " style="color: var(--text-color)"></i>
-                    </a>
-
-                    <!-- color mode button -->
-                    <a class="btn btn-floating m-1 navbar_button" role="button" onclick="toggleColor()">
-                        <i class="fa fa-sun fa-2x" id="colorModeIcon" style="color: var(--habit-color)"></i>
-                    </a>
-
-                    <!-- close button -->
-                    <a class="btn btn-floating m-1 navbar_button" th:href="@{/logout}" role="button" style="">
-                        <i class="fa fa-times fa-2x " style="color: var(--text-color)"></i>
-                    </a>
-
-                </div>
-                <!-- Right elements -->
-            </div>
-            <!-- Container wrapper -->
-        </nav>
+        <div th:insert="fragments/fragments :: navbar"></div>
         <!-- navbar -->
 
-        <!-- content -->
+        <!-- content container -->
         <div>
             <div class="container-fluid">
 
-                <!-- real content & sidebar row -->
+                <!--  content & sidebar row -->
                 <div class="row">
+
                     <!-- sidebar -->
                     <div class="col-2">
                         <div></div>
                     </div>
                     <!-- sidebar -->
 
-                    <!-- content -->
+                    <!-- content col, row -->
                     <div class="col-8">
-
-                        <!-- habit field -->
                         <div class="row" style="margin: 15px">
-                            <div class="card card-body" style="border-color: var(--habit-color)">
+
+                            <!--new habits card-->
+                            <div class="card habits-card">
                                 <div class="card-body">
-                                    <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">HABITS</h5>
+                                    <p class="card-title roboto-bold">HABITS</p>
                                     <div class="card-text">
+                                        <!-- new habit form -->
+                                        <form id="newHabitForm" class="habit-form">
+                                            <!-- Tag input -->
+                                            <div class="form-outline mb-4 habit-formfield">
+                                                <input type="text" id="newHabitTag" class="form-control" />
+                                                <label class="form-label" for="newHabitTag" style>My new habit is:</label>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="col">
+                                                    <!-- frequency input -->
+                                                    <div class="form-outline">
+                                                        <select class="form-select" id="newHabitQuantity">
+                                                            <option selected>I want to do it:</option>
+                                                            <option value="1">daily</option>
+                                                            <option value="2">weekly</option>
+                                                            <option value="3">biweekly</option>
+                                                            <option value="3">triweekly</option>
+                                                            <option value="3">monthly</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <!-- quantity input -->
+                                                    <div class="form-outline">
+                                                        <input type="number" id="newHabitFrequency" class="form-control" />
+                                                        <label class="form-label" for="newHabitQuantity">In a quantity of:</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-block habit-button" v-on:click="newHabit()">
+                                                CREATE
+                                            </button>
+                                        </form>
+                                        <!-- new habit form -->
                                     </div>
-                                    <button type="button" class="btn btn-floating" style="color: var(--habit-color)">
-                                        <i class="fas fa-plus fa-1x" style="color: var(--light_white)"></i>
-                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <!-- habit field -->
+                            <!--new habits card-->
 
-                        <!-- goal field -->
-                        <div class="row" style="margin: 15px">
-                            <div class="card card-body" style="border-color: var(--goal-color)">
+                            <!--habits card-->
+                            <div class="card habits-card">
                                 <div class="card-body">
-                                    <h5 class="card-title roboto-bold" style="font-size: var(--font-size-m); color: var(--text-color)">GOALS</h5>
                                     <div class="card-text">
+                                        <div id="habitApp">
+                                            <test></test>
+                                        </div>
                                     </div>
-                                    <button type="button" class="btn btn-floating" style="color: var(--goal-color)">
-                                        <i class="fas fa-plus fa-1x" style="color: var(--light_white)"></i>
-                                    </button>
                                 </div>
                             </div>
+                            <!--habits card-->
                         </div>
-                        <!-- goal field -->
-
                     </div>
-                    <!-- content -->
+                    <!-- content col, row -->
 
-                    <!-- blocker -->
+                    <!-- blocker col -->
                     <div class="col-2">
                         <div></div>
                     </div>
-                    <!-- blocker -->
-                </div>
-            </div>
+                    <!-- content col, row -->
 
+                </div>
+                <!--  content, sidebar, blocker row -->
+            </div>
         </div>
-        <!-- content -->
+        <!-- content container -->
 
         <!-- footer-->
-        <div th:insert="fragments/components :: footer"></div>
+        <div th:insert="fragments/fragments :: footer"></div>
         <!-- footer-->
 
     </body>
 
-    <!-- bootstrap js -->
-    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js}" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <!-- color switcher js -->
-    <script th:src="@{https://unpkg.com/vue@next}"></script>
+    <!--internal java scripts-->
+    <script th:src="@{/js/colorMode.js}" type="text/javascript" defer></script>
+    <script th:src="@{/js/oktaWidget.js}" type="text/javascript" defer></script>
+    <script th:src="@{/js/vueApp.js}" type="text/javascript" defer></script>
+    <!--internal java scripts-->
 
 </html>
-<script>
-    import Goal_component from "../static/js/vue/GoalComponent";
-    import Habit_component from "../static/js/vue/HabitComponent";
-    export default {
-        components: {Habit_component, Goal_component}
-    }
-</script>

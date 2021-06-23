@@ -20,7 +20,7 @@
 
         <!-- JS Imports-->
         <script th:src="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/js/okta-sign-in.min.js}"></script>
-        <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js}" integrity="sha512-rVJOxE3yHzlhHmJPnqcl5SZKZ49Foi1AOS3DUD1xw8HsniDi0Ih58kVMAY4mHXVam+4SVXhzqfikJl9/dlm54g==" crossorigin="anonymous" defer></script>
+        <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.8.0/mdb.min.js}" integrity="sha512-rVJOxE3yHzlhHmJPnqcl5SZKZ49Foi1AOS3DUD1xw8HsniDi0Ih58kVMAY4mHXVam+4SVXhzqfikJl9/dlm54g==" crossorigin="anonymous" defer></script>
         <script th:src="@{https://cdn.jsdelivr.net/npm/mdbvue/lib/index.js}"></script>
         <script th:src="@{https://unpkg.com/vue@next}" defer></script>
         <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js}" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" defer></script>
@@ -36,46 +36,37 @@
 
     <body class="dark-mode bg-bg">
 
-    <!-- navbar -->
-    <div th:insert="fragments/fragments :: navbar"></div>
-    <!-- navbar -->
+        <!-- icon & text -->
+        <div class="container-fluid" style="height: 100%">
 
-    <!-- logo & text -->
-    <div class="container-fluid" style="height: 100%">
-
-        <!-- logo row-->
-        <div class="row align-items-center justify-content-center bg-bg" style="padding-top: 5%">
-            <div class="d-flex justify-content-center">
-                <img src="/img/logo.svg"
-                     height="300px"
-                     alt=""
-                     loading="lazy"
-                />
+            <!-- icon row-->
+            <div class="row align-items-center justify-content-center bg-bg " style="padding-top: 5%">
+                <div class="d-flex justify-content-center">
+                    <i class="fas fa-exclamation-triangle fa-10x" style="color: var(--habit-color)"></i>
+                </div>
             </div>
-        </div>
-        <!-- logo row-->
+            <!-- icon row-->
 
-        <!-- login register row-->
-        <div class="row align-items-center justify-content-center" style="padding-top: 5%">
-            <div class="d-flex justify-content-center">
-
-                <!-- login button -->
-                <button type="button" class="btn btn-rounded login-button" onclick="location.href='/dashboard.html';">
-                    LOGIN | REGISTER
-                </button>
-                <!-- login button -->
-
+            <!-- text row-->
+            <div class="row align-items-center justify-content-center bg-bg" style="padding-top: 5%">
+                <div class="d-flex justify-content-center" style="font-size: var(--font-size-s)">
+                    AN ERROR HAS OCCURRED.
+                </div>
             </div>
+
+            <div class="row align-items-center justify-content-center bg-bg" style="padding-top: 5%">
+                <div class="d-flex justify-content-center" style="font-size: var(--font-size-xs)">
+                    IF THIS HAPPENS AGAIN, PLEASE CONTACT THE ADMIN!
+                </div>
+            </div>
+            <!-- text row-->
         </div>
-        <!-- login register row-->
-    </div>
-    <!-- logo & text -->
+        <!-- icon & text -->
 
-    <!-- footer -->
-    <div th:insert="fragments/fragments :: footer"></div>
-    <!-- footer -->
-
-</body>
+        <!-- return button -->
+            <button type="button" class="btn btn-primary">RETURN HOME</button>
+        <!-- return button -->
+    </body>
 
     <!--internal java scripts-->
     <script th:src="@{/js/colorMode.js}" type="text/javascript" defer></script>

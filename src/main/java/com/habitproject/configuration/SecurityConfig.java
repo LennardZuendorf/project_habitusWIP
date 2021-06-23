@@ -2,7 +2,6 @@ package com.habitproject.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -31,9 +30,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // public pages
                 .antMatchers(
-                        HttpMethod.GET,
                         Endpoints.Site.INDEX,
-                        Endpoints.Site.SLASH
+                        Endpoints.Site.SLASH,
+                        Endpoints.Site.LOGIN,
+                        Endpoints.Site.DASH
                 ).permitAll()
                 // static resources
                 .antMatchers(
@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutSuccessHandler(oidcLogoutSuccessHandler())
 
                 .and().oauth2Client()
-                .and().oauth2Login();
+                .and().oauth2Login().loginPage(Endpoints.Site.LOGIN);
     }
 
 }
