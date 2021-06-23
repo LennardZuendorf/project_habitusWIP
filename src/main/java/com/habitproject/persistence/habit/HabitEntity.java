@@ -1,6 +1,7 @@
 package com.habitproject.persistence.habit;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
  * HabitEntity defines database entries for persistence
@@ -15,6 +16,9 @@ public class HabitEntity {
     private Long hid;
 
     @Column
+    private String uid;
+
+    @Column
     private String tag;
 
     @Column
@@ -24,15 +28,17 @@ public class HabitEntity {
     @Column
     private Integer quantity;
 
-    @Column
-    private String uid;
+    @Column(name="last_check", nullable = true)
+    private LocalDateTime lastCheck;
+
 
     //constructor
-    public HabitEntity(String tag, HabitFrequency frequency, Integer quantity, String uid){
+    public HabitEntity(String uid, String tag, HabitFrequency frequency, Integer quantity, LocalDateTime lastCheck ){
+        this.uid = uid;
         this.tag = tag;
         this.frequency = frequency;
         this.quantity = quantity;
-        this.uid = uid;
+        this.lastCheck = lastCheck;
     }
     protected HabitEntity(){}
 
@@ -60,5 +66,11 @@ public class HabitEntity {
     }
     public String getUid() {
         return uid;
+    }
+    public LocalDateTime getLastCheck() {
+        return lastCheck;
+    }
+    public void setLastCheck(LocalDateTime lastCheck) {
+        this.lastCheck = lastCheck;
     }
 }
