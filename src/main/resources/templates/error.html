@@ -54,18 +54,23 @@
                 </div>
             </div>
 
-            <div class="row align-items-center justify-content-center bg-bg" style="padding-top: 5%">
+            <div class="row align-items-center justify-content-center bg-bg">
                 <div class="d-flex justify-content-center" style="font-size: var(--font-size-xs)">
                     IF THIS HAPPENS AGAIN, PLEASE CONTACT THE ADMIN!
                 </div>
             </div>
             <!-- text row-->
+
+            <!-- return button -->
+            <div class="row justify-content-center align-items-center bg-bg " style="padding-top: 5%">
+                <div class="col-4">
+                    button type="button" class="btn btn-rounded login-button" th:onclick="errorButton()"
+                </div>
+            </div>
+            <!-- return button -->
         </div>
         <!-- icon & text -->
 
-        <!-- return button -->
-            <button type="button" class="btn btn-primary">RETURN HOME</button>
-        <!-- return button -->
     </body>
 
     <!--internal java scripts-->
