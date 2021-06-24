@@ -34,7 +34,7 @@
 
     </head>
 
-    <body class="dark-mode bg-bg">
+    <body class="dark-mode bg-bg" onload="startupColor()";>
 
         <!-- icon & text -->
         <div class="container-fluid" style="height: 100%">
@@ -73,5 +73,23 @@
     <script th:src="@{/js/oktaWidget.js}" type="text/javascript" defer></script>
     <script th:src="@{/js/vueApp.js}" type="text/javascript" defer></script>
     <!--internal java scripts-->
+
+    <!--color mode script-->
+    <script type="text/javascript">
+        function startupColor() {
+            if (localStorage.getItem("colorMode") === "light") {
+                toggleColor();
+            }
+        }
+    </script>
+    <!--color mode script-->
+
+    <script type="text/javascript">
+        function errorButton() {
+            location.href='/home.html';
+        }
+    </script>
+
+
 
 </html>
