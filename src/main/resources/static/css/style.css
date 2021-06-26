@@ -184,16 +184,12 @@ body{
     font-size: var(--font-size-xs)
 }
 
-.habit-formfield{
-    outline-color: var(--habit-color) !important;
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
-}
 
 .form-outline{
-    outline-color: var(--habit-color) !important;
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
+    outline: var(--habit-color) 10px !important;
+    border: var(--text-color) 10px !important;
 }
 
 .form-label{
@@ -261,4 +257,9 @@ body{
     background-color: var(--background-color) !important;
     border: 1px !important;
     border-color: var(--text-color) !important;
+}
+
+.habit-button{
+    background-color: var(--habit-color) !important;
+    box-shadow: var(--habit-color) !important;
 }
