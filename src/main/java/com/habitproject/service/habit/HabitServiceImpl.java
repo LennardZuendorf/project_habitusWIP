@@ -53,7 +53,7 @@ public class HabitServiceImpl implements HabitService{
 
     /**
      * updating a HabitEntity in the database
-     * @param hid          - id of the habit to update
+     * @param hid - id of the habit to update
      * @param requestBody - all of HabitEntity params
      * @return http status code
      */
