@@ -15,30 +15,38 @@ public class HabitEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long hid;
 
-    @Column
+    @Column(nullable = false)
     private String uid;
 
-    @Column
+    @Column(nullable = false)
     private String tag;
 
-    @Column
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private HabitFrequency frequency;
 
-    @Column
+    @Column(nullable = false)
     private Integer quantity;
 
     @Column(name="last_check", nullable = true)
     private LocalDateTime lastCheck;
 
+    @Column(nullable = false)
+    private boolean done;
+
+    @Column(name="done_amount")
+    private Integer doneAmount;
+
 
     //constructor
-    public HabitEntity(String uid, String tag, HabitFrequency frequency, Integer quantity, LocalDateTime lastCheck ){
+    public HabitEntity(String uid, String tag, HabitFrequency frequency, Integer quantity, LocalDateTime lastCheck, boolean done, Integer doneAmount ){
         this.uid = uid;
         this.tag = tag;
         this.frequency = frequency;
         this.quantity = quantity;
         this.lastCheck = lastCheck;
+        this.done = done;
+        this.doneAmount = doneAmount;
     }
     protected HabitEntity(){}
 
@@ -72,5 +80,17 @@ public class HabitEntity {
     }
     public void setLastCheck(LocalDateTime lastCheck) {
         this.lastCheck = lastCheck;
+    }
+    public boolean isDone() {
+        return done;
+    }
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+    public Integer getDoneAmount() {
+        return doneAmount;
+    }
+    public void setDoneAmount(Integer doneAmount) {
+        this.doneAmount = doneAmount;
     }
 }

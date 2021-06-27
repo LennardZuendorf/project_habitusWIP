@@ -9,8 +9,7 @@ public interface HabitService {
 
     //HabitEntity services
     HabitStatusReturn postHabit(HabitRequestModel requestBody);
-    HabitStatusReturn getHabit(Long hid);
-    HabitListStatusReturn getAllHabit(String uid);
+    HabitListStatusReturn getHabits(String uid);
     HttpStatus putHabit(Long hid, HabitRequestModel requestBody);
     HttpStatus deleteHabit(Long hid);
 }

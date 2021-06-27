@@ -24,20 +24,9 @@ public class HabitServiceImpl implements HabitService{
      */
     @Override
     public HabitStatusReturn postHabit(HabitRequestModel requestBody) {
-        HabitEntity newHabit = new HabitEntity(requestBody.getUid(), requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getLastCheck());
+        HabitEntity newHabit = new HabitEntity(requestBody.getUid(), requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getLastCheck(), requestBody.isDone(), requestBody.getDoneAmount());
         repository.saveAndFlush(newHabit);
         return new HabitStatusReturn(newHabit, HttpStatus.CREATED);
-    }
-
-    /**
-     * getting one HabitEntity by id
-     * @param hid - the habit id to select
-     * @return HabitStatusReturn - combination of new Entity and status code
-     */
-    @Override
-    public HabitStatusReturn getHabit(Long hid) {
-        if (repository.existsById(hid))return new HabitStatusReturn(repository.findFirstByHid(hid), HttpStatus.OK);
-        else return new HabitStatusReturn(null, HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -46,7 +35,7 @@ public class HabitServiceImpl implements HabitService{
      * @return HabitListStatusReturn - combination of new List with Entities and status code
      */
     @Override
-    public HabitListStatusReturn getAllHabit(String uid) {
+    public HabitListStatusReturn getHabits(String uid) {
         if (repository.existsByUid(uid)) return new HabitListStatusReturn(repository.findAllByUid(uid), HttpStatus.OK);
         else return new HabitListStatusReturn(null, HttpStatus.NO_CONTENT);
     }
@@ -64,6 +53,8 @@ public class HabitServiceImpl implements HabitService{
             habitEntry.setTag(requestBody.getTag());
             habitEntry.setFrequency(requestBody.getFrequency());
             habitEntry.setQuantity(requestBody.getQuantity());
+            habitEntry.setDone(requestBody.isDone());
+            habitEntry.setDoneAmount(requestBody.getDoneAmount());
             repository.saveAndFlush(habitEntry);
             return HttpStatus.OK;
         }else return HttpStatus.NO_CONTENT;
