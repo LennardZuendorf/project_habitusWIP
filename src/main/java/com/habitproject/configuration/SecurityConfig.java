@@ -25,6 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
+        http.cors();
         http
                 .authorizeRequests()
 
@@ -34,7 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         Endpoints.Site.SLASH,
                         Endpoints.Site.LOGIN,
                         Endpoints.Site.ERROR,
-                        Endpoints.Site.DASH
+                        Endpoints.Site.DASH,
+                        Endpoints.Rest.HABITS,
+                        Endpoints.Rest.HABITS_GET_ALL
                 ).permitAll()
                 // static resources
                 .antMatchers(
