@@ -46,7 +46,7 @@ public class HabitServiceImpl implements HabitService{
      * @return HabitListStatusReturn - combination of new List with Entities and status code
      */
     @Override
-    public HabitListStatusReturn getAllHabit(Long uid) {
+    public HabitListStatusReturn getAllHabit(String uid) {
         if (repository.existsByUid(uid)) return new HabitListStatusReturn(repository.findAllByUid(uid), HttpStatus.OK);
         else return new HabitListStatusReturn(null, HttpStatus.NO_CONTENT);
     }

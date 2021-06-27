@@ -45,7 +45,7 @@ public class HabitRESTController {
      * @return status code, json
      */
     @GetMapping("/habits/all/{uid}")
-    public ResponseEntity <List<HabitEntity>> getAllHabit(@PathVariable Long uid){
+    public ResponseEntity <List<HabitEntity>> getAllHabit(@PathVariable String uid){
         var output = service.getAllHabit(uid);
         return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
