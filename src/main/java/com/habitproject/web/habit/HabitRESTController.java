@@ -29,24 +29,13 @@ public class HabitRESTController {
     }
 
     /**
-     * API call for getting a habit (HabitEntity) by id
-     * @param hid - the habit id to select
-     * @return status code, json
-     */
-    @GetMapping("/habits/{hid}")
-    public ResponseEntity <HabitEntity> getHabit(@PathVariable Long hid){
-        var output = service.getHabit(hid);
-        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
-    }
-
-    /**
      * API call for getting all habits (HabitEntity) by userID
      * @param uid - the user ID to be selected by
      * @return status code, json
      */
-    @GetMapping("/habits/all/{uid}")
+    @GetMapping("/habits/{uid}")
     public ResponseEntity <List<HabitEntity>> getAllHabit(@PathVariable String uid){
-        var output = service.getAllHabit(uid);
+        var output = service.getHabits(uid);
         return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
 

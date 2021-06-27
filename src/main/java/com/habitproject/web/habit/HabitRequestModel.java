@@ -11,6 +11,8 @@ public class HabitRequestModel {
     private Integer quantity;
     private String uid;
     private LocalDateTime lastCheck;
+    private boolean done;
+    private Integer doneAmount;
 
     public String getTag() {
         return tag;
@@ -25,4 +27,10 @@ public class HabitRequestModel {
         return uid;
     }
     public LocalDateTime getLastCheck(){return lastCheck;}
+    public boolean isDone() {
+        return done;
+    }
+    public Integer getDoneAmount() {
+        return doneAmount;
+    }
 }
