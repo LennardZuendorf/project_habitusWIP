@@ -2,9 +2,7 @@ const app = Vue.createApp({});
 
 app.component('habit_component', {
     template:
-        `
-          <link rel="stylesheet" href="./css/vueStyle.css">
-          
+        `         
           <!-- new habit form-->
           <div class="container-fluid">
     
@@ -57,7 +55,7 @@ app.component('habit_component', {
                   <div class="card-body">
                     <div class="card-title single-habit-title">{{ habit.tag }} </div>
                     <div class="card-text single-habit-text">
-                      {{habit.quantity}} {{habit.frequency}}
+                      {{habit.quantity}} {{habit.frequency}} {{habit.lastCheck}} {{habit.done}} {{habit.doneAmount}}
                     </div>
                     <button type="button" class="btn btn-rounded habit-button" v-on:click="doneHabit()">DONE</button>
                   </div>
@@ -68,34 +66,90 @@ app.component('habit_component', {
           </div>
     `,
     data() {
+        let uid;
         return {
-            habits: []
+            habits: [],
+            uid
             };
         },
     methods: {
-        requestHabits(uidInput){
-            axios.get('/habits/all/'+uidInput.toString())
+        requestHabits(){
+            axios.get('/habits/'+this.uid.toString())
                 .then(response => {this.habits = response.data; console.log(response.data)});
         },
 
-        createHabit(){
-            axios.post()
-                .then(response => {this.habits = response.data; console.log(response.data)});
+        createHabit(hidInput){
+            let result;
+
+            axios.post('/habits/',{
+                done: false,
+                doneAmount: 0,
+                frequency: this.newHabitFrequency,
+                lastCheck: LocalDateTime.now(),
+                quantity: this.newHabitQuantity,
+                tag: this.newHabitTag
+            })
+                .then(response => {
+                    result = response.data; console.log("new habit created successfully")
+                });
+
+            this.requestHabits(this.uid);
         },
 
-        deleteHabits(){
-            axios.delete()
+        deleteHabit(hidInput){
+            axios.delete('/habits/'+hidInput.toString)
                 .then(response => {this.habits = response.data; console.log(response.data)});
+
+            this.requestHabits(this.uid);
         },
 
         doneHabit(hidInput){
-            axios.put('/habits/'+hidInput.toString())
-                .then()
+            const habit = habits.find(element => element.hid = hidInput);
 
+            axios.put('/habits/' + hidInput.toString, {
+                done: true,
+                doneAmount: habit.doneAmount + 1,
+                frequency: habit.frequency,
+                lastCheck: LocalDateTime.now(),
+                quantity: habit.quantity,
+                tag: habit.tag
+            })
+                .then(response => {
+                    result = response.data;
+                    console.log("habit successfully marked as done")
+                });
+
+            this.requestHabits(this.uid);
+
+        },
+
+        updateHabit(hidInput, updateFrequency, updateQuantity, updateTag){
+            const habit = habits.find(element => element.hid = hidInput);
+
+            axios.put('/habits/' + hidInput, {
+                done: habit.done,
+                doneAmount: habit.doneAmount,
+                frequency: updateFrequency,
+                lastCheck: habit.lastCheck,
+                quantity: updateQuantity,
+                tag: updateTag
+            })
+                .then(response => {
+                    result = response.data;
+                    console.log("habit updated successfully")
+                });
+
+            this.requestHabits(this.uid);
+
+        },
+
+        getUser(){
+            this.uid = '999';
         }
     },
     mounted: function() {
-        this.requestHabits(999)
+        this.getUser();
+        this.requestHabits()
     }
 });
 
