@@ -188,8 +188,6 @@ body{
 .form-outline{
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
-    outline: var(--habit-color) 10px !important;
-    border: var(--text-color) 10px !important;
 }
 
 .form-label{
@@ -211,24 +209,24 @@ body{
 }
 
 .form-outline .form-control:focus~.form-notch .form-notch-leading {
-    border-top: .125rem solid var(--outline-color);
-    border-bottom: .125rem solid var(--outline-color);
-    border-left: .125rem solid var(--outline-color);
+    border-top: .125rem solid var(--outline-color) !important;
+    border-bottom: .125rem solid var(--outline-color) !important;
+    border-left: .125rem solid var(--outline-color) !important;
 }
 .form-outline .form-control:focus~.form-notch .form-notch-middle {
     border-bottom: .125rem solid;
-    border-color: var(--outline-color);
+    border-color: var(--outline-color) !important;
 }
 
 .form-outline .form-control:focus~.form-notch .form-notch-trailing {
-    border-color: currentcolor currentcolor currentcolor var(--outline-color);
-    border-bottom: .125rem solid var(--outline-color);
-    border-right: .125rem solid var(--outline-color);
-    border-top: .125rem solid var(--outline-color);
+    border-color: currentcolor currentcolor currentcolor var(--outline-color) !important;
+    border-bottom: .125rem solid var(--outline-color) !important;
+    border-right: .125rem solid var(--outline-color) !important;
+    border-top: .125rem solid var(--outline-color) !important;
 }
 
 .form-outline .form-control:focus~.form-label {
-    color: var(--outline-color);
+    color: var(--outline-color) !important;
 }
 
 .card{
@@ -262,4 +260,9 @@ body{
 .habit-button{
     background-color: var(--habit-color) !important;
     box-shadow: var(--habit-color) !important;
+}
+
+.habit-table{
+    color: var(--text-color) !important;
+    background-color: var(--background-color) !important;
 }
