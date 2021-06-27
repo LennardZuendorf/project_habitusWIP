@@ -3,8 +3,8 @@ package com.habitproject.service.habit;
 import com.habitproject.persistence.habit.HabitEntity;
 import com.habitproject.persistence.habit.HabitRepository;
 import com.habitproject.web.habit.HabitListStatusReturn;
-import com.habitproject.web.habit.HabitStatusReturn;
 import com.habitproject.web.habit.HabitRequestModel;
+import com.habitproject.web.habit.HabitStatusReturn;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -61,7 +61,7 @@ public class HabitServiceImpl implements HabitService{
     }
 
     /**
-     * API call for deleting a habit (HabitEntity)
+     * delete a habit (HabitEntity)
      * @param hid - id of the habit that should be deleted
      * @return http status code
      */
@@ -70,6 +70,19 @@ public class HabitServiceImpl implements HabitService{
         if (repository.existsById(hid)) {
             repository.delete(repository.getOne(hid));
             repository.flush();
+            return HttpStatus.OK;
+        } else return HttpStatus.NO_CONTENT;
+    }
+
+    /**
+     * deleting all habit (HabitEntity)
+     * @param uid - id of the habit that should be deleted
+     * @return http status code
+     */
+    @Override
+    public HttpStatus deleteAllHabits(String uid) {
+        if (!repository.findAllByUid(uid).isEmpty()){
+            repository.deleteInBatch(repository.findAllByUid(uid));
             return HttpStatus.OK;
         } else return HttpStatus.NO_CONTENT;
     }

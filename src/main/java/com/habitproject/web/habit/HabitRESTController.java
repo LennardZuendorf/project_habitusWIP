@@ -59,4 +59,14 @@ public class HabitRESTController {
     public ResponseEntity <Void> deleteHabit (@PathVariable Long hid){
         return ResponseEntity.status(service.deleteHabit(hid)).build();
     }
+
+    /**
+     * API call for deleting all habits (HabitEntity)
+     * @param uid - id of the user all habits should be deleted from
+     * @return status code
+     */
+    @DeleteMapping("/habits/all/{uid}")
+    public ResponseEntity <Void> deleteAllHabits (@PathVariable String uid){
+        return ResponseEntity.status(service.deleteAllHabits(uid)).build();
+    }
 }
