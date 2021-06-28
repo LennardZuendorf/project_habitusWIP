@@ -67,7 +67,7 @@ app.component('habit_component', {
               </div>
 
               <!-- update habit form -->
-              <div class="card habits-form-card" style="visibility: collapse; display: none; padding-top:2%" id="habit-display-edit-form">
+              <div class="card habits-form-card" style="visibility: collapse; display: none; margin-top: 2%" id="habit-display-edit-form">
                 <div class="card-body">
                   <form id="updateHabitForm">
                     <div class="row align-items-center justify-content-center">
@@ -113,9 +113,12 @@ app.component('habit_component', {
 
                       <!-- submit button -->
                       <div class="col-lg-1">
-                        <button type="button" class="btn btn-rounded edit-btns" v-on:click="saveEditing(updatingHabit.hid)">SAVE</button>
-                      </div>
+                        <label class="form-label"></label>
+                        <button type="button" class="btn btn-rounded habit-button" v-on:click="saveEditing(updatingHabit.hid)">
+                          SAVE
+                        </button>
                       <!-- submit button -->
+                    </div>
                     </div>
                   </form>
                   <!-- new habit form -->
@@ -129,9 +132,7 @@ app.component('habit_component', {
                       <div class="card-body">
                         <!--card title-->
                         <div class="card-title card-title-m roboto-bold">
-                          <div class="habit-display-text" >{{ habit.tag }}</div>
-                          <div class="habit-display-text">&nbsp - &nbsp{{ habit.tag }}</div>
-                          <div class="habit-display-text">TO GO</div>
+                          {{ habit.tag }} - {{habit.doneAmount}}
                         </div>
                         <!--card title-->
                         
@@ -150,10 +151,17 @@ app.component('habit_component', {
                                     <div class="habit-display-text"> time(s) a period.</div>
                                 </div>
         
-                                <div class="col-md-3">
-                                  <button type="button" id="edit-button " class="btn btn-rounded edit-btns" v-on:click="toggleEditing(habit.hid)">EDIT</button>
-                                  <button type="button" id="delete-button" class="btn btn-rounded edit-btns" v-on:click="deleteHabit(habit.hid)">DELETE</button>
-                                  <button type="button" id="done-button" class="btn btn-rounded habit-button" style="margin-left: 1rem !important;" v-on:click="doneHabit(habit.hid)">DONE</button>
+                                <div class="col-md-1">
+                                  <button type="button" id="edit-button " class="btn btn-rounded edit-btns" style="font-size: var(--font-size-xs)" v-on:click="toggleEditingOn(habit.hid)">edit</button>
+                                </div>
+
+                                  <div class="col-md-1">
+                                    <button type="button" id="delete-button" class="btn btn-rounded edit-btns" style="font-size: var(--font-size-xs)" v-on:click="deleteHabit(habit.hid)">del</button>
+                                  </div>
+
+                                <div class="col-md-1">
+                                  <button type="button" id="done-button" class="btn btn-rounded habit-button" v-on:click="doneHabit(habit.hid)">DONE</button>
+                                </div>
                                 </div>
                               </div>
                           <!--habit information row-->
@@ -165,7 +173,6 @@ app.component('habit_component', {
                 <!--card text-->
               </div>
               <!-- habits cards -->
-          </div>
         `,
     data() {
         let url
@@ -194,14 +201,14 @@ app.component('habit_component', {
         },
 
         createHabit(){
-            let frequency= this.newHabitFrequency;
-            let quantity= this.newHabitQuantity;
-            let tag= this.newHabitTag;
-            let uid= this.uid;
-
             let result;
             let URL;
             URL = this.url;
+
+            let frequency = this.newHabitFrequency;
+            let quantity = this.newHabitQuantity;
+            let tag = this.newHabitTag;
+            let uid = this.uid;
 
             axios.post(URL,{
                 done: false,
@@ -217,6 +224,7 @@ app.component('habit_component', {
                     this.requestHabits(this.uid);
                 });
 
+            $('newHabitForm').get(0).reset()
 
         },
 
@@ -256,18 +264,35 @@ app.component('habit_component', {
         updateHabit(hidInput){
             const habit = this.habits.find(element => element.hid = hidInput);
             let URL;
+            let frequency;
+            let quantity;
+            let tag
+            let uid = this.uid
+
+
             URL = this.url + hidInput.toString();
+
+            if(this.updateHabitFrequency == null){
+                frequency = habit.frequency;
+            }else {frequency = this.updateHabitFrequency;}
+
+            if(this.updateHabitQuantity == null){
+                quantity = habit.quantity;
+            }else {quantity = this.updateHabitQuantity;}
+
+            if(this.updateHabitTag == null){
+                tag = habit.tag;
+            }else {tag = this.updateHabitTag;}
 
             axios.put(URL, {
                 done: habit.done,
                 doneAmount: habit.doneAmount,
-                frequency: updateFrequency,
-                quantity: updateQuantity,
-                tag: updateTag,
-                uid: this.uid
+                frequency: frequency,
+                quantity: quantity,
+                tag: tag,
+                uid: uid
             })
                 .then(response => {
-                    result = response.data;
                     console.log("habit updated successfully");
                     this.requestHabits(this.uid);
                 });
@@ -275,23 +300,35 @@ app.component('habit_component', {
         },
 
         saveEditing(hidInput){
+            this.toggleEditingOff();
             this.updateHabit(hidInput);
-            this.toggleEditing(hidInput);
+
+            $('editHabitForm').get(0).reset()
         },
 
-        toggleEditing(hidInput){
+        toggleEditingOn(hidInput){
             const x = document.getElementById("habit-display-edit-form");
             this.setUpdateHabit(hidInput);
-
-            console.log(x)
-            console.log("Hello!")
 
             x.style.visibility = "visible";
             x.style.display = "block";
         },
 
-        getUser(){
-            this.uid = '999';
+        toggleEditingOff(){
+            const x = document.getElementById("habit-display-edit-form");
+
+            x.style.visibility = "collapsed";
+            x.style.display = "none";
+        },
+
+        async startup() {
+            let URL = '/user/';
+
+            axios.get(URL)
+                .then(response => {
+                    this.uid = response.data;
+                    this.requestHabits();
+                });
         },
 
         setUpdateHabit(hidInput){
@@ -305,8 +342,7 @@ app.component('habit_component', {
     },
 
     mounted: function() {
-        this.getUser();
-        this.requestHabits()
+        this.startup();
     }
 });
 
