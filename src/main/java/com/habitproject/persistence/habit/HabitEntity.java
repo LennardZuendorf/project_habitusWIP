@@ -39,7 +39,7 @@ public class HabitEntity {
 
 
     //constructor
-    public HabitEntity(String uid, String tag, HabitFrequency frequency, Integer quantity, LocalDateTime lastCheck, boolean done, Integer doneAmount ){
+    public HabitEntity(String uid, String tag, HabitFrequency frequency, Integer quantity, boolean done, Integer doneAmount ){
         this.uid = uid;
         this.tag = tag;
         this.frequency = frequency;

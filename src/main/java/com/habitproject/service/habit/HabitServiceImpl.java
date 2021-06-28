@@ -8,6 +8,8 @@ import com.habitproject.web.habit.HabitStatusReturn;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 public class HabitServiceImpl implements HabitService{
 
@@ -24,7 +26,7 @@ public class HabitServiceImpl implements HabitService{
      */
     @Override
     public HabitStatusReturn postHabit(HabitRequestModel requestBody) {
-        HabitEntity newHabit = new HabitEntity(requestBody.getUid(), requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.getLastCheck(), requestBody.isDone(), requestBody.getDoneAmount());
+        HabitEntity newHabit = new HabitEntity(requestBody.getUid(), requestBody.getTag(), requestBody.getFrequency(), requestBody.getQuantity(), requestBody.isDone(), requestBody.getDoneAmount());
         repository.saveAndFlush(newHabit);
         return new HabitStatusReturn(newHabit, HttpStatus.CREATED);
     }
@@ -55,6 +57,7 @@ public class HabitServiceImpl implements HabitService{
             habitEntry.setQuantity(requestBody.getQuantity());
             habitEntry.setDone(requestBody.isDone());
             habitEntry.setDoneAmount(requestBody.getDoneAmount());
+            habitEntry.setLastCheck(LocalDateTime.now());
             repository.saveAndFlush(habitEntry);
             return HttpStatus.OK;
         }else return HttpStatus.NO_CONTENT;
