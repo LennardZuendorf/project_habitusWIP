@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutSuccessHandler(oidcLogoutSuccessHandler())
 
                 .and().oauth2Client()
-                .and().oauth2Login().loginPage(Endpoints.Site.LOGIN);
+                .and().oauth2Login();
     }
 
 }
