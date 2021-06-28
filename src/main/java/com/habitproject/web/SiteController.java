@@ -8,14 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SiteController {
 
     @GetMapping("/")
-    public String HabitHomepage(){
-        return Endpoints.Site.INDEX;
-    }
+    public String HabitHomepage(){return Endpoints.Site.INDEX;}
 
     @GetMapping("/home")
-    public String HabitHomepage2(){
-        return Endpoints.Site.INDEX;
-    }
+    public String HabitHomepage2(){ return Endpoints.Site.INDEX;}
 
     @GetMapping("/dashboard")
     public String HabitDashboard(){ return Endpoints.Site.DASH; }
@@ -26,12 +22,6 @@ public class SiteController {
     }
 
     @GetMapping("/login")
-    public String Login(){
-        return Endpoints.Site.LOGIN;
-    }
+    public String Login(){ return Endpoints.Site.LOGIN; }
 
-    @GetMapping("/test")
-    public String testSite(){
-        return Endpoints.Site.TEST;
-    }
 }
