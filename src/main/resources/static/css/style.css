@@ -169,10 +169,6 @@ body{
     color: var(--text-color) !important;
 }
 
-.habit-form-field{
-    margin-top: 15px;
-    outline: var(--outline-color) solid !important;
-}
 
 .card-title-l{
     font-size: var(--font-size-l);
@@ -194,7 +190,7 @@ body{
 .form-select{
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
-    font-size: var(--font-size-m) !important;
+    font-size: var(--font-size-s) !important;
     height: 3rem !important;
 }
 
@@ -206,8 +202,8 @@ body{
 .form-control{
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
-    font-size: var(--font-size-m) !important;
     height: 3rem !important;
+    font-size: var(--font-size-s) !important;
 }
 
 .form-control:focus {
@@ -217,17 +213,15 @@ body{
 
 .edit-btns{
     color: var(--text-color) !important;
-    margin-left: 3rem !important;
+    margin-left: 1rem !important;
 }
 
 .habit-display-form{
     background-color: var(--accent-color) !important;
-    border: none;
     height: 2rem !important;
     color: var(--text-color) !important;
+    border-color: var(--habit-color) !important;
 }
-
-
 
 .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--text-color) !important;
@@ -237,3 +231,15 @@ body{
 .form-control::-ms-input-placeholder { /* Microsoft Edge */
     color: var(--text-color) !important;
 }
+
+.habit-display-text{
+    text-transform: uppercase !important;
+    color: var(--text-color) !important;
+    float:left !important;
+}
+
+.vue-input-style{
+    color: var(--habit-color) !important;
+
+}
+
