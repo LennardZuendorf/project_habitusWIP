@@ -152,7 +152,7 @@ app.component('habit_component', {
                                 </div>
         
                                 <div class="col-md-1">
-                                  <button type="button" id="edit-button " class="btn btn-rounded edit-btns" style="font-size: var(--font-size-xs)" v-on:click="toggleEditingOn(habit.hid)">edit</button>
+                                  <button type="button" id="edit-button" class="btn btn-rounded edit-btns" style="font-size: var(--font-size-xs)" v-on:click="toggleEditingOn(habit.hid)">edit</button>
                                 </div>
 
                                   <div class="col-md-1">
