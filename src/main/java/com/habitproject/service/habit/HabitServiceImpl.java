@@ -93,7 +93,6 @@ public class HabitServiceImpl implements HabitService{
     /**
      * updating all habits
      * @param uid - id of the user whos habits should be updated
-     * @return http status code
      */
     @Override
     public void updateHabitsStatus(String uid) {
@@ -117,7 +116,7 @@ public class HabitServiceImpl implements HabitService{
                     }
                     break;
                 case "BIWEEKLY":
-                    if (habit.getLastCheck().plusDays(14).isAfter(LocalDateTime.now())) {
+                    if (habit.getLastCheck().plusWeeks(2).isAfter(LocalDateTime.now())) {
                         updateHabit(habit.getHid(), habit.getTag(), habit.getFrequency(), habit.getQuantity(), false, 0, placeholderDate);
                     }
                     break;
@@ -141,7 +140,7 @@ public class HabitServiceImpl implements HabitService{
     public void updateHabit (Long hid, String tag, HabitFrequency frequency, Integer quantity, boolean done, Integer doneAmount, LocalDateTime lastCheck){
         var habitEntry = repository.findFirstByHid(hid);
 
-        if(lastCheck.equals(placeholderDate)){
+        if(!lastCheck.equals(placeholderDate)){
             if(!done)lastCheck = habitEntry.getLastCheck();
         }
 

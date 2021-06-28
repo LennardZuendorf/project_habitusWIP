@@ -6,8 +6,7 @@ public class Endpoints {
     public static class Rest{
 
         //Habit Endpoints
-        public static final String HABITS = "/habits/**";
-        public static final String HABITS_GET_ALL = "/habits/all/**";
+        public static final String API = "/api/**";
 
     }
 
