@@ -4,6 +4,8 @@
 The HABIT project will be a web app allowing you to track habits every day on the web.
 Want to start programming every single day? Workout 3 times a week? Or read one book a month? Then HABIT is for you.
 
+Habits supports a color mode, persitstant saving of habits (and bringing them back, when they are due), editing and deleting your habits.
+
 ## Status (MAIN)
 
 [![Build Status](https://travis-ci.com/LennardZuendorf/project_habit.svg?branch=main)](https://travis-ci.com/LennardZuendorf/project_habit)

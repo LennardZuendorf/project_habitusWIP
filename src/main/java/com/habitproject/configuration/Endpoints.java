@@ -5,19 +5,8 @@ public class Endpoints {
     //REST API Endpoints
     public static class Rest{
 
-        //Goal Endpoints
-        public static final String GOALS = "/goals";
-        public static final String GOALS_GET = "/goals/";
-        public static final String GOALS_GET_ALL = "/goals/all/";
-        public static final String GOALS_PUT = "/goals/";
-        public static final String GOALS_DELETE = "/goals/";
-
         //Habit Endpoints
-        public static final String HABITS = "/habits";
-        public static final String HABITS_GET = "/habits/";
-        public static final String HABITS_GET_ALL = "/habits/all/";
-        public static final String HABITS_PUT = "/habits/";
-        public static final String HABITS_DELETE = "/habits/";
+        public static final String API = "/api/**";
 
     }
 

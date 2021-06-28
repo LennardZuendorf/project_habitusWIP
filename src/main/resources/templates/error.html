@@ -4,37 +4,35 @@
     <head>
 
         <!--basics-->
-        <title>HABIT</title>
+        <title>HABIT error</title>
         <meta http-equiv="Content-Type" content="text/html"/>
         <meta charset="UTF-8">
         <link rel="icon" type="image/svg" th:href="@{/img/logo_clean.svg}"/>
         <!--basics-->
 
-        <!--Style Imports-->
-        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
-        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css}"/>
+        <!--external Style Imports-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@3.8.0/css/mdb.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
         <link rel="stylesheet" th:href="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/css/okta-sign-in.min.css}"/>
-        <link rel="stylesheet" th:href="@{/css/Style.css}">
-        <link rel="stylesheet" th:href="@{/css/OktaStyle.css}">
-        <!--Style Imports-->
+        <!--external Style Imports-->
 
-        <!-- JS Imports-->
-        <script th:src="@{https://global.oktacdn.com/okta-signin-widget/5.7.3/js/okta-sign-in.min.js}"></script>
-        <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.8.0/mdb.min.js}" integrity="sha512-rVJOxE3yHzlhHmJPnqcl5SZKZ49Foi1AOS3DUD1xw8HsniDi0Ih58kVMAY4mHXVam+4SVXhzqfikJl9/dlm54g==" crossorigin="anonymous" defer></script>
-        <script th:src="@{https://cdn.jsdelivr.net/npm/mdbvue/lib/index.js}"></script>
-        <script th:src="@{https://unpkg.com/vue@next}" defer></script>
-        <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js}" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" defer></script>
-        <!-- JS Imports-->
+        <!--internal Style Imports -->
+        <link rel="stylesheet" th:href="@{/css/oktaStyle.css}" type="text/css">
+        <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
+        <!--internal Style Imports -->
 
-        <!--color mode script-->
-        <script type="text/javascript">
-            (function () {if (localStorage.getItem("colorMode") === "light") {
-                toggleColor();}})(); </script>
-        <!--color mode script-->
+        <!--external JS Imports-->
+        <script src="https://cdn.jsdelivr.net/npm/@okta/okta-signin-widget@5.7.3/dist/js/okta-sign-in.entry.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.1.2/dist/vue.global.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mdb-ui-kit@3.8.0/js/mdb.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@babel/core@7.14.6/lib/index.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/fontawesome.min.js"></script>
+        <!--external JS Imports-->
 
     </head>
 
-    <body class="dark-mode bg-bg">
+    <body class="dark-mode bg-bg" onload="startupColor()";>
 
         <!-- icon & text -->
         <div class="container-fluid" style="height: 100%">
@@ -54,24 +52,48 @@
                 </div>
             </div>
 
-            <div class="row align-items-center justify-content-center bg-bg" style="padding-top: 5%">
+            <div class="row align-items-center justify-content-center bg-bg">
                 <div class="d-flex justify-content-center" style="font-size: var(--font-size-xs)">
                     IF THIS HAPPENS AGAIN, PLEASE CONTACT THE ADMIN!
                 </div>
             </div>
             <!-- text row-->
+
+            <!-- return button -->
+            <div class="row justify-content-center align-items-center bg-bg " style="padding-top: 5%">
+                <div class="col-4">
+                    <button type="button" class="btn btn-rounded login-button" th:onclick="errorButton()" style="font-size: var(--font-size-s)"> RETURN HOME</button>
+                </div>
+            </div>
+            <!-- return button -->
         </div>
         <!-- icon & text -->
 
-        <!-- return button -->
-            <button type="button" class="btn btn-primary">RETURN HOME</button>
-        <!-- return button -->
     </body>
 
     <!--internal java scripts-->
     <script th:src="@{/js/colorMode.js}" type="text/javascript" defer></script>
     <script th:src="@{/js/oktaWidget.js}" type="text/javascript" defer></script>
-    <script th:src="@{/js/vueApp.js}" type="text/javascript" defer></script>
+    <script th:src="@{/js/habitApp.js}" type="module"></script>
+    <script th:src="@{/js/settingsApp.js}" type="module"></script>
     <!--internal java scripts-->
+
+    <!--color mode script-->
+    <script type="text/javascript">
+        function startupColor() {
+            if (localStorage.getItem("colorMode") === "light") {
+                toggleColor();
+            }
+        }
+    </script>
+    <!--color mode script-->
+
+    <script type="text/javascript">
+        function errorButton() {
+            location.href='/home.html';
+        }
+    </script>
+
+
 
 </html>

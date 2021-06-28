@@ -8,6 +8,8 @@ public class HabitRequestModel {
     private HabitFrequency frequency;
     private Integer quantity;
     private String uid;
+    private boolean done;
+    private Integer doneAmount;
 
     public String getTag() {
         return tag;
@@ -20,5 +22,11 @@ public class HabitRequestModel {
     }
     public String getUid() {
         return uid;
+    }
+    public boolean isDone() {
+        return done;
+    }
+    public Integer getDoneAmount() {
+        return doneAmount;
     }
 }

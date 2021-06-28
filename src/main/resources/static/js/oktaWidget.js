@@ -22,8 +22,3 @@ signInWidgetConfig = {
 
 signInWidget = new OktaSignIn(signInWidgetConfig);
 signInWidget.renderEl({el: '#widget-container'})
-
-function logout() {
-    signInWidget.authClient.signOut();
-    location.href = '/home.html';
-}

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 public class HabitRESTController {
 
@@ -28,24 +29,13 @@ public class HabitRESTController {
     }
 
     /**
-     * API call for getting a habit (HabitEntity) by id
-     * @param hid - the habit id to select
-     * @return status code, json
-     */
-    @GetMapping("/habits/{hid}")
-    public ResponseEntity <HabitEntity> getHabit(@PathVariable Long hid){
-        var output = service.getHabit(hid);
-        return ResponseEntity.status(output.getStatus()).body(output.getResponse());
-    }
-
-    /**
      * API call for getting all habits (HabitEntity) by userID
      * @param uid - the user ID to be selected by
      * @return status code, json
      */
-    @GetMapping("/habits/all/{uid}")
-    public ResponseEntity <List<HabitEntity>> getAllHabit(@PathVariable Long uid){
-        var output = service.getAllHabit(uid);
+    @GetMapping("/habits/{uid}")
+    public ResponseEntity <List<HabitEntity>> getAllHabit(@PathVariable String uid){
+        var output = service.getHabits(uid);
         return ResponseEntity.status(output.getStatus()).body(output.getResponse());
     }
 
@@ -68,5 +58,15 @@ public class HabitRESTController {
     @DeleteMapping("/habits/{hid}")
     public ResponseEntity <Void> deleteHabit (@PathVariable Long hid){
         return ResponseEntity.status(service.deleteHabit(hid)).build();
+    }
+
+    /**
+     * API call for deleting all habits (HabitEntity)
+     * @param uid - id of the user all habits should be deleted from
+     * @return status code
+     */
+    @DeleteMapping("/habits/all/{uid}")
+    public ResponseEntity <Void> deleteAllHabits (@PathVariable String uid){
+        return ResponseEntity.status(service.deleteAllHabits(uid)).build();
     }
 }

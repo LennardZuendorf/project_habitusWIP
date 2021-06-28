@@ -26,14 +26,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .authorizeRequests()
 
                 // public pages
                 .antMatchers(
                         Endpoints.Site.INDEX,
                         Endpoints.Site.SLASH,
-                        Endpoints.Site.LOGIN,
-                        Endpoints.Site.DASH
+                        Endpoints.Site.TEST,
+                        Endpoints.Site.LOGIN
                 ).permitAll()
                 // static resources
                 .antMatchers(
@@ -47,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutSuccessHandler(oidcLogoutSuccessHandler())
 
                 .and().oauth2Client()
-                .and().oauth2Login().loginPage(Endpoints.Site.LOGIN);
+                .and().oauth2Login();
     }
 
 }

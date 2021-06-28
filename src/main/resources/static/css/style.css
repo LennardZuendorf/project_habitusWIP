@@ -23,9 +23,7 @@
     --background-color: var(--dark-grey);
     --accent-color: var(--ligher-grey);
     --text-color: var(--light_white);
-    --outline-color: var(--light_white);
-
-    --mdb-light: var(--text-color) !important;
+    --outline-color: var(--habit-color);
 
     --default-custom-button-background-color: var(--background-color);
     --default-custom-button-border-color: var(--background-color);
@@ -36,7 +34,6 @@
     --background-color: var(--light_white);
     --accent-color: var(--darker-white);
     --text-color: var(--dark-grey);
-    --outline-color: var(--dark-grey);
 }
 
 .roboto-black {
@@ -75,27 +72,7 @@
 body{
     height: 100%;
     margin: 30px;
-}
-
-.bg-bg{
-    background: var(--background-color);
-    background-color: var(--background-color);
-    color: var(--text-color)
-}
-
-.bg-accent{
-    background-color: var(--accent-color);
-    color: var(--text-color)
-}
-
-.m-heading{
-    color: var(--text-color);
-    font-min-size: var(--font-size-m);
-    font-max-size: var(--font-size-l);
-}
-
-.nav-link{
-    padding-right: 75px;
+    background-color: var(--background-color) !important;
 }
 
 .d-flex {
@@ -109,26 +86,9 @@ body{
     box-shadow: none !important;
 }
 
-.footer_text{
-    color: var(--text-color);
-    font-size: var(--font-size-xs);
-}
-
 .footer{
     background-color: var(--background-color);
     width: 100%;
-}
-
-.field_heading{
-    color: var(--text-color);
-    font: var(--font-size-l);
-}
-
-.card-body{
-    height: 100%;
-    width: 100%;
-    background-color: var(--accent-color);
-    border-width: 3px;
 }
 
 .modal-dialog{
@@ -142,16 +102,6 @@ body{
     font-size: var(--font-size-xs);
 }
 
-.btn-outline-light{
-    background-color: var(--accent-color);
-}
-
-.login-modal{
-    color: var(--text-color);
-    background-color: var(--accent-color);
-    outline-width: medium;
-    outline-color: var(--text-color);
-}
 
 .login-button{
     background-color: var(--accent-color);
@@ -184,25 +134,8 @@ body{
     font-size: var(--font-size-xs)
 }
 
-.habit-formfield{
-    outline-color: var(--habit-color) !important;
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
-}
-
-.form-outline{
-    outline-color: var(--habit-color) !important;
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
-}
 
 .form-label{
-    outline-color: var(--habit-color) !important;
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
-}
-
-.form-control {
     outline-color: var(--habit-color) !important;
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
@@ -214,51 +147,98 @@ body{
     box-shadow: var(--habit-color) !important;
 }
 
-.form-outline .form-control:focus~.form-notch .form-notch-leading {
-    border-top: .125rem solid var(--outline-color);
-    border-bottom: .125rem solid var(--outline-color);
-    border-left: .125rem solid var(--outline-color);
-}
-.form-outline .form-control:focus~.form-notch .form-notch-middle {
-    border-bottom: .125rem solid;
-    border-color: var(--outline-color);
+.habits-card-main{
+    margin-top: 5% !important;
+    background-color: var(--accent-color) !important;
+    height: 100%;
+    width: 100%;
 }
 
-.form-outline .form-control:focus~.form-notch .form-notch-trailing {
-    border-color: currentcolor currentcolor currentcolor var(--outline-color);
-    border-bottom: .125rem solid var(--outline-color);
-    border-right: .125rem solid var(--outline-color);
-    border-top: .125rem solid var(--outline-color);
+.habits-form-card{
+    background-color: var(--background-color) !important;
 }
 
-.form-outline .form-control:focus~.form-label {
-    color: var(--outline-color);
-}
-
-.card{
+.habits-list-card{
     margin-top: 15px !important;
     background-color: var(--accent-color) !important;
-    border-color: var(--habit-color) !important;
-    border: 3px !important;
+    color: var(--text-color) !important;
+    border-color: var(--text-color) !important;
 }
 
 .fa-times{
     color: var(--text-color) !important;
 }
 
-.habit-form{
-    margin-top: 15px;
+
+.card-title-l{
+    font-size: var(--font-size-l);
+    color: var(--text-color);
+    text-transform: uppercase;
 }
 
-.card-title{
+.card-title-m{
     font-size: var(--font-size-m);
     color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.accent-button{
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
 }
 
 .form-select{
-    color: var(--text-color) !important;
-    box-shadow: var(--text-color) !important;
     background-color: var(--background-color) !important;
-    border: 1px !important;
-    border-color: var(--text-color) !important;
+    color: var(--text-color) !important;
+    font-size: var(--font-size-s) !important;
+    height: 3rem !important;
 }
+
+.form-select:focus {
+    border-color: var(--habit-color) !important;
+    box-shadow: 0px 1px 1px var(--accent-color) inset, 0px 0px 8px var(--habit-color);
+}
+
+.form-control{
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+    height: 3rem !important;
+    font-size: var(--font-size-s) !important;
+}
+
+.form-control:focus {
+    border-color: var(--habit-color) !important;
+    box-shadow: 0px 1px 1px var(--accent-color) inset, 0px 0px 8px var(--habit-color);
+}
+
+.edit-btns{
+    color: var(--text-color) !important;
+}
+
+.habit-display-form{
+    background-color: var(--accent-color) !important;
+    height: 2rem !important;
+    color: var(--text-color) !important;
+    border-color: var(--habit-color) !important;
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text-color) !important;
+    opacity: 1; /* Firefox */
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--text-color) !important;
+}
+
+.habit-display-text{
+    text-transform: uppercase !important;
+    color: var(--text-color) !important;
+    float:left !important;
+}
+
+.vue-input-style{
+    color: var(--habit-color) !important;
+
+}
+
