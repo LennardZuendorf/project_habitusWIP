@@ -3,25 +3,34 @@ package com.habitproject.web;
 import com.habitproject.configuration.Endpoints;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SiteController {
 
-    @GetMapping("/")
-    public String HabitHomepage(){return Endpoints.Site.INDEX;}
-
-    @GetMapping("/home")
-    public String HabitHomepage2(){ return Endpoints.Site.INDEX;}
-
-    @GetMapping("/dashboard")
-    public String HabitDashboard(){ return Endpoints.Site.DASH; }
-
-    @GetMapping("/error")
-    public String Error(){
-        return Endpoints.Site.ERROR;
+    @RequestMapping(path = Endpoints.Site.SLASH)
+    public ModelAndView showIndexPage() {
+        return new ModelAndView("home.html");
     }
 
-    @GetMapping("/login")
-    public String Login(){ return Endpoints.Site.LOGIN; }
+    @GetMapping(path = Endpoints.Site.INDEX)
+    public ModelAndView showIndexPage2() {
+        return new ModelAndView("home.html");
+    }
 
+    @GetMapping(path = Endpoints.Site.DASH)
+    public ModelAndView showDashboard() {
+        return new ModelAndView("dashboard.html");
+    }
+
+    @GetMapping(path = Endpoints.Site.ERROR)
+    public ModelAndView showError() {
+        return new ModelAndView("error.html");
+    }
+
+    @GetMapping(path = Endpoints.Site.LOGIN)
+    public ModelAndView showLogin() {
+        return new ModelAndView("login.html");
+    }
 }

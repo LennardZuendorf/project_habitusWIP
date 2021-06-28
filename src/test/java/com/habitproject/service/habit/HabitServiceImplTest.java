@@ -2,7 +2,7 @@ package com.habitproject.service.habit;
 
 class HabitServiceImplTest {
 
-   /*
+    /*
 
     HabitService classUnderTest = new HabitServiceImpl;
 
@@ -37,5 +37,7 @@ class HabitServiceImplTest {
     void updateHabitTest3() {
 
     }
-    */
+
+     */
+
 }
