@@ -12,6 +12,7 @@ class UserRESTController {
 
     @GetMapping("/user")
     ResponseEntity <Object> getUserId (@AuthenticationPrincipal OidcUser user) {
-        return ResponseEntity.status(HttpStatus.OK).body(user.getAttributes().get("id"));
+        System.out.println(user.getAttributes().get("sub"));
+        return ResponseEntity.status(HttpStatus.OK).body(user.getAttributes().get("sub"));
     }
 }
