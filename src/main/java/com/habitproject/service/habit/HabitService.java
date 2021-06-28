@@ -13,4 +13,5 @@ public interface HabitService {
     HttpStatus putHabit(Long hid, HabitRequestModel requestBody);
     HttpStatus deleteHabit(Long hid);
     HttpStatus deleteAllHabits(String uid);
+    void updateHabitsStatus(String uid);
 }
