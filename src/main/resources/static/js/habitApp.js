@@ -193,6 +193,28 @@ app.component('habit_component', {
 
         },
 
+        toggleEditing(hidInput){
+            const habitDisplay = document.getElementById("habit-display"+hidInput.toString());
+            habitDisplay.toggleAttribute("disabled");
+            if(habitDisplay.style.outline !== "var(--habit-color)"){
+                habitDisplay.style.outline = "var(--habit-color)";
+            }else {habitDisplay.style.outline = "none !important";}
+            this.toggleSaveButton();
+        },
+
+        saveEditing(hidInput){
+            const habitDisplay = document.getElementById("habit-display"+hidInput.toString());
+            habitDisplay.toggleAttribute("disabled");
+            this.updateHabit(hidInput);
+        },
+
+        toggleSaveButton(){
+            const btn = document.getElementById("save-edit-button");
+            if (btn.style.visibility === "hidden"){
+                btn.style.display = "visible";
+            } else {btn.style.display = "hidden";}
+        },
+
         getUser(){
             this.uid = '999';
         }
