@@ -25,19 +25,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.cors();
         http
+                .csrf().disable()
                 .authorizeRequests()
 
                 // public pages
                 .antMatchers(
                         Endpoints.Site.INDEX,
                         Endpoints.Site.SLASH,
-                        Endpoints.Site.LOGIN,
-                        Endpoints.Site.ERROR,
-                        Endpoints.Site.DASH,
-                        Endpoints.Rest.HABITS,
-                        Endpoints.Rest.HABITS_GET_ALL
+                        Endpoints.Site.TEST,
+                        Endpoints.Site.LOGIN
                 ).permitAll()
                 // static resources
                 .antMatchers(
