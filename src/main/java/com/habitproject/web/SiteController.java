@@ -16,21 +16,21 @@ public class SiteController {
 
     @GetMapping(path = Endpoints.Site.INDEX)
     public ModelAndView showIndexPage2() {
-        return new ModelAndView("home.html");
+        return new ModelAndView("home");
     }
 
     @GetMapping(path = Endpoints.Site.DASH)
     public ModelAndView showDashboard() {
-        return new ModelAndView("dashboard.html");
+        return new ModelAndView("dashboard");
     }
 
     @GetMapping(path = Endpoints.Site.ERROR)
     public ModelAndView showError() {
-        return new ModelAndView("error.html");
+        return new ModelAndView("error");
     }
 
     @GetMapping(path = Endpoints.Site.LOGIN)
     public ModelAndView showLogin() {
-        return new ModelAndView("login.html");
+        return new ModelAndView("login");
     }
 }
