@@ -11,7 +11,7 @@ public class SiteController {
 
     @RequestMapping(path = Endpoints.Site.SLASH)
     public ModelAndView showIndexPage() {
-        return new ModelAndView("home.html");
+        return new ModelAndView("home");
     }
 
     @GetMapping(path = Endpoints.Site.INDEX)

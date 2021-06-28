@@ -10,13 +10,12 @@ signInWidgetConfig = {
         // Changes to widget functionality
         features: {
         registration: true,
-        rememberMe: true,
-        router: true,
+        rememberMe: true
     },
         baseUrl: "https://dev-22030587.okta.com",
-        clientId: "0oau09w4fHXe11kvW5d6",
+        clientId: "0oa13n31xrIcmLIfg5d7",
         authParams: {
-        issuer: "https://https://dev-22030587.okta.com/oauth2/default"
+        issuer: "https://dev-22030587.okta.com/oauth2/default"
     },
 };
 

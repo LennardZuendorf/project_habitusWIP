@@ -39,8 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(
                         "/css/**",
                         "/img/**",
-                        "/js/**",
-                        "./templates"
+                        "/js/**"
                 ).permitAll()
                 .anyRequest().authenticated()
 
@@ -48,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutSuccessHandler(oidcLogoutSuccessHandler())
 
                 .and().oauth2Client()
-                .and().oauth2Login();
+                .and().oauth2Login().loginPage("/login");
     }
 
 }
