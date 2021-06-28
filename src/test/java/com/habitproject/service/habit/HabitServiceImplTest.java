@@ -2,82 +2,40 @@ package com.habitproject.service.habit;
 
 class HabitServiceImplTest {
 
-    /*
-    //mock repository and RequestModel
-    @Mock
-    HabitRepository mockedHabitRepository;
-    @Mock
-    HabitRequestModel mockedHabitRequestModel;
+   /*
 
-    //class under test
-    HabitService classUnderTest = new HabitServiceImpl(mockedHabitRepository);
+    HabitService classUnderTest = new HabitServiceImpl;
 
-    //values of existing test entry
-    Long testHid1 = Long.getLong("999");
-    String testTag1 = "buch lesen";
-    HabitFrequency testFrequency1 = HabitFrequency.BIWEEKLY;
-    int testQuantity1 = 1;
-    String testUid1 = "999";
-
-    //new test values
-    String testTag2 = "test 2";
-    HabitFrequency testFrequency2 = HabitFrequency.DAILY;
-    int testQuantity2 = 5;
-    String testUid2 = "999";
-
-
+    HabitEntity testEntity = new HabitEntity("999", "test", HabitFrequency.DAILY, 1, LocalDateTime.now(), false, 0);
+    HabitEntity testEntity = new HabitEntity("999", "test", HabitFrequency.WEEKLY, 1, LocalDateTime.now().minusDays(7), true, 0);
+    String testUid = "999";
 
     @Test
-    @DisplayName("should create proper HabitEntity")
-    void postHabitTest() {
-        when(mockedHabitRequestModel.getTag()).thenReturn(testTag2);
-        when(mockedHabitRequestModel.getFrequency()).thenReturn(testFrequency2);
-        when(mockedHabitRequestModel.getQuantity()).thenReturn(testQuantity2);
-        when(mockedHabitRequestModel.getUid()).thenReturn(testUid2);
+    void updateHabitTest1() {
 
-        HabitEntity expectedHabit = new HabitEntity(testTag2, testFrequency2, testQuantity2, testUid2);
+        when(HabitRepository.findById())
+
 
         //expected
-        var expected = new HabitStatusReturn(expectedHabit, HttpStatus.CREATED);
+        var expected = n
+
 
         //actual
-        var actual = classUnderTest.postHabit(mockedHabitRequestModel);
+        var actual = classUnderTest.updateHabitsStatus(999);
+
 
         //assertion
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    void getHabitTestTrue() {
-        //expected
-        var expected = ;
-
-        //actual
-        var actual = classUnderTest.getHabit();
-
-        //
-        Assertions.assertEquals(expected, actual);
-
+    void updateHabitTest2() {
 
     }
 
     @Test
-    void getHabitTestFalse() {
-        //ex
+    void updateHabitTest3() {
 
     }
-
-    @Test
-    void getAllHabitTest() {
-    }
-
-    @Test
-    void putHabitTest() {
-    }
-
-    @Test
-    void deleteHabitTest() {
-    }
-
-     */
+    */
 }
