@@ -18,7 +18,6 @@
 
         <!--internal Style Imports -->
         <link rel="stylesheet" th:href="@{/css/oktaStyle.css}" type="text/css">
-        <link rel="stylesheet" th:href="@{/css/vueStyle.css}" type="text/css">
         <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
         <!--internal Style Imports -->
 
@@ -33,7 +32,7 @@
 
     </head>
 
-    <body class="dark-mode bg-bg" onload="startupColor();">
+    <body class="dark-mode" onload="startupColor();">
 
         <!-- navbar -->
         <div th:insert="fragments/fragments :: navbar"></div>
@@ -41,7 +40,7 @@
 
         <!-- content container -->
         <div>
-            <div class="container-fluid">
+            <div class="container-fluid" style="margin-bottom: 15%">
 
                 <!--  content & sidebar row -->
                 <div class="row">
@@ -56,9 +55,9 @@
                     <div class="col-8">
                         <div class="row" style="margin: 15px">
                             <!--habits card-->
-                            <div class="card habits-card">
+                            <div class="card habits-card-main rounded">
                                 <div class="card-body">
-                                    <p class="card-title roboto-bold">HABITS</p>
+                                    <p class="card-title card-title-l roboto-black">HABITS</p>
                                     <div class="card-text">
                                         <!-- habits vue component -->
                                         <div id="habitApp">
