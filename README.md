@@ -4,7 +4,18 @@
 The HABIT project will be a web app allowing you to track habits every day on the web.
 Want to start programming every single day? Workout 3 times a week? Or read one book a month? Then HABIT is for you.
 
-Habits supports a color mode, persitstant saving of habits (and bringing them back, when they are due), editing and deleting your habits.
+Habits supports a color mode, persitstant saving of habits (and bringing them back, when they are due), editing and deleting your habits. The newest release is @v1.0
+
+## Roadmap
+
+**short term topics:**
+- implemeting view for done habits
+- full test coverage
+- bugfixing, refactoring, cleanup
+
+**mid term topics:**
+- implementing custom icons for habits
+- implementing goal functions analog to habits
 
 ## Status (MAIN)
 
@@ -18,7 +29,7 @@ Habits supports a color mode, persitstant saving of habits (and bringing them ba
 
 ## Tech Stack
 
-**Client:** Vue.js, JavaScript
+**Client:** Vue.js, clean JavaScript
 
 **Server:** Spring Boot, Thymeleaf
 
@@ -34,7 +45,7 @@ Habits supports a color mode, persitstant saving of habits (and bringing them ba
 
 ## Appendix
 
-HABIT is a programming project developed as part of the course "web technologies" with Prof. Dr. [@Arif Wider](https://github.com/ProfWider) and [@Daniel Wagner](https://github.com/DanielWagner87).
-The course "web technologies" is part of HTW Berlins' Ba Sc. Business Computing.    
+
+HABIT is a programming project originally developed as part of the course "web technologies" of HTW Berlins' Ba Sc. Business Computing. I'm using this project to contiously train my basic programming skills and try out new things. 
 
 ![Logo](https://raw.githubusercontent.com/LennardZuendorf/HABIT/workingBranch/src/main/resources/static/img/logo_long.svg)
