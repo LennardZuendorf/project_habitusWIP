@@ -1,7 +1,7 @@
 
 # [HABIT project](https://habit-project.herokuapp.com/)
 
-The HABIT project will be a web app allowing you to track habits every day on the web.
+The HABIT project is a web app allowing you to track habits every day on the web.
 Want to start programming every single day? Workout 3 times a week? Or read one book a month? Then HABIT is for you.
 
 Habits supports a color mode, persitstant saving of habits (and bringing them back, when they are due), editing and deleting your habits. The newest release is @v1.0
@@ -16,12 +16,17 @@ Habits supports a color mode, persitstant saving of habits (and bringing them ba
 **mid term topics:**
 - implementing custom icons for habits
 - implementing goal functions analog to habits
+- optimization for different screen sizes
 
-## Status (MAIN)
+**long term topics:**
+- HABIT pwa edition
+- (optional) switching techstack, i.e. to Kotlin, Dart
+
+## Status (main/production Branch)
 
 [![Build Status](https://travis-ci.com/LennardZuendorf/project_habit.svg?branch=main)](https://travis-ci.com/LennardZuendorf/project_habit)
 
-## Status (Staging)
+## Status (staging Branch)
 [![Build Status](https://travis-ci.com/LennardZuendorf/project_habit.svg?branch=stagingBranch)](https://travis-ci.com/LennardZuendorf/project_habit)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/LennardZuendorf/HABIT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/HABIT/alerts/)
 [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/LennardZuendorf/HABIT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/HABIT/context:java)
