@@ -1,26 +1,25 @@
-
 # [HABIT project](https://habit-project.herokuapp.com/)
 
 The HABIT project is a web app allowing you to track habits every day on the web.
 Want to start programming every single day? Workout 3 times a week? Or read one book a month? Then HABIT is for you.
 
-Habits supports a color mode, persitstant saving of habits (and bringing them back, when they are due), editing and deleting your habits. The newest release is @v1.0
+Habit supports a colour mode, persistent saving of habits (and bringing them back, when they are due), editing and deleting your habits. The newest release is @v1.0
 
 ## Roadmap
 
 **short term topics:**
-- implemeting view for done habits
+- implementing view for done habits
 - full test coverage
-- bugfixing, refactoring, cleanup
+- bug fixing, refactoring, cleanup
 
-**mid term topics:**
+**midterm topics:**
 - implementing custom icons for habits
-- implementing goal functions analog to habits
+- implementing goal functions analogue to habits
 - optimization for different screen sizes
 
 **long term topics:**
-- HABIT pwa edition
-- (optional) switching techstack, i.e. to Kotlin, Dart
+- HABIT PWA edition
+- (optional) switching tech-stack, i.e. to Kotlin, Dart
 
 ## Status (main/production Branch)
 
@@ -51,6 +50,6 @@ Habits supports a color mode, persitstant saving of habits (and bringing them ba
 ## Appendix
 
 
-HABIT is a programming project originally developed as part of the course "web technologies" of HTW Berlins' Ba Sc. Business Computing. I'm using this project to contiously train my basic programming skills and try out new things. 
+HABIT is a programming project originally developed as part of the course "web technologies" of HTW Berlins' Ba Sc. Business Computing. I'm using this project to continuously train my basic programming skills and try out new things. 
 
 ![Logo](https://raw.githubusercontent.com/LennardZuendorf/HABIT/workingBranch/src/main/resources/static/img/logo_long.svg)
