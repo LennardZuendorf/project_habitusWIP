@@ -1,6 +1,5 @@
-const app = Vue.createApp({});
-
-app.component('habit_component', {
+export default{
+    props: ['habit_component'],
     template:
         `
           <!-- new habit form-->
@@ -344,6 +343,4 @@ app.component('habit_component', {
     mounted: function() {
         this.startup();
     }
-});
-
-app.mount('#habitApp');
+}

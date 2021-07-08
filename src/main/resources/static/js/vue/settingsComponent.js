@@ -1,6 +1,5 @@
-const app = Vue.createApp({});
-
-app.component('settings_component', {
+export default {
+    props:['settings-component'],
     template:
         `        
     `,
@@ -12,5 +11,4 @@ app.component('settings_component', {
         }
     },
 
-});
-app.mount('#settingsApp');
+}
