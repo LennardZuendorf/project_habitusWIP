@@ -33,7 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(
                         Endpoints.Site.INDEX,
                         Endpoints.Site.SLASH,
-                        Endpoints.Site.LOGIN
+                        Endpoints.Site.LOGIN,
+                        Endpoints.Site.DASH
                 ).permitAll()
                 // static resources
                 .antMatchers(

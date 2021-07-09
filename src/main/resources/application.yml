@@ -7,7 +7,11 @@ spring:
     driver-class-name: org.postgresql.Driver
     platform: postgres
     initialization-mode: always
-    max-active: 5
+    tomcat:
+      max-active: 5
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
 
   jpa:
     properties:
