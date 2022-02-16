@@ -20,11 +20,9 @@ I maintain this project as a study repo for running a Java spring Rest API Webse
 
 
 ## Status (staging)
-[![Build Status](https://travis-ci.com/LennardZuendorf/project_habit.svg?branch=stagingBranch)](https://travis-ci.com/LennardZuendorf/project_habit)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/LennardZuendorf/HABIT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/HABIT/alerts/)
-[![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/LennardZuendorf/HABIT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/HABIT/context:java)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/LennardZuendorf/HABIT.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/HABIT/context:javascript)
 
+[![CircleCI](https://circleci.com/gh/LennardZuendorf/project_habit.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
+[![CodeFactor](https://www.codefactor.io/repository/github/lennardzuendorf/project_habit/badge)](https://www.codefactor.io/repository/github/lennardzuendorf/project_habit)
 
 ## Author
 
