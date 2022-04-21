@@ -1,3 +1,5 @@
+![Logo](https://raw.githubusercontent.com/LennardZuendorf/HABIT/workingBranch/src/main/resources/static/img/logo_long.svg)
+
 # [HABIT project](https://habit-project.herokuapp.com/)
 
 The HABIT project is a web app allowing you to track habits every day on the web.
@@ -21,8 +23,9 @@ I maintain this project as a study repo for running a Java spring Rest API Webse
 
 ## Status (staging)
 
-[![CircleCI](https://circleci.com/gh/LennardZuendorf/project_habit.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
-[![CodeFactor](https://www.codefactor.io/repository/github/lennardzuendorf/project_habit/badge)](https://www.codefactor.io/repository/github/lennardzuendorf/project_habit)
+[![CircleCI](https://circleci.com/gh/LennardZuendorf/project_habitus.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
+
+[![CodeFactor](https://www.codefactor.io/repository/github/lennardzuendorf/project_habitus/badge)](https://www.codefactor.io/repository/github/lennardzuendorf/project_habitus)
 
 ## Author
 
@@ -31,7 +34,6 @@ I maintain this project as a study repo for running a Java spring Rest API Webse
 
 ## Appendix
 
+HABIT is a programming project originally developed as part of the course "web technologies" of HTW Berlins' Ba Sc. Business Computing. I'm using this project to train my basic programming skills and try out new things. 
 
-HABIT is a programming project originally developed as part of the course "web technologies" of HTW Berlins' Ba Sc. Business Computing. I'm using this project to continuously train my basic programming skills and try out new things. 
 
-![Logo](https://raw.githubusercontent.com/LennardZuendorf/HABIT/workingBranch/src/main/resources/static/img/logo_long.svg)
