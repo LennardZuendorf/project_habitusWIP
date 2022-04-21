@@ -21,11 +21,13 @@ I maintain this project as a study repo for running a Java spring Rest API Webse
 **Hosting:** Heroku
 
 
-## Status (staging)
+## Status (Main Branch)
 
-[![CircleCI](https://circleci.com/gh/LennardZuendorf/project_habitus.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
+[![CircleCI](https://circleci.com/gh/LennardZuendorf/project_habitus/tree/main.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/lennardzuendorf/project_habitus/badge)](https://www.codefactor.io/repository/github/lennardzuendorf/project_habitus)
+
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/LennardZuendorf/project_habitus.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LennardZuendorf/project_habitus/alerts/)
 
 ## Author
 
